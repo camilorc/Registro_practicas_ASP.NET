@@ -1,0 +1,1011 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ACTA1">
+          <Key>
+            <PropertyRef Name="IDACTA1" />
+          </Key>
+          <Property Name="IDACTA1" Type="number" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="OBSERVACIONES" Type="varchar2" MaxLength="2000" Nullable="false" />
+          <Property Name="TAREAS" Type="varchar2" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ACTA2">
+          <Key>
+            <PropertyRef Name="IDACTA2" />
+          </Key>
+          <Property Name="IDACTA2" Type="number" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="PRINCIPALES_TAREAS" Type="varchar2" MaxLength="500" Nullable="false" />
+          <Property Name="APORTES" Type="varchar2" MaxLength="500" Nullable="false" />
+          <Property Name="SUGERENCIAS" Type="varchar2" MaxLength="500" Nullable="false" />
+          <Property Name="PROMEDIO_PERSONAL" Type="number" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="PROMEDIO_PROFESIONAL" Type="number" Precision="2" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CARRERA">
+          <Key>
+            <PropertyRef Name="IDCARRERA" />
+            <PropertyRef Name="NOMBRE_CARRERA" />
+          </Key>
+          <Property Name="IDCARRERA" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE_CARRERA" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="ESCUELA_IDESCUELA" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="ESCUELA_NOMBRE_ESCUELA" Type="varchar2" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CENTRO_PRACTICA">
+          <Key>
+            <PropertyRef Name="IDCENTROPRACTICA" />
+          </Key>
+          <Property Name="IDCENTROPRACTICA" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE_CENTRO" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="DIRECCION_CENTRO" Type="varchar2" MaxLength="100" />
+          <Property Name="DEPARTAMENTO_CENTRO" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="AREA_CENTRO" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="USERNAME" Type="varchar2" MaxLength="50" />
+          <Property Name="RAZON_SOCIAL" Type="varchar2" MaxLength="100" />
+          <Property Name="WEB" Type="varchar2" MaxLength="100" />
+          <Property Name="FONO" Type="number" Precision="10" Scale="0" />
+          <Property Name="EMAIL" Type="varchar2" MaxLength="100" />
+          <Property Name="PASS" Type="varchar2" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ESCUELA">
+          <Key>
+            <PropertyRef Name="IDESCUELA" />
+            <PropertyRef Name="NOMBRE_ESCUELA" />
+          </Key>
+          <Property Name="IDESCUELA" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE_ESCUELA" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="DIRECTOR_CARRERA" Type="varchar2" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PRACTICA">
+          <Key>
+            <PropertyRef Name="IDPRACTICA" />
+          </Key>
+          <Property Name="IDPRACTICA" Type="number" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="TIPO_HORAS_PRACTICA" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="CANT_HORAS" Type="number" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="FECHA_TERMINO" Type="date" Nullable="false" />
+          <Property Name="FECHA_INICIO" Type="date" Nullable="false" />
+          <Property Name="DISTANCIA" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="DONDE" Type="varchar2" MaxLength="50" />
+          <Property Name="NOTA_FINAL" Type="float" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="ACTA1_IDACTA1" Type="number" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="ACTA2_IDACTA2" Type="number" Precision="3" Scale="0" />
+          <Property Name="IDCENTROPRACTICA" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="ESTADO" Type="number" Precision="4" Scale="0" />
+        </EntityType>
+        <EntityType Name="ROLES">
+          <Key>
+            <PropertyRef Name="IDROL" />
+          </Key>
+          <Property Name="IDROL" Type="number" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE_ROL" Type="varchar2" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SEDE">
+          <Key>
+            <PropertyRef Name="IDSEDE" />
+            <PropertyRef Name="NOMBRE_SEDE" />
+          </Key>
+          <Property Name="IDSEDE" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE_SEDE" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="DIRECCION_SEDE" Type="varchar2" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SISTEMA">
+          <Key>
+            <PropertyRef Name="IDNOTIFICACION" />
+          </Key>
+          <Property Name="IDNOTIFICACION" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE_NOTIFICACION" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="FECHA_HORA" Type="date" Nullable="false" />
+          <Property Name="USUARIO_RUT" Type="number" Precision="10" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="RUT" />
+          </Key>
+          <Property Name="RUT" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="DV_USUARIO" Type="varchar2" MaxLength="1" Nullable="false" />
+          <Property Name="CONTRASEÑA" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="NOMBRES" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="APELLIDO1" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="APELLIDO2" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="FECHA_NACIMIENTO" Type="date" Nullable="false" />
+          <Property Name="DIRECCION" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="TELEFONO" Type="number" Precision="10" Scale="0" />
+          <Property Name="CORREO" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="SEDE_IDSEDE" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="SEDE_NOMBRE_SEDE" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="ROLES_IDROL" Type="number" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="PRACTICA_IDPRACTICA" Type="number" Precision="4" Scale="0" />
+          <Property Name="CARRERA_IDCARRERA" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="CARRERA_NOMBRE_CARRERA" Type="varchar2" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <Association Name="CARRERA_ESCUELA_FK">
+          <End Role="ESCUELA" Type="Self.ESCUELA" Multiplicity="1" />
+          <End Role="CARRERA" Type="Self.CARRERA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESCUELA">
+              <PropertyRef Name="IDESCUELA" />
+              <PropertyRef Name="NOMBRE_ESCUELA" />
+            </Principal>
+            <Dependent Role="CARRERA">
+              <PropertyRef Name="ESCUELA_IDESCUELA" />
+              <PropertyRef Name="ESCUELA_NOMBRE_ESCUELA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PRACTICA_ACTA1_FK">
+          <End Role="ACTA1" Type="Self.ACTA1" Multiplicity="1" />
+          <End Role="PRACTICA" Type="Self.PRACTICA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACTA1">
+              <PropertyRef Name="IDACTA1" />
+            </Principal>
+            <Dependent Role="PRACTICA">
+              <PropertyRef Name="ACTA1_IDACTA1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PRACTICA_ACTA2_FK">
+          <End Role="ACTA2" Type="Self.ACTA2" Multiplicity="0..1" />
+          <End Role="PRACTICA" Type="Self.PRACTICA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACTA2">
+              <PropertyRef Name="IDACTA2" />
+            </Principal>
+            <Dependent Role="PRACTICA">
+              <PropertyRef Name="ACTA2_IDACTA2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PRACTICA_CENTRO_PRACTICA_FK">
+          <End Role="CENTRO_PRACTICA" Type="Self.CENTRO_PRACTICA" Multiplicity="1" />
+          <End Role="PRACTICA" Type="Self.PRACTICA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CENTRO_PRACTICA">
+              <PropertyRef Name="IDCENTROPRACTICA" />
+            </Principal>
+            <Dependent Role="PRACTICA">
+              <PropertyRef Name="IDCENTROPRACTICA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SISTEMA_USUARIO_FK">
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
+          <End Role="SISTEMA" Type="Self.SISTEMA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="RUT" />
+            </Principal>
+            <Dependent Role="SISTEMA">
+              <PropertyRef Name="USUARIO_RUT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="USUARIO_CARRERA_FK">
+          <End Role="CARRERA" Type="Self.CARRERA" Multiplicity="1" />
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CARRERA">
+              <PropertyRef Name="IDCARRERA" />
+              <PropertyRef Name="NOMBRE_CARRERA" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="CARRERA_IDCARRERA" />
+              <PropertyRef Name="CARRERA_NOMBRE_CARRERA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="USUARIO_PRACTICA_FK">
+          <End Role="PRACTICA" Type="Self.PRACTICA" Multiplicity="0..1" />
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRACTICA">
+              <PropertyRef Name="IDPRACTICA" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="PRACTICA_IDPRACTICA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="USUARIO_ROLES_FK">
+          <End Role="ROLES" Type="Self.ROLES" Multiplicity="1" />
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROLES">
+              <PropertyRef Name="IDROL" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="ROLES_IDROL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="USUARIO_SEDE_FK">
+          <End Role="SEDE" Type="Self.SEDE" Multiplicity="1" />
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SEDE">
+              <PropertyRef Name="IDSEDE" />
+              <PropertyRef Name="NOMBRE_SEDE" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="SEDE_IDSEDE" />
+              <PropertyRef Name="SEDE_NOMBRE_SEDE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="BUSCAR_USUARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PROYECTO">
+          <Parameter Name="P_RUT" Type="number" Mode="In" />
+          <Parameter Name="P_DV_USUARIO" Type="varchar2" Mode="In" />
+          <Parameter Name="P_ROL" Type="number" Mode="In" />
+          <Parameter Name="P_CONTRASENNA" Type="varchar2" Mode="Out" />
+          <Parameter Name="P_NOMBRES" Type="varchar2" Mode="Out" />
+          <Parameter Name="P_APELLIDO1" Type="varchar2" Mode="Out" />
+          <Parameter Name="P_APELLIDO2" Type="varchar2" Mode="Out" />
+          <Parameter Name="P_FECHA_NACIMIENTO" Type="date" Mode="Out" />
+          <Parameter Name="P_DIRECCION" Type="varchar2" Mode="Out" />
+          <Parameter Name="P_TELEFONO" Type="number" Mode="Out" />
+          <Parameter Name="P_EMAIL" Type="varchar2" Mode="Out" />
+          <Parameter Name="P_SEDE_ID" Type="number" Mode="Out" />
+          <Parameter Name="P_SEDE_NOMBRE" Type="varchar2" Mode="Out" />
+          <Parameter Name="P_PRACTICA_ID" Type="number" Mode="Out" />
+          <Parameter Name="P_CARRERA_ID" Type="number" Mode="Out" />
+          <Parameter Name="P_CARRERA_NOMBRE" Type="varchar2" Mode="Out" />
+        </Function>
+        <Function Name="CREAR_ACTA2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PROYECTO">
+          <Parameter Name="P_TAREAS" Type="varchar2" Mode="In" />
+          <Parameter Name="P_APORTES" Type="varchar2" Mode="In" />
+          <Parameter Name="P_SEGURENCIAS" Type="varchar2" Mode="In" />
+          <Parameter Name="P_PROM_PERSONAL" Type="number" Mode="In" />
+          <Parameter Name="P_PROM_PROFE" Type="number" Mode="In" />
+          <Parameter Name="P_NOM_CENTRO" Type="varchar2" Mode="In" />
+          <Parameter Name="P_DIRECC_CENTRO" Type="varchar2" Mode="In" />
+          <Parameter Name="P_RAZON_SOCIAL" Type="varchar2" Mode="In" />
+          <Parameter Name="P_WEB" Type="varchar2" Mode="In" />
+          <Parameter Name="P_FONO" Type="number" Mode="In" />
+          <Parameter Name="P_EMAIL" Type="varchar2" Mode="In" />
+          <Parameter Name="P_ID_CENTRO" Type="number" Mode="In" />
+          <Parameter Name="P_ID_PRACTICA" Type="number" Mode="In" />
+        </Function>
+        <Function Name="CREAR_CARRERA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PROYECTO">
+          <Parameter Name="NOMBRE_CARRERA" Type="varchar2" Mode="In" />
+          <Parameter Name="ID_ESCUELA" Type="number" Mode="In" />
+          <Parameter Name="NOMBRE_ESCUELA" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="CREAR_SEDE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PROYECTO">
+          <Parameter Name="NOMBRE_SEDE" Type="varchar2" Mode="In" />
+          <Parameter Name="DIRECCION_SEDE" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="CREAR_USUARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PROYECTO">
+          <Parameter Name="RUT" Type="number" Mode="In" />
+          <Parameter Name="DV_USUARIO" Type="varchar2" Mode="In" />
+          <Parameter Name="CONTRASENNA" Type="varchar2" Mode="In" />
+          <Parameter Name="NOMBRES" Type="varchar2" Mode="In" />
+          <Parameter Name="APELLIDO1" Type="varchar2" Mode="In" />
+          <Parameter Name="APELLIDO2" Type="varchar2" Mode="In" />
+          <Parameter Name="FECHA_NACIMIENTO" Type="varchar2" Mode="In" />
+          <Parameter Name="DIRECCION" Type="varchar2" Mode="In" />
+          <Parameter Name="TELEFONO" Type="number" Mode="In" />
+          <Parameter Name="CORREO" Type="varchar2" Mode="In" />
+          <Parameter Name="ID_SEDE" Type="number" Mode="In" />
+          <Parameter Name="NOMBRE_SEDE" Type="varchar2" Mode="In" />
+          <Parameter Name="ID_ROL" Type="number" Mode="In" />
+          <Parameter Name="ID_PRACTICA" Type="number" Mode="In" />
+          <Parameter Name="ID_CARRERA" Type="number" Mode="In" />
+          <Parameter Name="NOMBRE_CARRERA" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="EDITAR_CARRERA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PROYECTO">
+          <Parameter Name="ID_CARRERA" Type="number" Mode="In" />
+          <Parameter Name="NOMBRE_CARRERA" Type="varchar2" Mode="In" />
+          <Parameter Name="ID_ESCUELA" Type="number" Mode="In" />
+          <Parameter Name="NOMBRE_ESCUELA" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="EDITAR_SEDE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PROYECTO">
+          <Parameter Name="ID_SEDE" Type="number" Mode="In" />
+          <Parameter Name="NOMBRE_SEDE" Type="varchar2" Mode="In" />
+          <Parameter Name="DIRECCION_SEDE" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="EDITAR_USUARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PROYECTO">
+          <Parameter Name="P_RUT" Type="number" Mode="In" />
+          <Parameter Name="P_DV_USUARIO" Type="varchar2" Mode="In" />
+          <Parameter Name="P_CONTRASENNA" Type="varchar2" Mode="In" />
+          <Parameter Name="P_NOMBRES" Type="varchar2" Mode="In" />
+          <Parameter Name="P_APELLIDO1" Type="varchar2" Mode="In" />
+          <Parameter Name="P_APELLIDO2" Type="varchar2" Mode="In" />
+          <Parameter Name="P_FECHA_NACIMIENTO" Type="varchar2" Mode="In" />
+          <Parameter Name="P_DIRECCION" Type="varchar2" Mode="In" />
+          <Parameter Name="P_TELEFONO" Type="number" Mode="In" />
+          <Parameter Name="P_CORREO" Type="varchar2" Mode="In" />
+          <Parameter Name="P_ID_SEDE" Type="number" Mode="In" />
+          <Parameter Name="P_NOMBRE_SEDE" Type="varchar2" Mode="In" />
+          <Parameter Name="P_ID_ROL" Type="number" Mode="In" />
+          <Parameter Name="P_ID_PRACTICA" Type="number" Mode="In" />
+          <Parameter Name="P_ID_CARRERA" Type="number" Mode="In" />
+          <Parameter Name="P_NOMBRE_CARRERA" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="ELIMINAR_CARRERA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PROYECTO">
+          <Parameter Name="NOMBRE_CARRERA" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="ELIMINAR_SEDE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PROYECTO">
+          <Parameter Name="NOMBRE_SEDE" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="INGRESAR_PRACTICA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PROYECTO">
+          <Parameter Name="RUT_ALUMNO" Type="number" Mode="In" />
+          <Parameter Name="RUT_DOCENTE" Type="number" Mode="In" />
+          <Parameter Name="FECHA_INICIO" Type="varchar2" Mode="In" />
+          <Parameter Name="FECHA_TERMINO" Type="varchar2" Mode="In" />
+          <Parameter Name="TIPO_PRACTICA" Type="varchar2" Mode="In" />
+          <Parameter Name="CANT_HORAS" Type="number" Mode="In" />
+          <Parameter Name="IDCENTRO" Type="number" Mode="In" />
+          <Parameter Name="NOMBRE_CENTRO" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="REPORTE_ESPEC_JEFE_CARRERA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PROYECTO">
+          <Parameter Name="P_SEDE" Type="number" Mode="In" />
+          <Parameter Name="P_CARRERA" Type="number" Mode="In" />
+          <Parameter Name="P_RUT" Type="number" Mode="Out" />
+          <Parameter Name="P_DV" Type="varchar2" Mode="Out" />
+          <Parameter Name="P_NOMBRES" Type="varchar2" Mode="Out" />
+          <Parameter Name="P_APELLIDO1" Type="varchar2" Mode="Out" />
+          <Parameter Name="P_APELLIDO2" Type="varchar2" Mode="Out" />
+        </Function>
+        <Function Name="REPORTE_GENERAL_JEFE_CARRERA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PROYECTO">
+          <Parameter Name="P_SEDE" Type="number" Mode="In" />
+          <Parameter Name="P_CARRERA" Type="number" Mode="In" />
+          <Parameter Name="P_CANTIDAD_CURSO" Type="number" Mode="Out" />
+          <Parameter Name="P_CANTIDAD_PENDIENTE" Type="number" Mode="Out" />
+          <Parameter Name="P_CANTIDAD_FINALIZADA" Type="number" Mode="Out" />
+        </Function>
+        <Function Name="UPDATE_CENTRO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="PROYECTO">
+          <Parameter Name="ID_CENTRO" Type="number" Mode="In" />
+          <Parameter Name="P_NOM" Type="varchar2" Mode="In" />
+          <Parameter Name="P_DIRECCION" Type="varchar2" Mode="In" />
+          <Parameter Name="P_DEPTO" Type="varchar2" Mode="In" />
+          <Parameter Name="P_AREA" Type="varchar2" Mode="In" />
+        </Function>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="ACTA1" EntityType="Self.ACTA1" Schema="PROYECTO" store:Type="Tables" />
+          <EntitySet Name="ACTA2" EntityType="Self.ACTA2" Schema="PROYECTO" store:Type="Tables" />
+          <EntitySet Name="CARRERA" EntityType="Self.CARRERA" Schema="PROYECTO" store:Type="Tables" />
+          <EntitySet Name="CENTRO_PRACTICA" EntityType="Self.CENTRO_PRACTICA" Schema="PROYECTO" store:Type="Tables" />
+          <EntitySet Name="ESCUELA" EntityType="Self.ESCUELA" Schema="PROYECTO" store:Type="Tables" />
+          <EntitySet Name="PRACTICA" EntityType="Self.PRACTICA" Schema="PROYECTO" store:Type="Tables" />
+          <EntitySet Name="ROLES" EntityType="Self.ROLES" Schema="PROYECTO" store:Type="Tables" />
+          <EntitySet Name="SEDE" EntityType="Self.SEDE" Schema="PROYECTO" store:Type="Tables" />
+          <EntitySet Name="SISTEMA" EntityType="Self.SISTEMA" Schema="PROYECTO" store:Type="Tables" />
+          <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="PROYECTO" store:Type="Tables" />
+          <AssociationSet Name="CARRERA_ESCUELA_FK" Association="Self.CARRERA_ESCUELA_FK">
+            <End Role="ESCUELA" EntitySet="ESCUELA" />
+            <End Role="CARRERA" EntitySet="CARRERA" />
+          </AssociationSet>
+          <AssociationSet Name="PRACTICA_ACTA1_FK" Association="Self.PRACTICA_ACTA1_FK">
+            <End Role="ACTA1" EntitySet="ACTA1" />
+            <End Role="PRACTICA" EntitySet="PRACTICA" />
+          </AssociationSet>
+          <AssociationSet Name="PRACTICA_ACTA2_FK" Association="Self.PRACTICA_ACTA2_FK">
+            <End Role="ACTA2" EntitySet="ACTA2" />
+            <End Role="PRACTICA" EntitySet="PRACTICA" />
+          </AssociationSet>
+          <AssociationSet Name="PRACTICA_CENTRO_PRACTICA_FK" Association="Self.PRACTICA_CENTRO_PRACTICA_FK">
+            <End Role="CENTRO_PRACTICA" EntitySet="CENTRO_PRACTICA" />
+            <End Role="PRACTICA" EntitySet="PRACTICA" />
+          </AssociationSet>
+          <AssociationSet Name="SISTEMA_USUARIO_FK" Association="Self.SISTEMA_USUARIO_FK">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="SISTEMA" EntitySet="SISTEMA" />
+          </AssociationSet>
+          <AssociationSet Name="USUARIO_CARRERA_FK" Association="Self.USUARIO_CARRERA_FK">
+            <End Role="CARRERA" EntitySet="CARRERA" />
+            <End Role="USUARIO" EntitySet="USUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="USUARIO_PRACTICA_FK" Association="Self.USUARIO_PRACTICA_FK">
+            <End Role="PRACTICA" EntitySet="PRACTICA" />
+            <End Role="USUARIO" EntitySet="USUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="USUARIO_ROLES_FK" Association="Self.USUARIO_ROLES_FK">
+            <End Role="ROLES" EntitySet="ROLES" />
+            <End Role="USUARIO" EntitySet="USUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="USUARIO_SEDE_FK" Association="Self.USUARIO_SEDE_FK">
+            <End Role="SEDE" EntitySet="SEDE" />
+            <End Role="USUARIO" EntitySet="USUARIO" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ACTA1">
+          <Key>
+            <PropertyRef Name="IDACTA1" />
+          </Key>
+          <Property Name="IDACTA1" Type="Int16" Nullable="false" />
+          <Property Name="OBSERVACIONES" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TAREAS" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="PRACTICA" Relationship="Self.PRACTICA_ACTA1_FK" FromRole="ACTA1" ToRole="PRACTICA" />
+        </EntityType>
+        <EntityType Name="ACTA2">
+          <Key>
+            <PropertyRef Name="IDACTA2" />
+          </Key>
+          <Property Name="IDACTA2" Type="Int16" Nullable="false" />
+          <Property Name="PRINCIPALES_TAREAS" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="APORTES" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SUGERENCIAS" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PROMEDIO_PERSONAL" Type="Int16" Nullable="false" />
+          <Property Name="PROMEDIO_PROFESIONAL" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="PRACTICA" Relationship="Self.PRACTICA_ACTA2_FK" FromRole="ACTA2" ToRole="PRACTICA" />
+        </EntityType>
+        <EntityType Name="CARRERA">
+          <Key>
+            <PropertyRef Name="IDCARRERA" />
+            <PropertyRef Name="NOMBRE_CARRERA" />
+          </Key>
+          <Property Name="IDCARRERA" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE_CARRERA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ESCUELA_IDESCUELA" Type="Int32" Nullable="false" />
+          <Property Name="ESCUELA_NOMBRE_ESCUELA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ESCUELA" Relationship="Self.CARRERA_ESCUELA_FK" FromRole="CARRERA" ToRole="ESCUELA" />
+          <NavigationProperty Name="USUARIO" Relationship="Self.USUARIO_CARRERA_FK" FromRole="CARRERA" ToRole="USUARIO" />
+        </EntityType>
+        <EntityType Name="CENTRO_PRACTICA">
+          <Key>
+            <PropertyRef Name="IDCENTROPRACTICA" />
+          </Key>
+          <Property Name="IDCENTROPRACTICA" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE_CENTRO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DIRECCION_CENTRO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DEPARTAMENTO_CENTRO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AREA_CENTRO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="PRACTICA" Relationship="Self.PRACTICA_CENTRO_PRACTICA_FK" FromRole="CENTRO_PRACTICA" ToRole="PRACTICA" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RAZON_SOCIAL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="WEB" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FONO" Type="Int32" />
+          <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PASS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ESCUELA">
+          <Key>
+            <PropertyRef Name="IDESCUELA" />
+            <PropertyRef Name="NOMBRE_ESCUELA" />
+          </Key>
+          <Property Name="IDESCUELA" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE_ESCUELA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DIRECTOR_CARRERA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CARRERA" Relationship="Self.CARRERA_ESCUELA_FK" FromRole="ESCUELA" ToRole="CARRERA" />
+        </EntityType>
+        <EntityType Name="PRACTICA">
+          <Key>
+            <PropertyRef Name="IDPRACTICA" />
+          </Key>
+          <Property Name="IDPRACTICA" Type="Int16" Nullable="false" />
+          <Property Name="TIPO_HORAS_PRACTICA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CANT_HORAS" Type="Int16" Nullable="false" />
+          <Property Name="FECHA_TERMINO" Type="DateTime" Nullable="false" />
+          <Property Name="FECHA_INICIO" Type="DateTime" Nullable="false" />
+          <Property Name="DISTANCIA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="DONDE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NOTA_FINAL" Type="Decimal" Precision="1" Scale="0" Nullable="false" />
+          <Property Name="ACTA1_IDACTA1" Type="Int16" Nullable="false" />
+          <Property Name="ACTA2_IDACTA2" Type="Int16" />
+          <Property Name="IDCENTROPRACTICA" Type="Int32" Nullable="false" />
+          <Property Name="ESTADO" Type="Int16" />
+          <NavigationProperty Name="ACTA1" Relationship="Self.PRACTICA_ACTA1_FK" FromRole="PRACTICA" ToRole="ACTA1" />
+          <NavigationProperty Name="ACTA2" Relationship="Self.PRACTICA_ACTA2_FK" FromRole="PRACTICA" ToRole="ACTA2" />
+          <NavigationProperty Name="CENTRO_PRACTICA" Relationship="Self.PRACTICA_CENTRO_PRACTICA_FK" FromRole="PRACTICA" ToRole="CENTRO_PRACTICA" />
+          <NavigationProperty Name="USUARIO" Relationship="Self.USUARIO_PRACTICA_FK" FromRole="PRACTICA" ToRole="USUARIO" />
+        </EntityType>
+        <EntityType Name="ROLES">
+          <Key>
+            <PropertyRef Name="IDROL" />
+          </Key>
+          <Property Name="IDROL" Type="Int16" Nullable="false" />
+          <Property Name="NOMBRE_ROL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="USUARIO" Relationship="Self.USUARIO_ROLES_FK" FromRole="ROLES" ToRole="USUARIO" />
+        </EntityType>
+        <EntityType Name="SEDE">
+          <Key>
+            <PropertyRef Name="IDSEDE" />
+            <PropertyRef Name="NOMBRE_SEDE" />
+          </Key>
+          <Property Name="IDSEDE" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE_SEDE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DIRECCION_SEDE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="USUARIO" Relationship="Self.USUARIO_SEDE_FK" FromRole="SEDE" ToRole="USUARIO" />
+        </EntityType>
+        <EntityType Name="SISTEMA">
+          <Key>
+            <PropertyRef Name="IDNOTIFICACION" />
+          </Key>
+          <Property Name="IDNOTIFICACION" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE_NOTIFICACION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_HORA" Type="DateTime" Nullable="false" />
+          <Property Name="USUARIO_RUT" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="USUARIO" Relationship="Self.SISTEMA_USUARIO_FK" FromRole="SISTEMA" ToRole="USUARIO" />
+        </EntityType>
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="RUT" />
+          </Key>
+          <Property Name="RUT" Type="Int32" Nullable="false" />
+          <Property Name="DV_USUARIO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CONTRASEÑA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NOMBRES" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="APELLIDO1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="APELLIDO2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_NACIMIENTO" Type="DateTime" Nullable="false" />
+          <Property Name="DIRECCION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TELEFONO" Type="Int32" />
+          <Property Name="CORREO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SEDE_IDSEDE" Type="Int32" Nullable="false" />
+          <Property Name="SEDE_NOMBRE_SEDE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ROLES_IDROL" Type="Int16" Nullable="false" />
+          <Property Name="PRACTICA_IDPRACTICA" Type="Int16" />
+          <Property Name="CARRERA_IDCARRERA" Type="Int32" Nullable="false" />
+          <Property Name="CARRERA_NOMBRE_CARRERA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CARRERA" Relationship="Self.USUARIO_CARRERA_FK" FromRole="USUARIO" ToRole="CARRERA" />
+          <NavigationProperty Name="PRACTICA" Relationship="Self.USUARIO_PRACTICA_FK" FromRole="USUARIO" ToRole="PRACTICA" />
+          <NavigationProperty Name="ROLES" Relationship="Self.USUARIO_ROLES_FK" FromRole="USUARIO" ToRole="ROLES" />
+          <NavigationProperty Name="SEDE" Relationship="Self.USUARIO_SEDE_FK" FromRole="USUARIO" ToRole="SEDE" />
+          <NavigationProperty Name="SISTEMA" Relationship="Self.SISTEMA_USUARIO_FK" FromRole="USUARIO" ToRole="SISTEMA" />
+        </EntityType>
+        <Association Name="PRACTICA_ACTA1_FK">
+          <End Role="ACTA1" Type="Self.ACTA1" Multiplicity="1" />
+          <End Role="PRACTICA" Type="Self.PRACTICA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACTA1">
+              <PropertyRef Name="IDACTA1" />
+            </Principal>
+            <Dependent Role="PRACTICA">
+              <PropertyRef Name="ACTA1_IDACTA1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PRACTICA_ACTA2_FK">
+          <End Role="ACTA2" Type="Self.ACTA2" Multiplicity="0..1" />
+          <End Role="PRACTICA" Type="Self.PRACTICA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACTA2">
+              <PropertyRef Name="IDACTA2" />
+            </Principal>
+            <Dependent Role="PRACTICA">
+              <PropertyRef Name="ACTA2_IDACTA2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CARRERA_ESCUELA_FK">
+          <End Role="ESCUELA" Type="Self.ESCUELA" Multiplicity="1" />
+          <End Role="CARRERA" Type="Self.CARRERA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESCUELA">
+              <PropertyRef Name="IDESCUELA" />
+              <PropertyRef Name="NOMBRE_ESCUELA" />
+            </Principal>
+            <Dependent Role="CARRERA">
+              <PropertyRef Name="ESCUELA_IDESCUELA" />
+              <PropertyRef Name="ESCUELA_NOMBRE_ESCUELA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="USUARIO_CARRERA_FK">
+          <End Role="CARRERA" Type="Self.CARRERA" Multiplicity="1" />
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CARRERA">
+              <PropertyRef Name="IDCARRERA" />
+              <PropertyRef Name="NOMBRE_CARRERA" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="CARRERA_IDCARRERA" />
+              <PropertyRef Name="CARRERA_NOMBRE_CARRERA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PRACTICA_CENTRO_PRACTICA_FK">
+          <End Role="CENTRO_PRACTICA" Type="Self.CENTRO_PRACTICA" Multiplicity="1" />
+          <End Role="PRACTICA" Type="Self.PRACTICA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CENTRO_PRACTICA">
+              <PropertyRef Name="IDCENTROPRACTICA" />
+            </Principal>
+            <Dependent Role="PRACTICA">
+              <PropertyRef Name="IDCENTROPRACTICA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="USUARIO_PRACTICA_FK">
+          <End Role="PRACTICA" Type="Self.PRACTICA" Multiplicity="0..1" />
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRACTICA">
+              <PropertyRef Name="IDPRACTICA" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="PRACTICA_IDPRACTICA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="USUARIO_ROLES_FK">
+          <End Role="ROLES" Type="Self.ROLES" Multiplicity="1" />
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROLES">
+              <PropertyRef Name="IDROL" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="ROLES_IDROL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="USUARIO_SEDE_FK">
+          <End Role="SEDE" Type="Self.SEDE" Multiplicity="1" />
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SEDE">
+              <PropertyRef Name="IDSEDE" />
+              <PropertyRef Name="NOMBRE_SEDE" />
+            </Principal>
+            <Dependent Role="USUARIO">
+              <PropertyRef Name="SEDE_IDSEDE" />
+              <PropertyRef Name="SEDE_NOMBRE_SEDE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SISTEMA_USUARIO_FK">
+          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="1" />
+          <End Role="SISTEMA" Type="Self.SISTEMA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIO">
+              <PropertyRef Name="RUT" />
+            </Principal>
+            <Dependent Role="SISTEMA">
+              <PropertyRef Name="USUARIO_RUT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ProyectoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ACTA1" EntityType="Self.ACTA1" />
+          <EntitySet Name="ACTA2" EntityType="Self.ACTA2" />
+          <EntitySet Name="CARRERA" EntityType="Self.CARRERA" />
+          <EntitySet Name="CENTRO_PRACTICA" EntityType="Self.CENTRO_PRACTICA" />
+          <EntitySet Name="ESCUELA" EntityType="Self.ESCUELA" />
+          <EntitySet Name="PRACTICA" EntityType="Self.PRACTICA" />
+          <EntitySet Name="ROLES" EntityType="Self.ROLES" />
+          <EntitySet Name="SEDE" EntityType="Self.SEDE" />
+          <EntitySet Name="SISTEMA" EntityType="Self.SISTEMA" />
+          <EntitySet Name="USUARIO" EntityType="Self.USUARIO" />
+          <AssociationSet Name="PRACTICA_ACTA1_FK" Association="Self.PRACTICA_ACTA1_FK">
+            <End Role="ACTA1" EntitySet="ACTA1" />
+            <End Role="PRACTICA" EntitySet="PRACTICA" />
+          </AssociationSet>
+          <AssociationSet Name="PRACTICA_ACTA2_FK" Association="Self.PRACTICA_ACTA2_FK">
+            <End Role="ACTA2" EntitySet="ACTA2" />
+            <End Role="PRACTICA" EntitySet="PRACTICA" />
+          </AssociationSet>
+          <AssociationSet Name="CARRERA_ESCUELA_FK" Association="Self.CARRERA_ESCUELA_FK">
+            <End Role="ESCUELA" EntitySet="ESCUELA" />
+            <End Role="CARRERA" EntitySet="CARRERA" />
+          </AssociationSet>
+          <AssociationSet Name="USUARIO_CARRERA_FK" Association="Self.USUARIO_CARRERA_FK">
+            <End Role="CARRERA" EntitySet="CARRERA" />
+            <End Role="USUARIO" EntitySet="USUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="PRACTICA_CENTRO_PRACTICA_FK" Association="Self.PRACTICA_CENTRO_PRACTICA_FK">
+            <End Role="CENTRO_PRACTICA" EntitySet="CENTRO_PRACTICA" />
+            <End Role="PRACTICA" EntitySet="PRACTICA" />
+          </AssociationSet>
+          <AssociationSet Name="USUARIO_PRACTICA_FK" Association="Self.USUARIO_PRACTICA_FK">
+            <End Role="PRACTICA" EntitySet="PRACTICA" />
+            <End Role="USUARIO" EntitySet="USUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="USUARIO_ROLES_FK" Association="Self.USUARIO_ROLES_FK">
+            <End Role="ROLES" EntitySet="ROLES" />
+            <End Role="USUARIO" EntitySet="USUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="USUARIO_SEDE_FK" Association="Self.USUARIO_SEDE_FK">
+            <End Role="SEDE" EntitySet="SEDE" />
+            <End Role="USUARIO" EntitySet="USUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="SISTEMA_USUARIO_FK" Association="Self.SISTEMA_USUARIO_FK">
+            <End Role="USUARIO" EntitySet="USUARIO" />
+            <End Role="SISTEMA" EntitySet="SISTEMA" />
+          </AssociationSet>
+          <FunctionImport Name="BUSCAR_USUARIO">
+            <Parameter Name="P_RUT" Mode="In" Type="Decimal" />
+            <Parameter Name="P_DV_USUARIO" Mode="In" Type="String" />
+            <Parameter Name="P_ROL" Mode="In" Type="Decimal" />
+            <Parameter Name="P_CONTRASENNA" Mode="Out" Type="String" />
+            <Parameter Name="P_NOMBRES" Mode="Out" Type="String" />
+            <Parameter Name="P_APELLIDO1" Mode="Out" Type="String" />
+            <Parameter Name="P_APELLIDO2" Mode="Out" Type="String" />
+            <Parameter Name="P_FECHA_NACIMIENTO" Mode="Out" Type="DateTime" />
+            <Parameter Name="P_DIRECCION" Mode="Out" Type="String" />
+            <Parameter Name="P_TELEFONO" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_EMAIL" Mode="Out" Type="String" />
+            <Parameter Name="P_SEDE_ID" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_SEDE_NOMBRE" Mode="Out" Type="String" />
+            <Parameter Name="P_PRACTICA_ID" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_CARRERA_ID" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_CARRERA_NOMBRE" Mode="Out" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CREAR_ACTA2">
+            <Parameter Name="P_TAREAS" Mode="In" Type="String" />
+            <Parameter Name="P_APORTES" Mode="In" Type="String" />
+            <Parameter Name="P_SEGURENCIAS" Mode="In" Type="String" />
+            <Parameter Name="P_PROM_PERSONAL" Mode="In" Type="Decimal" />
+            <Parameter Name="P_PROM_PROFE" Mode="In" Type="Decimal" />
+            <Parameter Name="P_NOM_CENTRO" Mode="In" Type="String" />
+            <Parameter Name="P_DIRECC_CENTRO" Mode="In" Type="String" />
+            <Parameter Name="P_RAZON_SOCIAL" Mode="In" Type="String" />
+            <Parameter Name="P_WEB" Mode="In" Type="String" />
+            <Parameter Name="P_FONO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_EMAIL" Mode="In" Type="String" />
+            <Parameter Name="P_ID_CENTRO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_ID_PRACTICA" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="CREAR_CARRERA">
+            <Parameter Name="NOMBRE_CARRERA" Mode="In" Type="String" />
+            <Parameter Name="ID_ESCUELA" Mode="In" Type="Decimal" />
+            <Parameter Name="NOMBRE_ESCUELA" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CREAR_SEDE">
+            <Parameter Name="NOMBRE_SEDE" Mode="In" Type="String" />
+            <Parameter Name="DIRECCION_SEDE" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CREAR_USUARIO">
+            <Parameter Name="RUT" Mode="In" Type="Decimal" />
+            <Parameter Name="DV_USUARIO" Mode="In" Type="String" />
+            <Parameter Name="CONTRASENNA" Mode="In" Type="String" />
+            <Parameter Name="NOMBRES" Mode="In" Type="String" />
+            <Parameter Name="APELLIDO1" Mode="In" Type="String" />
+            <Parameter Name="APELLIDO2" Mode="In" Type="String" />
+            <Parameter Name="FECHA_NACIMIENTO" Mode="In" Type="String" />
+            <Parameter Name="DIRECCION" Mode="In" Type="String" />
+            <Parameter Name="TELEFONO" Mode="In" Type="Decimal" />
+            <Parameter Name="CORREO" Mode="In" Type="String" />
+            <Parameter Name="ID_SEDE" Mode="In" Type="Decimal" />
+            <Parameter Name="NOMBRE_SEDE" Mode="In" Type="String" />
+            <Parameter Name="ID_ROL" Mode="In" Type="Decimal" />
+            <Parameter Name="ID_PRACTICA" Mode="In" Type="Decimal" />
+            <Parameter Name="ID_CARRERA" Mode="In" Type="Decimal" />
+            <Parameter Name="NOMBRE_CARRERA" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="EDITAR_CARRERA">
+            <Parameter Name="ID_CARRERA" Mode="In" Type="Decimal" />
+            <Parameter Name="NOMBRE_CARRERA" Mode="In" Type="String" />
+            <Parameter Name="ID_ESCUELA" Mode="In" Type="Decimal" />
+            <Parameter Name="NOMBRE_ESCUELA" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="EDITAR_SEDE">
+            <Parameter Name="ID_SEDE" Mode="In" Type="Decimal" />
+            <Parameter Name="NOMBRE_SEDE" Mode="In" Type="String" />
+            <Parameter Name="DIRECCION_SEDE" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="EDITAR_USUARIO">
+            <Parameter Name="P_RUT" Mode="In" Type="Decimal" />
+            <Parameter Name="P_DV_USUARIO" Mode="In" Type="String" />
+            <Parameter Name="P_CONTRASENNA" Mode="In" Type="String" />
+            <Parameter Name="P_NOMBRES" Mode="In" Type="String" />
+            <Parameter Name="P_APELLIDO1" Mode="In" Type="String" />
+            <Parameter Name="P_APELLIDO2" Mode="In" Type="String" />
+            <Parameter Name="P_FECHA_NACIMIENTO" Mode="In" Type="String" />
+            <Parameter Name="P_DIRECCION" Mode="In" Type="String" />
+            <Parameter Name="P_TELEFONO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_CORREO" Mode="In" Type="String" />
+            <Parameter Name="P_ID_SEDE" Mode="In" Type="Decimal" />
+            <Parameter Name="P_NOMBRE_SEDE" Mode="In" Type="String" />
+            <Parameter Name="P_ID_ROL" Mode="In" Type="Decimal" />
+            <Parameter Name="P_ID_PRACTICA" Mode="In" Type="Decimal" />
+            <Parameter Name="P_ID_CARRERA" Mode="In" Type="Decimal" />
+            <Parameter Name="P_NOMBRE_CARRERA" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ELIMINAR_CARRERA">
+          <Parameter Name="NOMBRE_CARRERA" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ELIMINAR_SEDE">
+          <Parameter Name="NOMBRE_SEDE" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="INGRESAR_PRACTICA">
+            <Parameter Name="RUT_ALUMNO" Mode="In" Type="Decimal" />
+            <Parameter Name="RUT_DOCENTE" Mode="In" Type="Decimal" />
+            <Parameter Name="FECHA_INICIO" Mode="In" Type="String" />
+            <Parameter Name="FECHA_TERMINO" Mode="In" Type="String" />
+            <Parameter Name="TIPO_PRACTICA" Mode="In" Type="String" />
+            <Parameter Name="CANT_HORAS" Mode="In" Type="Decimal" />
+            <Parameter Name="IDCENTRO" Mode="In" Type="Decimal" />
+            <Parameter Name="NOMBRE_CENTRO" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="REPORTE_ESPEC_JEFE_CARRERA">
+            <Parameter Name="P_SEDE" Mode="In" Type="Decimal" />
+            <Parameter Name="P_CARRERA" Mode="In" Type="Decimal" />
+            <Parameter Name="P_RUT" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_DV" Mode="Out" Type="String" />
+            <Parameter Name="P_NOMBRES" Mode="Out" Type="String" />
+            <Parameter Name="P_APELLIDO1" Mode="Out" Type="String" />
+            <Parameter Name="P_APELLIDO2" Mode="Out" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="REPORTE_GENERAL_JEFE_CARRERA">
+            <Parameter Name="P_SEDE" Mode="In" Type="Decimal" />
+            <Parameter Name="P_CARRERA" Mode="In" Type="Decimal" />
+            <Parameter Name="P_CANTIDAD_CURSO" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_CANTIDAD_PENDIENTE" Mode="Out" Type="Decimal" />
+            <Parameter Name="P_CANTIDAD_FINALIZADA" Mode="Out" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="UPDATE_CENTRO">
+            <Parameter Name="ID_CENTRO" Mode="In" Type="Decimal" />
+            <Parameter Name="P_NOM" Mode="In" Type="String" />
+            <Parameter Name="P_DIRECCION" Mode="In" Type="String" />
+            <Parameter Name="P_DEPTO" Mode="In" Type="String" />
+            <Parameter Name="P_AREA" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="ProyectoEntities">
+          <EntitySetMapping Name="ACTA1">
+            <EntityTypeMapping TypeName="Model.ACTA1">
+              <MappingFragment StoreEntitySet="ACTA1">
+                <ScalarProperty Name="IDACTA1" ColumnName="IDACTA1" />
+                <ScalarProperty Name="OBSERVACIONES" ColumnName="OBSERVACIONES" />
+                <ScalarProperty Name="TAREAS" ColumnName="TAREAS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ACTA2">
+            <EntityTypeMapping TypeName="Model.ACTA2">
+              <MappingFragment StoreEntitySet="ACTA2">
+                <ScalarProperty Name="IDACTA2" ColumnName="IDACTA2" />
+                <ScalarProperty Name="PRINCIPALES_TAREAS" ColumnName="PRINCIPALES_TAREAS" />
+                <ScalarProperty Name="APORTES" ColumnName="APORTES" />
+                <ScalarProperty Name="SUGERENCIAS" ColumnName="SUGERENCIAS" />
+                <ScalarProperty Name="PROMEDIO_PERSONAL" ColumnName="PROMEDIO_PERSONAL" />
+                <ScalarProperty Name="PROMEDIO_PROFESIONAL" ColumnName="PROMEDIO_PROFESIONAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CARRERA">
+            <EntityTypeMapping TypeName="Model.CARRERA">
+              <MappingFragment StoreEntitySet="CARRERA">
+                <ScalarProperty Name="IDCARRERA" ColumnName="IDCARRERA" />
+                <ScalarProperty Name="NOMBRE_CARRERA" ColumnName="NOMBRE_CARRERA" />
+                <ScalarProperty Name="ESCUELA_IDESCUELA" ColumnName="ESCUELA_IDESCUELA" />
+                <ScalarProperty Name="ESCUELA_NOMBRE_ESCUELA" ColumnName="ESCUELA_NOMBRE_ESCUELA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CENTRO_PRACTICA">
+            <EntityTypeMapping TypeName="Model.CENTRO_PRACTICA">
+              <MappingFragment StoreEntitySet="CENTRO_PRACTICA">
+                <ScalarProperty Name="PASS" ColumnName="PASS" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="FONO" ColumnName="FONO" />
+                <ScalarProperty Name="WEB" ColumnName="WEB" />
+                <ScalarProperty Name="RAZON_SOCIAL" ColumnName="RAZON_SOCIAL" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="IDCENTROPRACTICA" ColumnName="IDCENTROPRACTICA" />
+                <ScalarProperty Name="NOMBRE_CENTRO" ColumnName="NOMBRE_CENTRO" />
+                <ScalarProperty Name="DIRECCION_CENTRO" ColumnName="DIRECCION_CENTRO" />
+                <ScalarProperty Name="DEPARTAMENTO_CENTRO" ColumnName="DEPARTAMENTO_CENTRO" />
+                <ScalarProperty Name="AREA_CENTRO" ColumnName="AREA_CENTRO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ESCUELA">
+            <EntityTypeMapping TypeName="Model.ESCUELA">
+              <MappingFragment StoreEntitySet="ESCUELA">
+                <ScalarProperty Name="IDESCUELA" ColumnName="IDESCUELA" />
+                <ScalarProperty Name="NOMBRE_ESCUELA" ColumnName="NOMBRE_ESCUELA" />
+                <ScalarProperty Name="DIRECTOR_CARRERA" ColumnName="DIRECTOR_CARRERA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRACTICA">
+            <EntityTypeMapping TypeName="Model.PRACTICA">
+              <MappingFragment StoreEntitySet="PRACTICA">
+                <ScalarProperty Name="IDPRACTICA" ColumnName="IDPRACTICA" />
+                <ScalarProperty Name="TIPO_HORAS_PRACTICA" ColumnName="TIPO_HORAS_PRACTICA" />
+                <ScalarProperty Name="CANT_HORAS" ColumnName="CANT_HORAS" />
+                <ScalarProperty Name="FECHA_TERMINO" ColumnName="FECHA_TERMINO" />
+                <ScalarProperty Name="FECHA_INICIO" ColumnName="FECHA_INICIO" />
+                <ScalarProperty Name="DISTANCIA" ColumnName="DISTANCIA" />
+                <ScalarProperty Name="DONDE" ColumnName="DONDE" />
+                <ScalarProperty Name="NOTA_FINAL" ColumnName="NOTA_FINAL" />
+                <ScalarProperty Name="ACTA1_IDACTA1" ColumnName="ACTA1_IDACTA1" />
+                <ScalarProperty Name="ACTA2_IDACTA2" ColumnName="ACTA2_IDACTA2" />
+                <ScalarProperty Name="IDCENTROPRACTICA" ColumnName="IDCENTROPRACTICA" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ROLES">
+            <EntityTypeMapping TypeName="Model.ROLES">
+              <MappingFragment StoreEntitySet="ROLES">
+                <ScalarProperty Name="IDROL" ColumnName="IDROL" />
+                <ScalarProperty Name="NOMBRE_ROL" ColumnName="NOMBRE_ROL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SEDE">
+            <EntityTypeMapping TypeName="Model.SEDE">
+              <MappingFragment StoreEntitySet="SEDE">
+                <ScalarProperty Name="IDSEDE" ColumnName="IDSEDE" />
+                <ScalarProperty Name="NOMBRE_SEDE" ColumnName="NOMBRE_SEDE" />
+                <ScalarProperty Name="DIRECCION_SEDE" ColumnName="DIRECCION_SEDE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SISTEMA">
+            <EntityTypeMapping TypeName="Model.SISTEMA">
+              <MappingFragment StoreEntitySet="SISTEMA">
+                <ScalarProperty Name="IDNOTIFICACION" ColumnName="IDNOTIFICACION" />
+                <ScalarProperty Name="NOMBRE_NOTIFICACION" ColumnName="NOMBRE_NOTIFICACION" />
+                <ScalarProperty Name="FECHA_HORA" ColumnName="FECHA_HORA" />
+                <ScalarProperty Name="USUARIO_RUT" ColumnName="USUARIO_RUT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USUARIO">
+            <EntityTypeMapping TypeName="Model.USUARIO">
+              <MappingFragment StoreEntitySet="USUARIO">
+                <ScalarProperty Name="RUT" ColumnName="RUT" />
+                <ScalarProperty Name="DV_USUARIO" ColumnName="DV_USUARIO" />
+                <ScalarProperty Name="CONTRASEÑA" ColumnName="CONTRASEÑA" />
+                <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
+                <ScalarProperty Name="APELLIDO1" ColumnName="APELLIDO1" />
+                <ScalarProperty Name="APELLIDO2" ColumnName="APELLIDO2" />
+                <ScalarProperty Name="FECHA_NACIMIENTO" ColumnName="FECHA_NACIMIENTO" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="CORREO" ColumnName="CORREO" />
+                <ScalarProperty Name="SEDE_IDSEDE" ColumnName="SEDE_IDSEDE" />
+                <ScalarProperty Name="SEDE_NOMBRE_SEDE" ColumnName="SEDE_NOMBRE_SEDE" />
+                <ScalarProperty Name="ROLES_IDROL" ColumnName="ROLES_IDROL" />
+                <ScalarProperty Name="PRACTICA_IDPRACTICA" ColumnName="PRACTICA_IDPRACTICA" />
+                <ScalarProperty Name="CARRERA_IDCARRERA" ColumnName="CARRERA_IDCARRERA" />
+                <ScalarProperty Name="CARRERA_NOMBRE_CARRERA" ColumnName="CARRERA_NOMBRE_CARRERA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="BUSCAR_USUARIO" FunctionName="Model.Store.BUSCAR_USUARIO" />
+          <FunctionImportMapping FunctionImportName="CREAR_ACTA2" FunctionName="Model.Store.CREAR_ACTA2" />
+          <FunctionImportMapping FunctionImportName="CREAR_CARRERA" FunctionName="Model.Store.CREAR_CARRERA" />
+          <FunctionImportMapping FunctionImportName="CREAR_SEDE" FunctionName="Model.Store.CREAR_SEDE" />
+          <FunctionImportMapping FunctionImportName="CREAR_USUARIO" FunctionName="Model.Store.CREAR_USUARIO" />
+          <FunctionImportMapping FunctionImportName="EDITAR_CARRERA" FunctionName="Model.Store.EDITAR_CARRERA" />
+          <FunctionImportMapping FunctionImportName="EDITAR_SEDE" FunctionName="Model.Store.EDITAR_SEDE" />
+          <FunctionImportMapping FunctionImportName="EDITAR_USUARIO" FunctionName="Model.Store.EDITAR_USUARIO" />
+          <FunctionImportMapping FunctionImportName="ELIMINAR_CARRERA" FunctionName="Model.Store.ELIMINAR_CARRERA" />
+          <FunctionImportMapping FunctionImportName="ELIMINAR_SEDE" FunctionName="Model.Store.ELIMINAR_SEDE" />
+          <FunctionImportMapping FunctionImportName="INGRESAR_PRACTICA" FunctionName="Model.Store.INGRESAR_PRACTICA" />
+          <FunctionImportMapping FunctionImportName="REPORTE_ESPEC_JEFE_CARRERA" FunctionName="Model.Store.REPORTE_ESPEC_JEFE_CARRERA" />
+          <FunctionImportMapping FunctionImportName="REPORTE_GENERAL_JEFE_CARRERA" FunctionName="Model.Store.REPORTE_GENERAL_JEFE_CARRERA" />
+          <FunctionImportMapping FunctionImportName="UPDATE_CENTRO" FunctionName="Model.Store.UPDATE_CENTRO" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

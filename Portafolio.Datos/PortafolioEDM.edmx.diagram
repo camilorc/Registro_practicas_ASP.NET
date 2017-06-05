@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="940cad4dbcbf43ae98f17c8d3788f165" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.ACTA1" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ACTA2" Width="1.5" PointX="0.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CARRERA" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CENTRO_PRACTICA" Width="1.5" PointX="0.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ESCUELA" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PRACTICA" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ROLES" Width="1.5" PointX="3" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SEDE" Width="1.5" PointX="3" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SISTEMA" Width="1.5" PointX="7.5" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.USUARIO" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="Model.PRACTICA_ACTA1_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.PRACTICA_ACTA2_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.CARRERA_ESCUELA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.USUARIO_CARRERA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.PRACTICA_CENTRO_PRACTICA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.USUARIO_PRACTICA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.USUARIO_ROLES_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.USUARIO_SEDE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SISTEMA_USUARIO_FK" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
