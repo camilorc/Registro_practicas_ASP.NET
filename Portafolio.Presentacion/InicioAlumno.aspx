@@ -21,7 +21,7 @@
     </p>
     <p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                <asp:Button ID="btn_naranjo" runat="server" Text="Formulario de Acta Final de Evaluación" BackColor="Orange" ForeColor="White" Font-Bold="true" Height="59px"/>
+                <asp:Button ID="btn_naranjo" runat="server" Text="Formulario de Acta Final de Evaluación" BackColor="Orange" ForeColor="White" Font-Bold="true" Height="59px" OnClick="btn_naranjo_Click"/>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:Button ID="btn_rojo" runat="server" Text="Gestor de Docummentación" BackColor="Red" ForeColor="White" Font-Bold="true" Height="59px"/>
     </p>

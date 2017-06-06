@@ -118,7 +118,9 @@
     <Content Include="Content\css\bootstrap-theme.min.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="GestorDocumentacion.aspx" />
     <Content Include="Gracias.aspx" />
+    <Content Include="Imagenes\acta1.jpg" />
     <Content Include="Imagenes\especialistas.jpg" />
     <Content Include="Imagenes\GraciasASSS.jpg" />
     <Content Include="Imagenes\logoDuoc.png" />
@@ -139,6 +141,10 @@
     <Content Include="Content\css\bootstrap-theme.min.css.map" />
     <Content Include="Content\css\bootstrap.css.map" />
     <Content Include="Content\css\bootstrap.min.css.map" />
+    <Content Include="Archivo\ACTA1.docx" />
+    <Content Include="Archivo\ACTA2.docx" />
+    <Content Include="Archivo\ACTA3.docx" />
+    <Content Include="Archivo\ACTAFINAL.docx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -177,6 +183,13 @@
     </Compile>
     <Compile Include="ActaFinal.aspx.designer.cs">
       <DependentUpon>ActaFinal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestorDocumentacion.aspx.cs">
+      <DependentUpon>GestorDocumentacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestorDocumentacion.aspx.designer.cs">
+      <DependentUpon>GestorDocumentacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Gracias.aspx.cs">
       <DependentUpon>Gracias.aspx</DependentUpon>
