@@ -19,9 +19,9 @@ namespace WebApplication1
         {
             try
             {
-                Portafolio.Negocio.Usuario usu = new Portafolio.Negocio.Usuario();
-                Portafolio.Negocio.Practica pra = new Portafolio.Negocio.Practica();
-                Portafolio.Negocio.CentroPractica cen = new Portafolio.Negocio.CentroPractica();
+                Usuario usu = new Usuario();
+                Practica pra = new Practica();
+                CentroPractica cen = new CentroPractica();
                 Portafolio.Negocio.Acta1 ac1 = new Portafolio.Negocio.Acta1();
 
                 if (true)
@@ -39,12 +39,11 @@ namespace WebApplication1
                 }
                 else
                 {
-                    lblMensaje.Text = "ya existe";
                     LimpiarControles();
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 lblMensaje.Text = "Error al crear";
                 LimpiarControles();

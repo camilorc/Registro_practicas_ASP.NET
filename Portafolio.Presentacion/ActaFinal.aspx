@@ -13,35 +13,29 @@
         }
         .auto-style1 {
             height: 23px;
-            width: 2055px;
+            width: 1224px;
             margin-right: 244px;
         }
         .auto-style2 {
             width: 274px;
         }
         .auto-style3 {
-            width: 1844px;
+            width: 1454px;
         }
         .auto-style4 {
             width: 272px;
         }
         .auto-style5 {
-            width: 675px;
+            width: 415px;
         }
         .auto-style6 {
             width: 1962px;
         }
-        .auto-style7 {
-            width: 184px;
-        }
         .auto-style8 {
-            width: 408px;
-        }
-        .auto-style9 {
-            width: 150px;
+            width: 79px;
         }
         .auto-style10 {
-            width: 524px;
+            width: 303px;
         }
         .auto-style11 {
             width: 1477px;
@@ -53,7 +47,19 @@
             width: 209px;
         }
         .auto-style14 {
-            width: 101px;
+            width: 45px;
+        }
+        .auto-style15 {
+            width: 81px;
+        }
+        .auto-style16 {
+            width: 70px;
+        }
+        .auto-style17 {
+            width: 543px;
+        }
+        .auto-style18 {
+            width: 145px;
         }
      </style>
 </asp:Content>
@@ -63,25 +69,25 @@
         <td class="auto-style2">
             Nombre Alumno</td>
          <td>
-             <asp:TextBox ID="txtNombreAlumno" runat="server" Width="1448px"></asp:TextBox>
+             <asp:TextBox ID="txtNombreAlumno" runat="server" Width="568px"></asp:TextBox>
         </td>
     </tr>
     <tr>
         <td class="auto-style2">
             Rut<Rut</td>
          <td>
-             <asp:TextBox ID="txtRut" runat="server" Width="1448px"></asp:TextBox>
-             <asp:TextBox ID="txtDv" runat="server"></asp:TextBox>
+             <asp:TextBox ID="txtRut" runat="server" Width="126px"></asp:TextBox>
+             -<asp:TextBox ID="txtDv" runat="server" Width="21px"></asp:TextBox>
+             &nbsp;
              <asp:Button ID="btnBuscarAlumno" runat="server" Text="Buscar" />
         </td>
     </tr>
     <tr>
         <td class="auto-style2">
-            Fecha>
-         <td>
-             <asp:TextBox ID="txtFecha" runat="server" Width="334px"></asp:TextBox>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; Semestre<asp:TextBox ID="txtSemestre" runat="server"></asp:TextBox>
-             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Año<asp:TextBox ID="txtAnio" runat="server"></asp:TextBox>
+            Fecha<td>
+             <asp:TextBox ID="txtFecha" runat="server" Width="209px"></asp:TextBox>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; Semestre<asp:TextBox ID="txtSemestre" runat="server" Width="39px"></asp:TextBox>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Año<asp:TextBox ID="txtAnio" runat="server" Width="75px"></asp:TextBox>
         </td>
     </tr>
 </table>
@@ -94,22 +100,22 @@
             Profesor Guía
         </td>
         <td class="auto-style3">
-            <asp:TextBox ID="txtProfesorGuia" runat="server" Width="1585px"></asp:TextBox>
+            <asp:TextBox ID="txtProfesorGuia" runat="server" Width="570px"></asp:TextBox>
         </td>
     </tr>
     <tr>
         <td class="auto-style4">
             Tipo de Práctica</td>
         <td class="auto-style3">
-            Profesional<asp:TextBox ID="txtProfesional" runat="server" Width="341px"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Laboral<asp:TextBox ID="txtLaboral" runat="server" Width="340px"></asp:TextBox>
+            Profesional<asp:TextBox ID="txtProfesional" runat="server" Width="42px"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Laboral <asp:TextBox ID="txtLaboral" runat="server" Width="48px"></asp:TextBox>
         </td>
     </tr>
     <tr>
         <td class="auto-style4">
             Carrera</td>
         <td class="auto-style3">
-            <asp:TextBox ID="txtCarrera" runat="server" Width="1580px"></asp:TextBox>
+            <asp:TextBox ID="txtCarrera" runat="server" Width="567px"></asp:TextBox>
         </td>
     </tr>
 </table>
@@ -126,12 +132,12 @@
    <tr>
        <td class="auto-style5">ACTA N°1
        </td>
-       <td class="auto-style7">
+       <td class="auto-style15">
            <asp:TextBox ID="txtActa1Si" runat="server" Width="48px"></asp:TextBox>
        </td>
        <td class="auto-style8">
            SI</td>
-       <td class="auto-style9">
+       <td class="auto-style16">
            <asp:TextBox ID="txtActa1No" runat="server" Width="48px"></asp:TextBox>
        </td>
        <td class="auto-style10">
@@ -140,12 +146,12 @@
     <tr>
        <td class="auto-style5">
            ACTA N°2</td>
-       <td class="auto-style7">
+       <td class="auto-style15">
            <asp:TextBox ID="txtActa2Si" runat="server" Width="48px"></asp:TextBox>
        </td>
        <td class="auto-style8">
            SI</td>
-       <td class="auto-style9">
+       <td class="auto-style16">
            <asp:TextBox ID="txtActa2No" runat="server" Width="48px"></asp:TextBox>
        </td>
        <td class="auto-style10">
@@ -154,12 +160,12 @@
     <tr>
        <td class="auto-style5">
            INFORME DIGITAL MÁS PAUTA DE EVALUACIÓN DEL INFORME</td>
-       <td class="auto-style7">
+       <td class="auto-style15">
            <asp:TextBox ID="txtDigitalSi" runat="server" Width="48px"></asp:TextBox>
        </td>
        <td class="auto-style8">
            SI</td>
-       <td class="auto-style9">
+       <td class="auto-style16">
            <asp:TextBox ID="txtDigitalNo" runat="server" Width="48px"></asp:TextBox>
        </td>
        <td class="auto-style10">
@@ -168,12 +174,12 @@
     <tr>
        <td class="auto-style5">
            EVALUACIÓN CENTRO DE PRÁCTICA</td>
-       <td class="auto-style7">
+       <td class="auto-style15">
            <asp:TextBox ID="txtEvaluacionSi" runat="server" Width="48px"></asp:TextBox>
        </td>
        <td class="auto-style8">
            SI</td>
-       <td class="auto-style9">
+       <td class="auto-style16">
            <asp:TextBox ID="txtEvaluacionNo" runat="server" Width="48px"></asp:TextBox>
        </td>
        <td class="auto-style10">
@@ -193,7 +199,7 @@
 
 <table>
     <tr>
-        <td class="style12">
+        <td class="auto-style17">
             La evaluación de la Práctica se realizará a través de dos instrumentos llamados<br />
 &nbsp;Informe de Práctica y Pauta de Verificación de Cumplimiento de Estándar.
             <br />
@@ -209,7 +215,7 @@
         <td class="auto-style12">
             <table>
                 <tr>
-                    <td>
+                    <td class="auto-style18">
                         Nota obtenida en el informe 
                         <br />
                         de práctica
@@ -219,12 +225,12 @@
                         60%</td>
                     <td class="auto-style13">
 
-                        <asp:TextBox ID="txtInforme" runat="server" Height="88px"></asp:TextBox>
+                        <asp:TextBox ID="txtInforme" runat="server" Height="58px" Width="51px"></asp:TextBox>
 
                     </td>
                 </tr>
                  <tr>
-                    <td>
+                    <td class="auto-style18">
 
                         Pauta de evaluación
                         <br />
@@ -234,12 +240,12 @@
                         40%</td>
                     <td class="auto-style13">
 
-                        <asp:TextBox ID="txtEmpresa" runat="server" Height="97px"></asp:TextBox>
+                        <asp:TextBox ID="txtEmpresa" runat="server" Height="38px" Width="50px"></asp:TextBox>
 
                     </td>
                 </tr>
                  <tr>
-                    <td>
+                    <td class="auto-style18">
 
                         NOTA FINAL</td>
                     <td class="auto-style14">
@@ -256,7 +262,5 @@
     </tr>
 </table>
     <br />
-    <br />
-    _____________________________________ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ____________________________ <br />
-             FIRMA PROFESOR    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                                                                                                                FIRMA COORDINADOR
+&nbsp;
 </asp:Content>

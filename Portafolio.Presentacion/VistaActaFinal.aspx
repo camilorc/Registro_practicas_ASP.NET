@@ -79,7 +79,6 @@
          <td>
              <asp:TextBox ID="txtRut" runat="server" Width="148px" ReadOnly="true"></asp:TextBox>
              -<asp:TextBox ID="txtDv" runat="server" Width="18px" ReadOnly="true"></asp:TextBox>
-             <asp:Button ID="btnBuscarAlumno" runat="server" Text="Buscar" />
         </td>
     </tr>
     <tr>

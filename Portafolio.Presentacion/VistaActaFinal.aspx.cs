@@ -19,6 +19,7 @@ namespace Portafolio.Presentacion
         protected void btnConsultar_Click(object sender, EventArgs e)
         {
             int rutAlumno = 19562876;
+            int rutProfe = 8379020;
 
             txtFecha.Text = DateTime.Now.ToShortDateString();
             txtAnio.Text = DateTime.Now.Year.ToString();
@@ -109,14 +110,16 @@ namespace Portafolio.Presentacion
                 txtDigitalNo.Text = "X";
             }
 
-            //OracleCommand pal = new OracleCommand();
-            //pal.Connection = conn;
-            //pal.CommandText = "SELECT * FROM USUARIO WHERE rut=8379020";
-            //var x = pal.ExecuteReader();
-            //x.Read();
-            //
-            //string docente = String.Format("{0}", x[2]);
-            //txtProfesorGuia.Text = docente.ToString();
+            OracleCommand pal = new OracleCommand();
+            pal.Connection = conn;
+            pal.CommandText = "SELECT * FROM USUARIO WHERE rut="+rutProfe;
+            var pro = pal.ExecuteReader();
+            pro.Read();
+            
+            string docente = String.Format("{0}", pro[3]);
+            string docente1 = String.Format("{0}", pro[4]);
+            string docente2 = String.Format("{0}", pro[5]);
+            txtProfesorGuia.Text = docente+" "+ docente1+" "+docente2;
             
 
             conn.Dispose();

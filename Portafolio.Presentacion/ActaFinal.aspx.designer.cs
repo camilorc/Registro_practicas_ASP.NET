@@ -13,15 +13,6 @@ namespace Portafolio.Presentacion {
     public partial class ActaFinal {
         
         /// <summary>
-        /// btnConsultar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnConsultar;
-        
-        /// <summary>
         /// txtNombreAlumno control.
         /// </summary>
         /// <remarks>
@@ -47,6 +38,15 @@ namespace Portafolio.Presentacion {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDv;
+        
+        /// <summary>
+        /// btnBuscarAlumno control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBuscarAlumno;
         
         /// <summary>
         /// txtFecha control.
