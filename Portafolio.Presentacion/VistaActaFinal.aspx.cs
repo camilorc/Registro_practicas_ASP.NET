@@ -9,16 +9,16 @@ using System.Web.UI.WebControls;
 
 namespace Portafolio.Presentacion
 {
-    public partial class ActaFinal : System.Web.UI.Page
+    public partial class VistaActa1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        protected void btnBuscarAlumno_Click(object sender, EventArgs e)
+        protected void btnConsultar_Click(object sender, EventArgs e)
         {
-            int rutAlumno = 16940519;
+            int rutAlumno = 19562876;
 
             txtFecha.Text = DateTime.Now.ToShortDateString();
             txtAnio.Text = DateTime.Now.Year.ToString();
@@ -28,9 +28,10 @@ namespace Portafolio.Presentacion
             conn.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = conn;
-            cmd.CommandText = "select * from usuario where rut=" + txtRut.Text;
+            cmd.CommandText = "select * from usuario where rut=" + rutAlumno;
             cmd.CommandType = CommandType.Text;
             OracleDataReader dr = cmd.ExecuteReader();
+            txtRut.Text = rutAlumno.ToString();
             dr.Read();
             String uno = dr.GetString(3);
             String dos = dr.GetString(4);
@@ -47,10 +48,13 @@ namespace Portafolio.Presentacion
 
             OracleCommand com = new OracleCommand();
             com.Connection = conn;
-            com.CommandText = "Select * from practica where idpractica=" + txtRut.Text;
+            com.CommandText = "Select * from practica where idpractica=" + rutAlumno;
             com.CommandType = CommandType.Text;
             OracleDataReader od = com.ExecuteReader();
             od.Read();
+
+            string nFinal = String.Format("{0}", od[10]);
+            txtNotaFinal.Text = nFinal;
 
             string ac1 = String.Format("{0}", od[11]);
             if (ac1 != null)
@@ -113,17 +117,9 @@ namespace Portafolio.Presentacion
             //
             //string docente = String.Format("{0}", x[2]);
             //txtProfesorGuia.Text = docente.ToString();
-
-            //update nota final
-            OracleCommand up = new OracleCommand();
-            up.Connection = conn;
-            up.CommandText = "UPDATE practica SET NOTA_FINAL ='" + notFinal + "' WHERE idpractica = " + rutAlumno;
-            up.CommandType = CommandType.Text;
-            var n = up.ExecuteReader();
-            txtEvaluacionNo.Text = "Ok";
+            
 
             conn.Dispose();
         }
-        
     }
 }

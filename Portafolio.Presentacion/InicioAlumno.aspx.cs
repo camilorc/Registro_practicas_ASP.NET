@@ -42,5 +42,10 @@ namespace WebApplication1
         {
             Response.Redirect("Acta1.aspx");
         }
+
+        protected void btn_naranjo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VistaActaFinal.aspx");
+        }
     }
 }
