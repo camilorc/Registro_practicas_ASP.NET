@@ -10,57 +10,24 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <table>
-       <tr>
-           <td class="auto-style1">
-               <br />
-               <br />
-           </td>
-           <td>
-           </td>
-       </tr>
-       <tr>
-           <td class="auto-style1">
-               <asp:Panel ID="Panel2" runat="server" Height="519px" Width="753px" BackColor="#FFFFCC" BorderColor="Blue" BorderStyle="Solid" Enabled="False" ForeColor="Black">
-                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <br />
-                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<table style="width:100%;">
-                       <tr>
-                           <td class="auto-style2">Bienvenido(a)</td>
-                           <td>
-                               <asp:Label ID="lbl_nom_centro" runat="server" Text="Label"></asp:Label>
-                           </td>
-                           <td>
-                               <asp:Button ID="btn_cerrar" runat="server" OnClick="btn_cerrar_Click" Text="Cerrar Sesión" />
-                           </td>
-                       </tr>
-                   </table>
-                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <br />
-                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <br />
-                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</asp:Panel>
-           </td>
-           <td>
-               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-               <asp:Button ID="Button1" runat="server" BackColor="#996633" BorderColor="#996633" BorderStyle="Solid" ForeColor="White" Text="Evaluar" Font-Size="X-Large" Height="133px" OnClick="Button1_Click1" PostBackUrl="~/Acta2.aspx" Width="265px" />
-               <asp:Button ID="Button2" runat="server" Text="Acta 3" OnClick="Button2_Click" />
-           </td>
-       </tr>
-       <tr>
-           <td class="auto-style1">
-               <br />
-               <br />
-           </td>
-           <td>
-               <br />
-               <br />
-               <br />
-           </td>
-       </tr>
-   </table>
     <br />
-    
-            
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav nav-pills">
+                  <li role="presentation" class="active"><a href="InicioEmpleador.aspx">Home</a></li>
+                  <li role="presentation"><a href="#" runat="server" onserverclick="Button1_Click1">Evaluar</a></li>
+                  <li role="presentation"><a href="#" runat="server" onserverclick="btn_cerrar_Click">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Bienvenido(a) <asp:Label ID="lbl_nom_centro" runat="server" Text="Label"></asp:Label></h2>
+ 
+            </div>
+        </div>
+    </div>
+      
 </asp:Content>
