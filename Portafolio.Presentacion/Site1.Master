@@ -7,19 +7,117 @@
     <link href="Content/css/bootstrap.css" rel="stylesheet" type="text/css"/>
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
+
     </asp:ContentPlaceHolder>
+    <style type="text/css" >
+        body
+        {
+         background: url("Imagenes/fondo.jpg") no-repeat center center;
+         -webkit-background-size: cover;
+         -moz-background-size: cover;
+         -o-background-size: cover;
+         -background-size: cover;
+        }
+        .style2
+        {
+            width: 6866px;
+            height: 80px;
+        }
+        .style9
+        {
+            height: 42px;
+            width: 6866px;
+        }
+        .style11
+        {
+            height: 4px;
+            width: 6866px;
+        }
+        *{
+            margin:0px;
+            padding:0px;   
+        }
+        #header
+        {
+            margin:auto;
+            width:800px;
+            font-family:Arial, Helvetica, Sans-Serif;
+        }
+        ul, ol
+        {
+            list-style:none;
+            height: 48px;
+            width: 786px;
+        }
+        .nav>li
+        {
+            float:left;
+        }
+        .nav li a 
+        {
+            background-color:lightblue;
+            color: blue;
+            font-weight:bold;
+            text-decoration:none;
+            padding:10px 12px;
+            display:block;
+            width: 120px;
+        }
+        .nav li a:haver
+        {
+            background-color:Purple;
+        }
+        .nav li ul {
+			display:none;
+			position:absolute;
+			min-width:140px;
+		}
+		.nav li:hover > ul {
+			display:block;
+		}
+		.nav li ul li {
+			position:relative;
+		}
+		.nav li ul li ul {
+			right:-140px;
+			top:0px;
+		}
+        .auto-style1 {
+            left: -2px;
+            top: -1px;
+        }
+        .auto-style3 {
+            left: 0px;
+            top: 0px;
+            width: 188px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        <asp:Panel ID="Panel1" runat="server" Height="101px" BackColor="LightGray">
-            <asp:Image ID="logoDuoc" ImageUrl="Imagenes/logoDuoc.png" runat="server" Height="106px" Width="481px" />
-             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-             </asp:Panel>
+    
+        <asp:Panel ID="Panel1" runat="server" Height="101px" BackColor="LightBlue">
+            <asp:Image ID="logoDuoc" ImageUrl="Imagenes/logoDuoc.png" runat="server" Height="98px" Width="450px" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:LoginName ID="nombre" runat="server" />
+        </asp:Panel>
+        <asp:Panel ID="panel2" runat="server" BackColor="LightBlue">
+             <div id="header">
+				<ul class="nav">
+					<li class="auto-style1"><a href="InicioAlumno.aspx">Inicio</a></li>
+					<li><a href="GestorDocumentacion.aspx" class="auto-style3">Actas</a>
+						<ul>
+							<li><a href="VistaActa1.aspx">Acta 1</a></li>
+							<li><a href="VistaActa2.aspx">Acta 2</a></li>
+							<li><a href="VistaActa3.aspx">Acta 3</a></li>
+                            <li><a href="VistaActaFinal.aspx">Acta Final</a></li>
+						</ul>
+					</li>					
+                </div>  
+            </asp:Panel>
+        <br />
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        </asp:ContentPlaceHolder>
-        Practica</div>
-        
+        </asp:ContentPlaceHolder>        
     </form>
     <script src="Script/jquery-3.2.1.min.js"></script>
     <script src="Script/bootstrap.min.js"></script>

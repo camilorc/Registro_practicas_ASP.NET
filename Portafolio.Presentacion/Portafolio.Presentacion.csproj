@@ -121,9 +121,16 @@
     <Content Include="GestorDocumentacion.aspx" />
     <Content Include="Gracias.aspx" />
     <Content Include="Imagenes\acta1.jpg" />
+    <Content Include="Imagenes\ACTA1_html_59c8c5f6.png" />
+    <Content Include="Imagenes\ACTA2_html_a3f125f8.jpg" />
+    <Content Include="Imagenes\ACTAFINAL_html_59c8c5f6.png" />
+    <Content Include="Imagenes\dos.png" />
     <Content Include="Imagenes\especialistas.jpg" />
+    <Content Include="Imagenes\final.jpg" />
     <Content Include="Imagenes\GraciasASSS.jpg" />
     <Content Include="Imagenes\logoDuoc.png" />
+    <Content Include="Imagenes\tres.png" />
+    <Content Include="Imagenes\uno.png" />
     <Content Include="InicioAlumno.aspx" />
     <Content Include="InicioEmpleador.aspx" />
     <Content Include="LoginAlumno.aspx" />
@@ -145,6 +152,7 @@
     <Content Include="Archivo\ACTA2.docx" />
     <Content Include="Archivo\ACTA3.docx" />
     <Content Include="Archivo\ACTAFINAL.docx" />
+    <Content Include="ACTA1.outline" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -153,6 +161,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="VistaActa1.aspx" />
+    <Content Include="VistaActa2.aspx" />
+    <Content Include="VistaActa3.aspx" />
     <Content Include="VistaActaFinal.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -235,6 +246,27 @@
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
     </Compile>
+    <Compile Include="VistaActa1.aspx.cs">
+      <DependentUpon>VistaActa1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VistaActa1.aspx.designer.cs">
+      <DependentUpon>VistaActa1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VistaActa2.aspx.cs">
+      <DependentUpon>VistaActa2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VistaActa2.aspx.designer.cs">
+      <DependentUpon>VistaActa2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VistaActa3.aspx.cs">
+      <DependentUpon>VistaActa3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VistaActa3.aspx.designer.cs">
+      <DependentUpon>VistaActa3.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VistaActaFinal.aspx.cs">
       <DependentUpon>VistaActaFinal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -252,7 +284,35 @@
       <Name>Portafolio.Negocio</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

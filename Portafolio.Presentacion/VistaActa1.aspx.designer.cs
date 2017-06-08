@@ -10,6 +10,6 @@
 namespace Portafolio.Presentacion {
     
     
-    public partial class VistaActa1 {
+    public partial class VistaActa11 {
     }
 }

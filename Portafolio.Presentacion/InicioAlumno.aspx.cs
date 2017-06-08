@@ -47,5 +47,10 @@ namespace WebApplication1
         {
             Response.Redirect("VistaActaFinal.aspx");
         }
+
+        protected void btn_rojo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("GestorDocumentacion.aspx");
+        }
     }
 }
