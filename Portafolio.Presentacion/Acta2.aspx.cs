@@ -185,6 +185,12 @@ namespace Portafolio.Presentacion
 
         }
 
+        protected void btn_cerrar_Click(object sender, EventArgs e)
+        {
+            Centro = null;
+            Response.Redirect("LoginCentroPractica.aspx");
+        }
+
 
     }
 }
