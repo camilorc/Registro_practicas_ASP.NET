@@ -25,31 +25,47 @@
 		@page { margin-left: 1.18in; margin-right: 0.64in; margin-top: 0.49in; margin-bottom: 0.98in }
 		P { margin-bottom: 0.08in; direction: ltr; font-size: 12pt; widows: 2; orphans: 2 }
 		A:link { color: #000000; so-language: zxx }
+	    .auto-style4 {
+            width: 1135px;
+        }
 	-->
+
 	</STYLE>
+    <script language="Javascript">
+
+  function imprSelec(paraimprimir)
+  {
+      var ficha = document.getElementById(paraimprimir);
+  var ventimp = window.open(' ', '_blank');
+  ventimp.document.write( ficha.innerHTML );
+  ventimp.document.close();
+  var css = ventimp.document.createElement("link");
+css.setAttribute("href", "tuhojadeeestilos.css");
+css.setAttribute("rel", "stylesheet");
+css.setAttribute("type", "text/css");
+ventimp.document.head.appendChild(css);
+  ventimp.print( );
+  ventimp.close();
+  }
+        </script>
 </HEAD>
+
 <BODY>
+    <a href="javascript:imprSelec('paraimprimir')">Imprimir</a>
+    <br />
+    <br />
+    <div id="paraimprimir">
 <DIV TYPE=HEADER>
 	<P LANG="es-CL" STYLE="margin-bottom: 0in"><BR>
 	</P>
 	<P STYLE="margin-bottom: 0in">         
-	<IMG SRC="Imagenes/ACTA2_html_a3f125f8.jpg" NAME="Imagen 3" ALIGN=BOTTOM WIDTH=118 HEIGHT=30 BORDER=0></P>
-	<P LANG="es-CL" STYLE="margin-bottom: 0in"><BR>
-	</P>
-	<P STYLE="margin-bottom: 0.45in">_____________________________________________________________________________</P>
+	<IMG SRC="Imagenes/ACTA2_html_a3f125f8.jpg" NAME="Imagen 3" ALIGN=BOTTOM WIDTH=118 HEIGHT=30 BORDER=0>_________________________________________________</P>
 </DIV>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" ALIGN=CENTER STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" ALIGN=CENTER STYLE="margin-bottom: 0in"><BR>
+        <P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
 </P>
 <P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT FACE="Calibri, serif"><FONT SIZE=2><SPAN LANG="en-US"><B>PAUTA
-DE EVALUACIÓN PRÁCTICA POR PARTE DE LA EMPRESA</B></SPAN></FONT></FONT></P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
+DE EVALUACIÓN PRÁCTICA POR PARTE DE LA EMPRESA</B></SPAN></FONT></FONT><BR>
+        </P>
 <P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
 </P>
 <OL TYPE=I>
@@ -63,9 +79,6 @@ utilizando los criterios de evaluaciones descritos en los Ítem
 Condiciones Personales del alumno y Condiciones Profesionales del
 alumno.</SPAN></FONT></FONT></FONT></P>
 <P LANG="en-US" ALIGN=JUSTIFY STYLE="margin-bottom: 0in"><BR>
-</P>
-<P ALIGN=JUSTIFY STYLE="margin-bottom: 0in"><SPAN LANG="en-US"><B>	</B></SPAN></P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
 </P>
 <UL>
 	<LI><P STYLE="margin-bottom: 0in"><FONT FACE="Calibri, serif"><FONT SIZE=2><SPAN LANG="en-US"><B>Alumno:</B></SPAN></FONT></FONT></P>
@@ -111,11 +124,7 @@ alumno.</SPAN></FONT></FONT></FONT></P>
 		</TD>
 	</TR>
 </TABLE>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
+        <P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
 </P>
 <UL>
 	<LI><P STYLE="margin-bottom: 0in"><FONT FACE="Calibri, serif"><FONT SIZE=2><SPAN LANG="en-US"><B>Empresa
@@ -197,10 +206,6 @@ alumno.</SPAN></FONT></FONT></FONT></P>
 </TABLE>
 <P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
 </P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
 <UL>
 	<LI><P STYLE="margin-bottom: 0in"><FONT FACE="Calibri, serif"><FONT SIZE=2><SPAN LANG="en-US"><B>Profesor
 	Supervisor:</B></SPAN></FONT></FONT></P>
@@ -250,10 +255,6 @@ alumno.</SPAN></FONT></FONT></FONT></P>
 </TABLE>
 <P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
 </P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
 <UL>
 	<LI><P STYLE="margin-bottom: 0in"><FONT FACE="Calibri, serif"><FONT SIZE=2><SPAN LANG="en-US"><B>Fecha:</B></SPAN></FONT></FONT></P>
 </UL>
@@ -291,24 +292,6 @@ alumno.</SPAN></FONT></FONT></FONT></P>
 		</TD>
 	</TR>
 </TABLE>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
 <P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
 </P>
 <OL TYPE=I START=2>
@@ -878,8 +861,6 @@ criterios:</SPAN></FONT></FONT></FONT></P>
 </TABLE>
 <P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
 </P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
 <OL TYPE=I START=3>
 	<LI><P STYLE="margin-bottom: 0in"><FONT FACE="Calibri, serif"><FONT SIZE=2><SPAN LANG="en-US"><B>CONDICIONES
 	PROFESIONALES DEL ALUMNO: </B></SPAN></FONT></FONT>
@@ -888,7 +869,7 @@ criterios:</SPAN></FONT></FONT></FONT></P>
 <P STYLE="margin-left: 0.5in; margin-bottom: 0in"><FONT COLOR="#7f7f7f"><FONT FACE="Calibri, serif"><FONT SIZE=2><SPAN LANG="en-US">Evaluar
 condiciones profesionales del alumno, de acuerdo a los siguientes
 criterios:</SPAN></FONT></FONT></FONT></P>
-<TABLE WIDTH=650 CELLPADDING=7 CELLSPACING=0>
+<TABLE CELLPADDING=7 CELLSPACING=0 class="auto-style4">
 	<COL WIDTH=13>
 	<COL WIDTH=211>
 	<COL WIDTH=90>
@@ -1377,20 +1358,6 @@ criterios:</SPAN></FONT></FONT></FONT></P>
 </TABLE>
 <P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
 </P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
 <OL TYPE=I START=4>
 	<LI><P STYLE="margin-bottom: 0in"><FONT FACE="Calibri, serif"><FONT SIZE=2><SPAN LANG="en-US"><B>CLASIFICACIÓN
 	GLOBAL DE LA PRÁCTICA EN TERRENO </B></SPAN></FONT></FONT>
@@ -1406,12 +1373,6 @@ criterios:</SPAN></FONT></FONT></FONT></P>
 	<COL WIDTH=612>
 	<TR>
 		<TD WIDTH=612 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
-			<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-			</P>
-			<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-			</P>
-			<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-			</P>
 			<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
 			</P>
 			<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
@@ -1434,10 +1395,6 @@ criterios:</SPAN></FONT></FONT></FONT></P>
 	<COL WIDTH=612>
 	<TR>
 		<TD WIDTH=612 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
-			<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-			</P>
-			<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-			</P>
 			<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
 			</P>
 			<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
@@ -1467,38 +1424,12 @@ criterios:</SPAN></FONT></FONT></FONT></P>
 			</P>
 			<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
 			</P>
-			<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-			</P>
-			<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-			</P>
 			<P LANG="en-US"><BR>
 			</P>
 		</TD>
 	</TR>
 </TABLE>
 <P LANG="en-US" STYLE="margin-left: 1in; margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
-</P>
-<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
 </P>
 <P ALIGN=RIGHT STYLE="margin-bottom: 0in">                           
                                                                      
@@ -1519,6 +1450,8 @@ nombre y firma Profesional a cargo  del Alumno</B></I></SPAN></FONT></FONT></FON
 <P STYLE="margin-bottom: 0in"><BR>
 </P>
 </BODY>
+    </div>
+
 </HTML>
 
 </asp:Content>

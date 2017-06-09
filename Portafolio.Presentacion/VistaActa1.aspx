@@ -31,15 +31,33 @@
             width: 1.76in;
             height: 0.29in;
         }
-	-->
+        -->
 	</STYLE>
+    <script language="Javascript">
+
+  function imprSelec(paraimprimir)
+  {
+      var ficha = document.getElementById(paraimprimir);
+  var ventimp = window.open(' ', '_blank');
+  ventimp.document.write( ficha.innerHTML );
+  ventimp.document.close();
+  var css = ventimp.document.createElement("link");
+css.setAttribute("href", "tuhojadeeestilos.css");
+css.setAttribute("rel", "stylesheet");
+css.setAttribute("type", "text/css");
+ventimp.document.head.appendChild(css);
+  ventimp.print( );
+  ventimp.close();
+  }
+
+</script> 
 </HEAD>
 <BODY>
-<DIV TYPE=HEADER>
-	<P STYLE="margin-bottom: 0.45in; line-height: 100%"><SPAN CLASS="sd-abs-pos" STYLE="position: absolute; top: -0.84in; left: -0.64in; width: 154px"><IMG SRC="Imagenes/ACTA1_html_59c8c5f6.png" NAME="0 Imagen" WIDTH=154 HEIGHT=47 BORDER=0></SPAN><BR>
-	</P>
-</DIV>
-<P STYLE="margin-left: 1.48in; text-indent: 0.49in; margin-bottom: 0in">
+    <a href="javascript:imprSelec('paraimprimir')">Imprimir</a>
+    <br />
+    <br />
+    <div id="paraimprimir">
+<P  STYLE="margin-left: 1.48in; text-indent: 0.49in; margin-bottom: 0in">
 <FONT FACE="Arial Narrow, serif"><FONT SIZE=3><B>SUPERVISIÓN DE
 PRÁCTICA</B></FONT></FONT></P>
 <P ALIGN=CENTER STYLE="margin-bottom: 0,10in"><FONT FACE="Arial Narrow, serif"><FONT SIZE=3><B>ACTA
@@ -48,7 +66,7 @@ N°1</B></FONT></FONT></P>
 </P>
 <P STYLE="margin-bottom: 0in"><BR>
 </P>
-<TABLE WIDTH=673 CELLPADDING=7 CELLSPACING=0>
+<TABLE  WIDTH=673 CELLPADDING=7 CELLSPACING=0 >
 	<COL WIDTH=177>
 	<COL WIDTH=24>
 	<COL WIDTH=62>
@@ -203,18 +221,18 @@ N°1</B></FONT></FONT></P>
 <P STYLE="margin-bottom: 0in"><BR>
 </P>
 <P STYLE="text-indent: -0.0in; margin-bottom: 0in"><FONT FACE="Arial Narrow, serif"><FONT SIZE=3><B>Principalestareas a desempeñar</B></FONT></FONT></P>
-<P STYLE="margin-left: -0.49in; margin-bottom: 0in"><BR>
+<P STYLE="margin-left: -0.49in; margin-bottom: 0in"><br />
 </P>
-<TABLE WIDTH=684 CELLPADDING=7 CELLSPACING=0>
-	<COL WIDTH=670>
-	<TR>
-		<TD WIDTH=670 HEIGHT=5 VALIGN=TOP STYLE="border-top: 1.00pt solid #00000a; border-bottom: 1.00pt solid #00000a; border-left: none; border-right: none; padding: 0in">
+<TABLE WIDTH=684 CELLPADDING="7" CELLSPACING=0>
+	<col WIDTH=670>
+	<tr>
+		<td WIDTH=670 HEIGHT=5 VALIGN=TOP STYLE="border-top: 1.00pt solid #00000a; border-bottom: 1.00pt solid #00000a; border-left: none; border-right: none; padding: 0in">
 			<P STYLE="margin-left: -0.02in; text-indent: 0.02in"><BR>
 			</P>
-		</TD>
-	</TR>
+		</td>
+	</tr>
 	<TR>
-		<TD WIDTH=670 HEIGHT=6 VALIGN=TOP STYLE="border-top: 1.00pt solid #00000a; border-bottom: 1.00pt solid #00000a; border-left: none; border-right: none; padding: 0in">
+		<TD WIDTH=670 HEIGHT=6 valign=top style="border-top: 1.00pt solid #00000a; border-bottom: 1.00pt solid #00000a; border-left: none; border-right: none; padding: 0in">
 			<P><BR>
 			</P>
 		</TD>
@@ -240,18 +258,18 @@ Especiales</B></FONT></FONT></P>
 </P>
 <TABLE WIDTH=684 CELLPADDING=7 CELLSPACING=0>
 	<COL WIDTH=670>
-	<TR>
-		<TD WIDTH=670 HEIGHT=5 VALIGN=TOP STYLE="border-top: 1.00pt solid #00000a; border-bottom: 1.00pt solid #00000a; border-left: none; border-right: none; padding: 0in">
-			<P STYLE="margin-left: 0.9in; text-indent: 0.02in"><BR>
-			</P>
-		</TD>
-	</TR>
-	<TR>
+	<tr>
+		<td width=670 height=5 VALIGN=TOP STYLE="border-top: 1.00pt solid #00000a; border-bottom: 1.00pt solid #00000a; border-left: none; border-right: none; padding: 0in">
+			<p style="margin-left: 0.9in; text-indent: 0.02in"><BR>
+			</p>
+		</td>
+	</tr>
+	<tr>
 		<TD WIDTH=670 HEIGHT=6 VALIGN=TOP STYLE="border-top: 1.00pt solid #00000a; border-bottom: 1.00pt solid #00000a; border-left: none; border-right: none; padding: 0in">
 			<P><BR>
 			</P>
 		</TD>
-	</TR>
+	</tr>
 	<TR>
 		<TD WIDTH=670 HEIGHT=6 VALIGN=TOP STYLE="border-top: 1.00pt solid #00000a; border-bottom: 1.00pt solid #00000a; border-left: none; border-right: none; padding: 0in">
 			<P><BR>
@@ -265,16 +283,11 @@ Especiales</B></FONT></FONT></P>
 		</TD>
 	</TR>
 </TABLE>
-<P STYLE="margin-left: -0.49in; margin-bottom: 0in"><BR>
+<P style="margin-left: -0.49in; margin-bottom: 0in"><BR>
 </P>
 <P STYLE="margin-left: -0.49in; margin-bottom: 0in"><BR>
 </P>
-<P STYLE="margin-left: -0.49in; margin-bottom: 0in"><BR>
-</P>
-<P STYLE="margin-left: -0.49in; margin-bottom: 0in"><BR>
-</P>
-<P STYLE="margin-left: -0.49in; margin-bottom: 0in"><FONT FACE="Arial Narrow, serif"><FONT SIZE=3>													</FONT></FONT></P>
-    <SPAN DIR="LTR" STYLE="border-style: none; border-color: inherit; border-width: medium; padding: 0.05in 0.1in; background: #ffffff;" class="auto-style6">
+    <SPAN DIR="LTR" STYLE="border-style: none; border-color: inherit; border-width: medium; padding: 0.05in 0.1in; background: #ffffff" class="auto-style6">
 <P STYLE="margin-bottom: 0in">
 	<P ALIGN=CENTER STYLE="margin-bottom: 0.14in"><FONT FACE="Arial Narrow, serif"><FONT SIZE=3><B>FIRMA
 	ALUMNO</B></FONT></FONT></P>
@@ -283,11 +296,12 @@ Especiales</B></FONT></FONT></P>
 	</P>
 </SPAN>
 <SPAN DIR="LTR" STYLE="float: left; width: 1.59in; height: 0.29in; border: none; padding: 0.05in 0.1in; background: #ffffff">
-	<P ALIGN=CENTER STYLE="margin-bottom: 0.14in"><FONT FACE="Arial Narrow, serif"><FONT SIZE=3><B>FIRMA
-	PROFESOR</B></FONT></FONT></P>
+	<P ALIGN=CENTER STYLE="margin-bottom: 0.14in">&nbsp;<FONT SIZE=3 face="Arial Narrow, serif"><B>FIRMA
+	PROFESOR</B></FONT></P>
     <P ALIGN=CENTER class="auto-style5">__<font size="3">_________________</font></P>
 	<P ALIGN=CENTER STYLE="margin-bottom: 0.14in"><BR><BR>
 	</P>
+        <br />
 </SPAN>
 <CENTER>
 	<TABLE DIR="LTR" WIDTH=167 CELLPADDING=7 CELLSPACING=0>
@@ -309,7 +323,10 @@ Especiales</B></FONT></FONT></P>
 	</TABLE>
 </CENTER><BR>
 </P>
+    </div>
+    <br />
+    <br />
 </BODY>
 </HTML>
-
+    
 </asp:Content>

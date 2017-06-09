@@ -56,6 +56,7 @@
             width: 466px;
         }
      </style>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
@@ -81,8 +82,30 @@
 		P { margin-bottom: 0.08in; direction: ltr; widows: 2; orphans: 2 }
 	-->
 	</STYLE>
+          <script language="Javascript">
+
+    function imprSelec(paraimprimir)
+    {
+        var ficha = document.getElementById(paraimprimir);
+        var ventimp = window.open(' ', '_blank');
+        ventimp.document.write( ficha.innerHTML );
+        ventimp.document.close();
+        var css = ventimp.document.createElement("link");
+        css.setAttribute("href", "tuhojadeeestilos.css");
+        css.setAttribute("rel", "stylesheet");
+        css.setAttribute("type", "text/css");
+        ventimp.document.head.appendChild(css);
+        ventimp.print( );
+        ventimp.close();
+    }
+
+    </script> 
 </HEAD>
 <BODY>
+    <a href="javascript:imprSelec('paraimprimir')">Imprimir</a>
+    <br />
+    <br />
+    <div id="paraimprimir">
 <DIV TYPE=HEADER>
 	<P STYLE="margin-bottom: 0.45in; line-height: 100%"><SPAN CLASS="sd-abs-pos" STYLE="position: absolute; top: -0.84in; left: -0.64in; width: 191px"><IMG SRC="Imagenes/ACTAFINAL_html_59c8c5f6.png" NAME="0 Imagen" WIDTH=191 HEIGHT=36 BORDER=0></SPAN><SPAN DIR="LTR" STYLE="float: left; width: 2in; height: 0.6in; border: none; padding: 0.05in 0.1in; background: #ffffff"><P STYLE="margin-bottom: 0.45in; line-height: 100%">&nbsp;<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT FACE="Arial Narrow, serif"><FONT SIZE=2>Instituto
 		Profesional Duoc Uc</FONT></FONT></P>
@@ -399,6 +422,7 @@ N°5 - FINAL</B></FONT></FONT></P>
 </TABLE><BR>
 </P>
 </BODY>
+    </div>
 </HTML>
 
 </asp:Content>

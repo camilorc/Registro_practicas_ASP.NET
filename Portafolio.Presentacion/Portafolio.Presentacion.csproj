@@ -124,6 +124,7 @@
     <Content Include="Imagenes\ACTA1_html_59c8c5f6.png" />
     <Content Include="Imagenes\ACTA2_html_a3f125f8.jpg" />
     <Content Include="Imagenes\ACTAFINAL_html_59c8c5f6.png" />
+    <Content Include="Imagenes\azul.png" />
     <Content Include="Imagenes\dos.png" />
     <Content Include="Imagenes\especialistas.jpg" />
     <Content Include="Imagenes\final.jpg" />
@@ -152,7 +153,6 @@
     <Content Include="Archivo\ACTA2.docx" />
     <Content Include="Archivo\ACTA3.docx" />
     <Content Include="Archivo\ACTAFINAL.docx" />
-    <Content Include="ACTA1.outline" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

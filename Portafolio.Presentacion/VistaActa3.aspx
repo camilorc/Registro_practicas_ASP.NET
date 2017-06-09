@@ -32,7 +32,29 @@
 		A:link { color: #0000ff; so-language: zxx }
 	-->
 	</STYLE>
+        <script language="Javascript">
+
+    function imprSelec(paraimprimir)
+    {
+        var ficha = document.getElementById(paraimprimir);
+        var ventimp = window.open(' ', '_blank');
+        ventimp.document.write( ficha.innerHTML );
+        ventimp.document.close();
+        var css = ventimp.document.createElement("link");
+        css.setAttribute("href", "tuhojadeeestilos.css");
+        css.setAttribute("rel", "stylesheet");
+        css.setAttribute("type", "text/css");
+        ventimp.document.head.appendChild(css);
+        ventimp.print( );
+        ventimp.close();
+    }
+
+    </script> 
 </HEAD>
+    <a href="javascript:imprSelec('paraimprimir')">Imprimir</a>
+    <br />
+    <br />
+    <div id="paraimprimir">
 <BODY LANG="es-CL" LINK="#0000ff" DIR="LTR">
 <H3 CLASS="western" STYLE="text-indent: 0.49in"><A NAME="_Toc362353347"></A>
 <I>Pauta de Evaluación Informe de Práctica</I></H3>
@@ -365,6 +387,7 @@
 <P CLASS="western" STYLE="margin-bottom: 0in"><BR>
 </P>
 </BODY>
+        </div>
 </HTML>
 
 </asp:Content>
