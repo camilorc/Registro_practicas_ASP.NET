@@ -55,16 +55,18 @@ namespace Portafolio.Testing
                 //}
 
                 Usuario user = new Usuario();
-                if (user.ValidarUsuario(16940519, "123456"))
-                {
-                    Console.WriteLine("Se ingreso");
-                }
-                else {
-                    Console.WriteLine("Fracasoooo");
-                }
 
-                    //Console.WriteLine("Rut del profe: "+rutProfe);
-                
+                //foreach (var item in user.AlumnosAsignados(4444))
+                //{
+                //   Console.WriteLine("Nombre alumno"+item.Nombres);
+                //}
+
+                //Console.WriteLine("Rut del profe: "+rutProfe);
+                if (user.CambiarAsignacionPractica(4444,7777,0)) {
+                    Console.WriteLine("Exitooooo");
+                } else {
+                    Console.WriteLine("Errorrrrrr");
+                }
                
 
             }
