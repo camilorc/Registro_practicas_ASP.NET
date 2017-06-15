@@ -33,28 +33,7 @@ namespace WebApplication1
 
             Response.Redirect("Gracias.aspx");
             
-            //var connectionString = ConfigurationManager.ConnectionStrings["OracleDbContext"].ConnectionString;
-            //OracleConnection _connection = new OracleConnection();
-            //lblUpdate.Text = "ACa";
-            //try
-            //{
-            //    
-            //    _connection.ConnectionString = connectionString;
-            //    lblUpdate.Text = "?";
-            //    //_connection.Open();
-            //    lblUpdate.Text = "Antes update";
-            //    string sql = "UPDATE practica SET nota_3 =" + txtNotaFinal.Text+"WHERE idpractica = 1";
-            //   
-            //    OracleCommand command = new OracleCommand(sql, _connection);
-            //    
-            //    var x = command.ExecuteNonQuery();
-            //    lblMensaje.Text = "Exito";
-            //}
-            //catch (Exception en)
-            //{
-            //    lblMensaje.Text = en.Message;
-            //}
-            //_connection.Close();
+            
         }
 
         protected void btnCalcular_Click(object sender, EventArgs e)

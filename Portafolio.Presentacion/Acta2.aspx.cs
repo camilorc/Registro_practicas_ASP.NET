@@ -105,7 +105,7 @@ namespace Portafolio.Presentacion
         {
             try
             {
-                Portafolio.Negocio.Acta2 acta2 = new Negocio.Acta2();
+                Negocio.Acta2 acta2 = new Negocio.Acta2();
                 acta2.PrincipalesTareas = txtTareas.Text;
                 acta2.Aportes = txtAportes.Text;
                 acta2.Sugerencias = txtSugerencias.Text;

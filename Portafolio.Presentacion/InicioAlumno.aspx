@@ -26,6 +26,13 @@
     <asp:Button ID="btn_rojo" runat="server" Text="Gestor de Docummentación" BackColor="Red" ForeColor="White" Font-Bold="true" Height="59px" OnClick="btn_rojo_Click"/>
     </p>
     <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        <asp:Button ID="btnCorreo" runat="server" Height="47px" Text="Correo" Width="121px" OnClick="btnCorreo_Click" />
+    </p>
+    <p>
     </p>
     <p>
         &nbsp;</p>

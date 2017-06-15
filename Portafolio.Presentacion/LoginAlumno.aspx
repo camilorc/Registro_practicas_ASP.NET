@@ -15,9 +15,17 @@
             <InstructionTextStyle Font-Italic="True" ForeColor="Black" />
             <LoginButtonStyle BackColor="White" BorderColor="#507CD1" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#284E98" />
             <TextBoxStyle Font-Size="0.8em" />
+            
             <TitleTextStyle BackColor="#507CD1" Font-Bold="True" Font-Size="0.9em" ForeColor="White" />
         </asp:Login>
-    
+            <br />
+            <asp:Label ID="lblMessage" runat="server" Text="¿Olvido la contraseña?" />
+            <br />
+            <asp:TextBox ID="txtEmail" runat="server" Width = "250"/>
+            <br />
+            <asp:Button Text="ENVIAR" runat="server" OnClick="SendEmail" />
+        <br />
+            
     </div>
     </form>
 </body>
