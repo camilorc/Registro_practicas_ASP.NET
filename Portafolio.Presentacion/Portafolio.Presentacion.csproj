@@ -133,6 +133,7 @@
     <Content Include="Imagenes\tres.png" />
     <Content Include="Imagenes\uno.png" />
     <Content Include="InicioAlumno.aspx" />
+    <Content Include="InicioDocente.aspx" />
     <Content Include="InicioEmpleador.aspx" />
     <Content Include="LoginAlumno.aspx" />
     <Content Include="LoginCentroPractica.aspx" />
@@ -216,6 +217,13 @@
     </Compile>
     <Compile Include="InicioAlumno.aspx.designer.cs">
       <DependentUpon>InicioAlumno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InicioDocente.aspx.cs">
+      <DependentUpon>InicioDocente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InicioDocente.aspx.designer.cs">
+      <DependentUpon>InicioDocente.aspx</DependentUpon>
     </Compile>
     <Compile Include="InicioEmpleador.aspx.cs">
       <DependentUpon>InicioEmpleador.aspx</DependentUpon>
