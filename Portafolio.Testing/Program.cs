@@ -69,7 +69,7 @@ namespace Portafolio.Testing
                 //    Console.WriteLine("Errorrrrrr");
                 //}
 
-                user.AlumnosAsignados(4444);
+                //user.AlumnosAsignados(4444);
                
 
             }

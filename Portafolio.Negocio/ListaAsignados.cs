@@ -101,11 +101,15 @@ namespace Portafolio.Negocio
                 _connection.ConnectionString = connectionString;
                 _connection.Open();
 
-                string sql = "update DOCENTE_PRACTICA set ESTADO_DOCENTE = '" + estado + "' WHERE rut_alumno = '" + rut_alumno + "' AND rut_docente = '" + rut_profe + "'";
+                OracleCommand cmd = _connection.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "cambiar_estado_prac_docente";
 
-                OracleCommand cmd = new OracleCommand(sql, _connection);
-
+                cmd.Parameters.Add("p_rut_alumno", OracleDbType.Int32).Value = rut_alumno;
+                cmd.Parameters.Add("p_rut_docente", OracleDbType.Int32).Value = rut_profe;
+                cmd.Parameters.Add("p_estado", OracleDbType.Int32).Value = estado;
                 cmd.ExecuteNonQuery();
+                _connection.Close();
 
                 return true;
             }
