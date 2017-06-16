@@ -62,11 +62,14 @@ namespace Portafolio.Testing
                 //}
 
                 //Console.WriteLine("Rut del profe: "+rutProfe);
-                if (user.CambiarAsignacionPractica(4444,7777,0)) {
-                    Console.WriteLine("Exitooooo");
-                } else {
-                    Console.WriteLine("Errorrrrrr");
-                }
+
+                //if (user.CambiarAsignacionPractica(4444,7777,0)) {
+                //    Console.WriteLine("Exitooooo");
+                //} else {
+                //    Console.WriteLine("Errorrrrrr");
+                //}
+
+                user.AlumnosAsignados(4444);
                
 
             }

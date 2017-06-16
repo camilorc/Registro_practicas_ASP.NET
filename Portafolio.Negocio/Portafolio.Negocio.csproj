@@ -66,6 +66,7 @@
     <Compile Include="CentroPractica.cs" />
     <Compile Include="Escuela.cs" />
     <Compile Include="InstanciaBD.cs" />
+    <Compile Include="ListaAsignados.cs" />
     <Compile Include="Practica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio.cs" />

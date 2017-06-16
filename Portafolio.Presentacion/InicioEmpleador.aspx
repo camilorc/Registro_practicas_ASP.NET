@@ -4,10 +4,7 @@
         .auto-style1 {
             width: 974px;
         }
-        .auto-style2 {
-            width: 158px;
-        }
-    </style>
+        </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br />
@@ -25,9 +22,12 @@
         <div class="row">
             <div class="col-md-6">
                 <h2>Bienvenido(a) <asp:Label ID="lbl_nom_centro" runat="server" Text="Label"></asp:Label></h2>
+                <p>&nbsp;</p>
  
             </div>
         </div>
+
+        
     </div>
       
 </asp:Content>
