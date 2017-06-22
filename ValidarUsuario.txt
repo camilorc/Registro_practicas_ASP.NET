@@ -1,0 +1,21 @@
+create or replace PROCEDURE ValidarUsuario(p_rut NUMBER,p_pass VARCHAR2,p_dv OUT VARCHAR2,
+p_nombres OUT VARCHAR2, p_apellido1 OUT VARCHAR2, p_apellido2 OUT VARCHAR2,
+p_fecha_nacimiento OUT VARCHAR2, p_direccion OUT VARCHAR2,p_telefono OUT NUMBER, p_email OUT VARCHAR2,
+p_sede_id OUT NUMBER, p_sede_nombre OUT VARCHAR2,p_rol_id OUT NUMBER,p_practica_id OUT NUMBER, p_carrera_id OUT NUMBER, p_carrera_nombre OUT VARCHAR2,
+p_foto_perfil OUT VARCHAR2)
+IS
+BEGIN
+  SELECT DV_USUARIO, NOMBRES, APELLIDO1, APELLIDO2, TO_CHAR(FECHA_NACIMIENTO),
+  DIRECCION,TELEFONO, CORREO, SEDE_IDSEDE,SEDE_NOMBRE_SEDE,ROLES_IDROL,
+  PRACTICA_IDPRACTICA, CARRERA_IDCARRERA,CARRERA_NOMBRE_CARRERA,FOTO_PERFIL
+  INTO p_dv,p_nombres,p_apellido1,p_apellido2,p_fecha_nacimiento,p_direccion,p_telefono,p_email,p_sede_id,
+  p_sede_nombre,p_rol_id,p_practica_id,p_carrera_id,p_carrera_nombre,p_foto_perfil
+  FROM USUARIO
+  WHERE RUT = p_rut AND CONTRASEÑA = p_pass;
+ 
+   EXCEPTION
+ WHEN OTHERS  THEN
+  DBMS_OUTPUT.PUT_LINE('Error: Usuario no encontrado '||SQLCODE);
+  DBMS_OUTPUT.PUT_LINE('Error: Usuario no encontrado '||sqlerrm);
+
+END;
