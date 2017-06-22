@@ -168,9 +168,9 @@ namespace Portafolio.Negocio
                 cmd.Parameters.Add("p_dv", OracleDbType.Varchar2,200).Direction = ParameterDirection.Output;
                 cmd.Parameters.Add("p_nombres", OracleDbType.Varchar2,200).Direction = ParameterDirection.Output;
                 cmd.Parameters.Add("p_apellido1", OracleDbType.Varchar2,200).Direction = ParameterDirection.Output;
-                cmd.Parameters.Add("p_apellido2", OracleDbType.Varchar2).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("p_apellido2", OracleDbType.Varchar2,200).Direction = ParameterDirection.Output;
                 cmd.Parameters.Add("p_fecha_nacimiento", OracleDbType.Varchar2,200).Direction = ParameterDirection.Output;
-                cmd.Parameters.Add("p_direccion", OracleDbType.Varchar2).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("p_direccion", OracleDbType.Varchar2,200).Direction = ParameterDirection.Output;
                 cmd.Parameters.Add("p_telefono", OracleDbType.Int32,200).Direction = ParameterDirection.Output;
                 cmd.Parameters.Add("p_email", OracleDbType.Varchar2,200).Direction = ParameterDirection.Output;
                 cmd.Parameters.Add("p_sede_id", OracleDbType.Int32,200).Direction = ParameterDirection.Output;
