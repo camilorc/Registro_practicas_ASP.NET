@@ -61,12 +61,7 @@ namespace Portafolio.Negocio
                     FechaInicio = pract.GetDateTime(4).ToString();
                     FechaTermino = pract.GetDateTime(3).ToString();
                     CantHoras = pract.GetInt32(2);
-
-
-
-
                 }
-
             }
             catch (Exception)
             {

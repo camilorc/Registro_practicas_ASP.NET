@@ -30,8 +30,7 @@
     <p>
         &nbsp;</p>
     <p>
-        <asp:Button ID="btnCorreo" runat="server" Height="47px" Text="Correo" Width="121px" OnClick="btnCorreo_Click" />
-    </p>
+        &nbsp;</p>
     <p>
     </p>
     <p>
