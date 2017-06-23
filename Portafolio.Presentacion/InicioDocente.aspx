@@ -9,6 +9,7 @@
                 <ul class="nav nav-pills">
                   <li role="presentation" class="active"><a href="InicioDocente.aspx">Home</a></li>
                   <li role="presentation"><a href="#" >Evaluar</a></li>
+                  <li role="presentation"><a href="MiPerfilDocente.aspx" >Mi Perfil</a></li>
                   <li role="presentation"><a href="#">Cerrar Sesión</a></li>
                 </ul>
             </div>

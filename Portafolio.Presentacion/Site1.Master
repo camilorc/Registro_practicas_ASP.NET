@@ -33,10 +33,7 @@
             height: 4px;
             width: 6866px;
         }
-        *{
-            margin:0px;
-            padding:0px;   
-        }
+        
         #header
         {
             margin:auto;

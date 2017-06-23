@@ -70,6 +70,15 @@ namespace Portafolio.Testing
                 //}
 
                 //user.AlumnosAsignados(4444);
+
+                if (user.ValidarUsuario(55555, "123456"))
+                {
+                    Console.WriteLine("Usuario encontrado");
+                }
+                else {
+                    Console.WriteLine("usario NO encontrado");
+                }
+                
                
 
             }

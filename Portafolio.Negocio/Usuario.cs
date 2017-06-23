@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 using Portafolio.Datos;
 using System.Configuration;
 using Oracle.ManagedDataAccess.Client;
+<<<<<<< HEAD
 using System.Net.Mail;
 using System.Net;
+=======
+using System.Data;
+>>>>>>> 9119b4324e76958a7e136322f5f24ce19aeda7cb
 
 namespace Portafolio.Negocio
 {
@@ -28,6 +32,7 @@ namespace Portafolio.Negocio
 
         //Para identificar el estado de su asiganación al Docente
         public int estadoPractica { get; set; }
+        public string FotoPerfil { get; set; }
 
         public Usuario()
         {
@@ -49,6 +54,7 @@ namespace Portafolio.Negocio
             CarreraNombre = string.Empty;
             Idpractica = 0;
             estadoPractica = 0;
+            FotoPerfil = "";
         }
 
         //método para buscar un usuario de la BD según su RUT
@@ -118,10 +124,47 @@ namespace Portafolio.Negocio
         {
             try
             {
+                //var connectionString = ConfigurationManager.ConnectionStrings["OracleDbContext"].ConnectionString;
+                //OracleConnection _connection = new OracleConnection();
+                //_connection.ConnectionString = connectionString;
+                //_connection.Open();
+                //
+                //string sql = "Select * FROM Usuario WHERE rut = '"+rut+"' AND contraseña = '"+pass+"'";
+                //
+                //OracleCommand cmd = new OracleCommand(sql, _connection);
+                //
+                //var user = cmd.ExecuteReader();
+                //
+                //while (user.Read())
+                //{
+                //    Rut = user.GetInt32(0);
+                //    Dv = user.GetString(1);
+                //    Contraseña = user.GetString(2);
+                //    Nombres = user.GetString(3);
+                //    Apellido1 = user.GetString(4);
+                //    Apellido2 = user.GetString(5);
+                //    FechaNac = user.GetDateTime(6);
+                //    Direccion = user.GetString(7);
+                //    Telefono = user.GetInt32(8);
+                //    Correo = user.GetString(9);
+                //    CarreraNombre = user.GetString(15);
+                //    Idpractica = user.GetInt32(14); ;
+                //}
+                //
+                //if (user.HasRows)
+                //{
+                //    return true;
+                //}
+                //else
+                //{
+                //    return false;
+                //}
+
                 var connectionString = ConfigurationManager.ConnectionStrings["OracleDbContext"].ConnectionString;
                 OracleConnection _connection = new OracleConnection();
                 _connection.ConnectionString = connectionString;
                 _connection.Open();
+<<<<<<< HEAD
                 string sql = "Select * FROM Usuario WHERE rut = '" + rut + "' AND contraseña = '" + pass + "'";
 
                 OracleCommand cmd = new OracleCommand(sql, _connection);
@@ -151,9 +194,63 @@ namespace Portafolio.Negocio
                 {
                     return false;
                 }
+=======
+
+                OracleCommand cmd = _connection.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "VALIDARUSUARIO";
+
+                cmd.Parameters.Add("p_rut", OracleDbType.Int32,200).Value = rut;
+                cmd.Parameters.Add("p_pass", OracleDbType.Varchar2,200).Value = pass;
+                cmd.Parameters.Add("p_dv", OracleDbType.Varchar2,200).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("p_nombres", OracleDbType.Varchar2,200).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("p_apellido1", OracleDbType.Varchar2,200).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("p_apellido2", OracleDbType.Varchar2,200).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("p_fecha_nacimiento", OracleDbType.Varchar2,200).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("p_direccion", OracleDbType.Varchar2,200).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("p_telefono", OracleDbType.Int32,200).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("p_email", OracleDbType.Varchar2,200).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("p_sede_id", OracleDbType.Int32,200).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("p_sede_nombre", OracleDbType.Varchar2,200).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("p_rol_id", OracleDbType.Int32,200).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("p_practica_id", OracleDbType.Int32,200).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("p_carrera_id", OracleDbType.Int32,200).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("p_carrera_nombre", OracleDbType.Varchar2,200).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("p_foto_perfil", OracleDbType.Varchar2,200).Direction = ParameterDirection.Output;
+                cmd.Parameters["p_dv"].Value= "";
+                cmd.ExecuteNonQuery();
+
+
+                //Asignamos parametros al objeto
+
+                Rut = rut;
+                Dv = cmd.Parameters["p_dv"].Value.ToString();
+                Nombres = cmd.Parameters["p_nombres"].Value.ToString();
+                Apellido1 = cmd.Parameters["p_apellido1"].Value.ToString();
+                Apellido2 = cmd.Parameters["p_apellido2"].Value.ToString();
+                FechaNac = DateTime.Parse(cmd.Parameters["p_fecha_nacimiento"].Value.ToString());
+                Direccion = cmd.Parameters["p_direccion"].Value.ToString();
+                Telefono = int.Parse(cmd.Parameters["p_telefono"].Value.ToString());
+                Correo = cmd.Parameters["p_email"].Value.ToString();
+                CarreraNombre = cmd.Parameters["p_carrera_nombre"].Value.ToString();
+                FotoPerfil = cmd.Parameters["p_foto_perfil"].Value.ToString();
+
+                Console.WriteLine("este es el DV: "+Dv+" "+Nombres+" "+Telefono+" "+FechaNac);
+                
+
+                
+
+                return true;
+
+                
+>>>>>>> 9119b4324e76958a7e136322f5f24ce19aeda7cb
             }
-            catch (Exception)
+            catch (Exception e )
             {
+<<<<<<< HEAD
+=======
+                Console.WriteLine("mensaje error: "+e);
+>>>>>>> 9119b4324e76958a7e136322f5f24ce19aeda7cb
                 return false;
             }
         }
