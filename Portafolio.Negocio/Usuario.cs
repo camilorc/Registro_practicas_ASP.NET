@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 using Portafolio.Datos;
 using System.Configuration;
 using Oracle.ManagedDataAccess.Client;
-<<<<<<< HEAD
+
 using System.Net.Mail;
 using System.Net;
-=======
+
 using System.Data;
->>>>>>> 9119b4324e76958a7e136322f5f24ce19aeda7cb
+
 
 namespace Portafolio.Negocio
 {
@@ -124,77 +124,11 @@ namespace Portafolio.Negocio
         {
             try
             {
-                //var connectionString = ConfigurationManager.ConnectionStrings["OracleDbContext"].ConnectionString;
-                //OracleConnection _connection = new OracleConnection();
-                //_connection.ConnectionString = connectionString;
-                //_connection.Open();
-                //
-                //string sql = "Select * FROM Usuario WHERE rut = '"+rut+"' AND contraseña = '"+pass+"'";
-                //
-                //OracleCommand cmd = new OracleCommand(sql, _connection);
-                //
-                //var user = cmd.ExecuteReader();
-                //
-                //while (user.Read())
-                //{
-                //    Rut = user.GetInt32(0);
-                //    Dv = user.GetString(1);
-                //    Contraseña = user.GetString(2);
-                //    Nombres = user.GetString(3);
-                //    Apellido1 = user.GetString(4);
-                //    Apellido2 = user.GetString(5);
-                //    FechaNac = user.GetDateTime(6);
-                //    Direccion = user.GetString(7);
-                //    Telefono = user.GetInt32(8);
-                //    Correo = user.GetString(9);
-                //    CarreraNombre = user.GetString(15);
-                //    Idpractica = user.GetInt32(14); ;
-                //}
-                //
-                //if (user.HasRows)
-                //{
-                //    return true;
-                //}
-                //else
-                //{
-                //    return false;
-                //}
 
                 var connectionString = ConfigurationManager.ConnectionStrings["OracleDbContext"].ConnectionString;
                 OracleConnection _connection = new OracleConnection();
                 _connection.ConnectionString = connectionString;
                 _connection.Open();
-<<<<<<< HEAD
-                string sql = "Select * FROM Usuario WHERE rut = '" + rut + "' AND contraseña = '" + pass + "'";
-
-                OracleCommand cmd = new OracleCommand(sql, _connection);
-
-                var user = cmd.ExecuteReader();
-
-                while (user.Read())
-                {
-                    Rut = user.GetInt32(0);
-                    Dv = user.GetString(1);
-                    Contraseña = user.GetString(2);
-                    Nombres = user.GetString(3);
-                    Apellido1 = user.GetString(4);
-                    Apellido2 = user.GetString(5);
-                    FechaNac = user.GetDateTime(6);
-                    Direccion = user.GetString(7);
-                    Telefono = user.GetInt32(8);
-                    Correo = user.GetString(9);
-                    CarreraNombre = user.GetString(15);
-                    Idpractica = user.GetInt32(14); ;
-                }
-                if (user.HasRows)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-=======
 
                 OracleCommand cmd = _connection.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
@@ -243,14 +177,10 @@ namespace Portafolio.Negocio
                 return true;
 
                 
->>>>>>> 9119b4324e76958a7e136322f5f24ce19aeda7cb
-            }
-            catch (Exception e )
+
+          }catch (Exception e )
             {
-<<<<<<< HEAD
-=======
                 Console.WriteLine("mensaje error: "+e);
->>>>>>> 9119b4324e76958a7e136322f5f24ce19aeda7cb
                 return false;
             }
         }
@@ -330,5 +260,42 @@ namespace Portafolio.Negocio
             }
 
         }
+
+        public bool EditarDocentePerfil(int rut_docente, string nombres, string apellido1, string apellido2,string nacimiento, string direccion, string email) {
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["OracleDbContext"].ConnectionString;
+                OracleConnection _connection = new OracleConnection();
+                _connection.ConnectionString = connectionString;
+                _connection.Open();
+
+                OracleCommand cmd = _connection.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "update_perfil_docente";
+
+                cmd.Parameters.Add("p_rut_docente", OracleDbType.Int32).Value = rut_docente;
+                cmd.Parameters.Add("p_nombres", OracleDbType.Varchar2).Value = nombres;
+                cmd.Parameters.Add("p_apellido1", OracleDbType.Varchar2).Value = apellido1;
+                cmd.Parameters.Add("p_apellido2", OracleDbType.Varchar2).Value = apellido2;
+                cmd.Parameters.Add("p_nacimiento", OracleDbType.Varchar2).Value = nacimiento;
+                cmd.Parameters.Add("p_direccion", OracleDbType.Varchar2).Value = direccion;
+                cmd.Parameters.Add("p_email", OracleDbType.Varchar2).Value = email;
+
+                cmd.ExecuteReader();
+                _connection.Close();
+
+
+
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+
+
+        }
+
     }
 }

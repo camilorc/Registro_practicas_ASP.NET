@@ -72,16 +72,25 @@ namespace Portafolio.Testing
 
                 //user.AlumnosAsignados(4444);
 
-                if (alum.ObtenerDatos(88888))
+                //if (alum.ObtenerDatos(88888))
+                //{
+                //    Console.WriteLine("Fecha inicio: "+alum.FechaInicio);
+                //    Console.WriteLine("nombres: " + alum.Nombres);
+                //    Console.WriteLine("centro: " + alum.NombreCentro);
+                //}
+                //else {
+                //    Console.WriteLine("usario NO encontrado");
+                //}
+
+                if (user.EditarDocentePerfil(55555,"Manuel","Docente","Vergara","10/10/1980","santiago centro, santiago","emailprofe@gmail.com"))
                 {
-                    Console.WriteLine("Fecha inicio: "+alum.FechaInicio);
-                    Console.WriteLine("nombres: " + alum.Nombres);
-                    Console.WriteLine("centro: " + alum.NombreCentro);
+                    Console.WriteLine("Exitooooo");
+
                 }
                 else {
                     Console.WriteLine("usario NO encontrado");
+
                 }
-                
                
 
             }

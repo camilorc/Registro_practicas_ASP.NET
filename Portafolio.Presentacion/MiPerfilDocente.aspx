@@ -1,7 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="MiPerfilDocente.aspx.cs" Inherits="Portafolio.Presentacion.MiPerfilDocente" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="MiPerfilDocente.aspx.cs" Inherits="Portafolio.Presentacion.MiPerfilDocente" EnableEventValidation="false"%>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
      <br />
     <div class="container">
         <div class="row">
@@ -70,7 +72,8 @@
                   <br />
                   <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                      <button type="submit" class="btn btn-primary">Editar</button>
+                      <asp:Button runat="server" Text="Editar" OnClick="Editar_Click"  CssClass="btn btn-success"></asp:Button>
+                        <asp:Label ID="lbl_mensaje" runat="server"></asp:Label>
                     </div>
                   </div>
                 </form>
