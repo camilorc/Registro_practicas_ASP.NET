@@ -14,7 +14,13 @@
         <asp:Login ID="Login1" runat="server" BackColor="#F7F7DE" BorderColor="#CCCC99" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="10pt" OnAuthenticate="Login1_Authenticate" UserNameLabelText="Rut sin guion:" Width="424px">
             <TitleTextStyle BackColor="#6B696B" Font-Bold="True" ForeColor="#FFFFFF" />
         </asp:Login>
-    
+     <br />
+            <asp:Label ID="lblMessage" runat="server" Text="¿Olvido la contraseña?" />
+            <br />
+            <asp:TextBox ID="txtEmail" runat="server" Width = "250"/>
+            <br />
+            <asp:Button Text="ENVIAR" runat="server" OnClick="SendEmail" />
+        <br />
     </div>
     </form>
 </body>

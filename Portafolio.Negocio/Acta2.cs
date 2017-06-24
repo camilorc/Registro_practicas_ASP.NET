@@ -37,7 +37,6 @@ namespace Portafolio.Negocio
         {
             try
             {
-
                 var connectionString = ConfigurationManager.ConnectionStrings["OracleDbContext"].ConnectionString;
                 OracleConnection _connection = new OracleConnection();
                 _connection.ConnectionString = connectionString;

@@ -5,15 +5,19 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Portafolio.Negocio;
-using Microsoft.Office.Interop.Word;
-using System.Net.Mail;
-using System.Web.Mail;
-using System.Net;
 
-namespace WebApplication1
+namespace Portafolio.Presentacion
 {
-    public partial class InicioAlumno : System.Web.UI.Page
+    public partial class MiPracticaAlumno : Page
     {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            lblArea.Text = Centro.AreaCentro;
+            lblNombrePractica.Text = Centro.NombreCentro;
+            
+             
+
+        }
 
         public Usuario Alumno
         {
@@ -22,10 +26,8 @@ namespace WebApplication1
                 if (Session["alumno"] == null)
                 {
                     Session["alumno"] = new Usuario();
-
                 }
                 return (Usuario)Session["alumno"];
-
             }
             set
             {
@@ -39,40 +41,28 @@ namespace WebApplication1
                 if (Session["practica"] == null)
                 {
                     Session["practica"] = new Practica();
-
                 }
                 return (Practica)Session["practica"];
-
             }
             set
             {
                 Session["practica"] = value;
             }
         }
-
-        protected void Page_Load(object sender, EventArgs e)
+        public CentroPractica Centro
         {
-
-        }
-
-        protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
-        {
-
-        }
-
-        protected void btn_Azul_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Acta1.aspx");
-        }
-
-        protected void btn_naranjo_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("VistaActaFinal.aspx");
-        }
-
-        protected void btn_rojo_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("GestorDocumentacion.aspx");
+            get
+            {
+                if (Session["centro"] == null)
+                {
+                    Session["centro"] = new CentroPractica();
+                }
+                return (CentroPractica)Session["centro"];
+            }
+            set
+            {
+                Session["centro"] = value;
+            }
         }
     }
 }

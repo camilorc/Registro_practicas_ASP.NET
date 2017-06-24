@@ -30,7 +30,6 @@ namespace WebApplication1
             OracleDataReader dr = cmd.ExecuteReader();
             lblMensaje.Text = "Exito";
             conn.Dispose();
-
             Response.Redirect("Gracias.aspx");
             
             

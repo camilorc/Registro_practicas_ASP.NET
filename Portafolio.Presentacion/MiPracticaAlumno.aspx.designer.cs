@@ -7,63 +7,90 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication1 {
+namespace Portafolio.Presentacion {
     
     
-    public partial class InicioAlumno {
+    public partial class MiPracticaAlumno {
         
         /// <summary>
-        /// btn_Azul control.
+        /// Panel3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Azul;
+        protected global::System.Web.UI.WebControls.Panel Panel3;
         
         /// <summary>
-        /// btn_Verde control.
+        /// lblNombrePractica control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Verde;
+        protected global::System.Web.UI.WebControls.Label lblNombrePractica;
         
         /// <summary>
-        /// btn_Celeste control.
+        /// lblRazon control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Celeste;
+        protected global::System.Web.UI.WebControls.Label lblRazon;
         
         /// <summary>
-        /// btn_naranjo control.
+        /// lblDireccion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_naranjo;
+        protected global::System.Web.UI.WebControls.Label lblDireccion;
         
         /// <summary>
-        /// btn_rojo control.
+        /// lblDepartamento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_rojo;
+        protected global::System.Web.UI.WebControls.Label lblDepartamento;
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// lblArea control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.Label lblArea;
+        
+        /// <summary>
+        /// lblWeb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblWeb;
+        
+        /// <summary>
+        /// lblFono control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFono;
+        
+        /// <summary>
+        /// lblMail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMail;
     }
 }

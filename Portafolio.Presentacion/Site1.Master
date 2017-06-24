@@ -103,7 +103,9 @@
              <div id="header">
 				<ul class="nav">
 					<li class="auto-style1"><a href="InicioAlumno.aspx">Inicio</a></li>
-					<li><a href="GestorDocumentacion.aspx" class="auto-style3">Actas</a>
+					<li><a href="MiPerfilAlumno.aspx" class="auto-style3">Mi Perfil</a>
+                    <li><a href="MiPracticaAlumno.aspx" class="auto-style3">Mi Práctica</a>
+                    <li><a href="GestorDocumentacion.aspx" class="auto-style3">Actas</a>
 						<ul>
 							<li><a href="VistaActa1.aspx">Acta 1</a></li>
 							<li><a href="VistaActa2.aspx">Acta 2</a></li>

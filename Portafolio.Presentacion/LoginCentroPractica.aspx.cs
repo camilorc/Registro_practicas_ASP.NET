@@ -46,5 +46,20 @@ namespace Portafolio.Presentacion
             }
            
         }
+
+        protected void SendEmail(object sender, EventArgs e)
+        {
+            Usuario al = new Usuario();
+            if (al.OlvidarContrasena(txtEmail.Text))
+            {
+                txtEmail.Text = "Correo enviado";
+                txtEmail.ReadOnly = true;
+                txtEmail.ForeColor = System.Drawing.Color.Blue;
+            }
+            else
+            {
+                txtEmail.Text = "Correo no enviado";
+            }
+        }
     }
 }

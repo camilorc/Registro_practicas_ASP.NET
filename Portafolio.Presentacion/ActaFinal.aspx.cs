@@ -25,7 +25,7 @@ namespace Portafolio.Presentacion
             txtAnio.Text = DateTime.Now.Year.ToString();
 
             string oradb = "Data Source=localhost:1521 / XE;User Id=PROYECTO;Password=1234";
-            OracleConnection conn = new OracleConnection(oradb);  // C#
+            OracleConnection conn = new OracleConnection(oradb); 
             conn.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = conn;
