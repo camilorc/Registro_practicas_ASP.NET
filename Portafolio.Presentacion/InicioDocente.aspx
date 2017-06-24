@@ -38,7 +38,7 @@
                         <ItemTemplate>
                             <tbody>
                                 <tr>
-                                    <th><%#Eval("Rut") %></th> 
+                                    <th><a href="DetalleDelAlumnoPractica.aspx?rut_alumno=<%#Eval("Rut") %>" ><%#Eval("Rut") %></a></th> 
                                     <th><%#Eval("Nombres") %></th> 
                                     <th><%#Eval("Apellido1") %></th> 
                                     <th><%#Eval("EstadoDetalle") %></th>

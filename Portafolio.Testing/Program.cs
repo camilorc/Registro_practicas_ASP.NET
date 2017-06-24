@@ -55,6 +55,7 @@ namespace Portafolio.Testing
                 //}
 
                 Usuario user = new Usuario();
+                DetallePracticaAlumno alum = new DetallePracticaAlumno();
 
                 //foreach (var item in user.AlumnosAsignados(4444))
                 //{
@@ -71,9 +72,11 @@ namespace Portafolio.Testing
 
                 //user.AlumnosAsignados(4444);
 
-                if (user.ValidarUsuario(55555, "123456"))
+                if (alum.ObtenerDatos(88888))
                 {
-                    Console.WriteLine("Usuario encontrado");
+                    Console.WriteLine("Fecha inicio: "+alum.FechaInicio);
+                    Console.WriteLine("nombres: " + alum.Nombres);
+                    Console.WriteLine("centro: " + alum.NombreCentro);
                 }
                 else {
                     Console.WriteLine("usario NO encontrado");

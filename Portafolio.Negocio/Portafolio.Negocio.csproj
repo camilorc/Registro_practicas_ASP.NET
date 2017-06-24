@@ -64,6 +64,7 @@
     <Compile Include="Acta2.cs" />
     <Compile Include="Carrera.cs" />
     <Compile Include="CentroPractica.cs" />
+    <Compile Include="DetallePracticaAlumno.cs" />
     <Compile Include="Escuela.cs" />
     <Compile Include="InstanciaBD.cs" />
     <Compile Include="ListaAsignados.cs" />
