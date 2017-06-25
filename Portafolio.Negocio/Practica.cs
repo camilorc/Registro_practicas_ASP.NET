@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Portafolio.Datos;
 using System.Configuration;
 using Oracle.ManagedDataAccess.Client;
+using System.Data;
+using Oracle.ManagedDataAccess.Types;
 
 namespace Portafolio.Negocio
 {
@@ -67,6 +69,81 @@ namespace Portafolio.Negocio
             {
 
                 throw;
+            }
+        }
+
+        //MÉTODO PARA ACTUALIZAR LA NOTA_3 SEGÚN EL IDPRACTICA DEL ALUMNO
+        public bool updateNota3Alumno(int rut_alumno, float nota_3) {
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["OracleDbContext"].ConnectionString;
+                OracleConnection _connection = new OracleConnection();
+                _connection.ConnectionString = connectionString;
+                _connection.Open();
+
+                OracleCommand cmd = _connection.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "UPDATE_ACTA3_ALUMNO";
+
+                cmd.Parameters.Add("p_rut_alumno", OracleDbType.Int32).Value = rut_alumno;
+                cmd.Parameters.Add("p_nota_3", OracleDbType.BinaryFloat).Value = nota_3;
+
+                cmd.ExecuteNonQuery();
+                _connection.Close();
+
+
+
+
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+
+
+
+
+        }
+
+        //MÉTODO PARA SABER SI YA TIENE UNA NOTA_3 
+        public bool tieneNota3(int rut_alumno) {
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["OracleDbContext"].ConnectionString;
+                OracleConnection _connection = new OracleConnection();
+                _connection.ConnectionString = connectionString;
+                _connection.Open();
+
+                OracleCommand cmd = _connection.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "saber_si_tiene_nota3";
+
+                cmd.Parameters.Add("p_rut_alumno", OracleDbType.Int32).Value = rut_alumno;
+                cmd.Parameters.Add("p_nota3", OracleDbType.Int32,200).Direction = ParameterDirection.Output;
+
+                cmd.ExecuteNonQuery();
+
+                Int32 nota3 = Convert.ToInt32((decimal)(OracleDecimal)(cmd.Parameters["p_nota3"].Value));
+
+
+                Console.WriteLine("param: "+nota3);
+                if (nota3 > 0)
+                {
+                    return true;
+                
+                }
+                else {
+                
+                    return false;
+                }
+                
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("mensaje " + e.Message);
+                return false;
             }
         }
 

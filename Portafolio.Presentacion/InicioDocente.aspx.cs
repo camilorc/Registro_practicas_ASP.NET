@@ -16,9 +16,7 @@ namespace Portafolio.Presentacion
             {
                 if (Session["docente"] == null)
                 {
-                    Session["docente"] = new Usuario() {
-                        Rut = 66666
-                    };
+                    Session["docente"] = new Usuario();
 
                 }
                 return (Usuario)Session["docente"];

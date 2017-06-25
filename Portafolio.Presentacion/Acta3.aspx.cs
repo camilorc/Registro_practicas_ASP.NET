@@ -13,26 +13,60 @@ namespace WebApplication1
 {
     public partial class Acta3 : System.Web.UI.Page
     {
+
+        public Usuario Docente
+        {
+            get
+            {
+                if (Session["docente"] == null)
+                {
+                    Session["docente"] = new Usuario();
+
+                }
+                return (Usuario)Session["docente"];
+
+            }
+            set
+            {
+                Session["docente"] = value;
+            }
+
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (!IsPostBack) {
+                CargarAlumnos();
+            }
         }
 
         protected void btnEvaluar_Click(object sender, EventArgs e)
         {
-            string oradb = "Data Source=localhost:1521 / XE;User Id=PROYECTO;Password=1234;";
-            OracleConnection conn = new OracleConnection(oradb); // C#
-            conn.Open();
-            OracleCommand cmd = new OracleCommand();
-            cmd.Connection = conn;
-            cmd.CommandText = "UPDATE practica SET nota_final =" + txtNotaFinal.Text + "WHERE idpractica = 83";
-            cmd.CommandType = CommandType.Text;
-            OracleDataReader dr = cmd.ExecuteReader();
-            lblMensaje.Text = "Exito";
-            conn.Dispose();
-            Response.Redirect("Gracias.aspx");
-            
-            
+            //string oradb = "Data Source=localhost:1521 / XE;User Id=PROYECTO;Password=1234;";
+            //OracleConnection conn = new OracleConnection(oradb); // C#
+            //conn.Open();
+            //OracleCommand cmd = new OracleCommand();
+            //cmd.Connection = conn;
+            //cmd.CommandText = "UPDATE practica SET nota_final =" + txtNotaFinal.Text + "WHERE idpractica = 83";
+            //cmd.CommandType = CommandType.Text;
+            //OracleDataReader dr = cmd.ExecuteReader();
+            //lblMensaje.Text = "Exito";
+            //conn.Dispose();
+            //Response.Redirect("Gracias.aspx");
+
+
+            Practica practica = new Practica();
+            if (practica.updateNota3Alumno(int.Parse(DropDownList1.SelectedValue), float.Parse(txtNotaFinal.Text)))
+            {
+                lblMensaje.Text = "Evaluación realizada con éxito!";
+
+            }
+            else {
+                lblMensaje.Text = "Ocurrio un error";
+            }
+
+
+
+
         }
 
         protected void btnCalcular_Click(object sender, EventArgs e)
@@ -64,5 +98,29 @@ namespace WebApplication1
             {
             }
             }
+
+        private void CargarAlumnos()
+        {
+            ListaAsignados lista = new ListaAsignados();
+            Practica practica = new Practica();
+            
+            foreach (var item in lista.AlumnosAsignados(Docente.Rut))
+            {
+                if (item.EstadoDetalle == "Aceptado" && !practica.tieneNota3(item.Rut)) {
+                    DropDownList1.Items.Add(
+                        new ListItem()
+                        {
+                            Text = item.Nombres,
+                            Value = item.Rut.ToString()
+
+                        }
+
+                    );
+                }
+                
+
+            }
+
+        }
     }
 }

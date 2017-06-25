@@ -1,15 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Acta3.aspx.cs" Inherits="WebApplication1.Acta3" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DocenteLayout.Master" AutoEventWireup="true" CodeBehind="Acta3.aspx.cs" Inherits="WebApplication1.Acta3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
-        .auto-style1 {
-            width: 1216px;
-        }
-        .auto-style2 {
-            height: 47px;
-        }
-    </style>
+   
     </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="container">
+        <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
     <table cellspacing="10" cellpadding="10"> 
  <tr> 
     <td align="center">Formalidades</td> 
@@ -69,6 +64,7 @@
  </td> 
  </tr> 
 </table>
+
         <table cellspacing="10" cellpadding="10"> 
  <tr> 
     <td align="center">Empresa</td> 
@@ -171,4 +167,6 @@
     <asp:Label ID="lblMensaje" runat="server" Text="."></asp:Label>
     <br />
     <asp:Button ID="btnEvaluar" runat="server" Text="Evaluar" OnClick="btnEvaluar_Click" />
+
+</div>
 </asp:Content>

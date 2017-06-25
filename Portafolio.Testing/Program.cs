@@ -82,16 +82,26 @@ namespace Portafolio.Testing
                 //    Console.WriteLine("usario NO encontrado");
                 //}
 
-                if (user.EditarDocentePerfil(55555,"Manuel","Docente","Vergara","10/10/1980","santiago centro, santiago","emailprofe@gmail.com"))
+                //if (user.EditarDocentePerfil(55555,"Manuel","Docente","Vergara","10/10/1980","santiago centro, santiago","emailprofe@gmail.com"))
+                //{
+                //    Console.WriteLine("Exitooooo");
+                //
+                //}
+                //else {
+                //    Console.WriteLine("usario NO encontrado");
+                //
+                //}
+
+                Practica prac = new Practica();
+                if (prac.tieneNota3(5555))
                 {
-                    Console.WriteLine("Exitooooo");
+                    Console.WriteLine("ya tiene nota 3");
 
                 }
-                else {
-                    Console.WriteLine("usario NO encontrado");
-
+                else
+                {
+                    Console.WriteLine("no tiene nota 3");
                 }
-               
 
             }
             catch (Exception e)

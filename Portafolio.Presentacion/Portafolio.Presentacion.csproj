@@ -143,12 +143,9 @@
     <Content Include="LoginAlumno.aspx" />
     <Content Include="LoginCentroPractica.aspx" />
     <Content Include="LoginDocente.aspx" />
-
     <Content Include="MiPerfilAlumno.aspx" />
     <Content Include="MiPracticaAlumno.aspx" />
-
     <Content Include="MiPerfilDocente.aspx" />
-
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -166,6 +163,7 @@
     <Content Include="Archivo\ACTA2.docx" />
     <Content Include="Archivo\ACTA3.docx" />
     <Content Include="Archivo\ACTAFINAL.docx" />
+    <Content Include="DocenteLayout.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -215,6 +213,13 @@
     </Compile>
     <Compile Include="DetalleDelAlumnoPractica.aspx.designer.cs">
       <DependentUpon>DetalleDelAlumnoPractica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocenteLayout.Master.cs">
+      <DependentUpon>DocenteLayout.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocenteLayout.Master.designer.cs">
+      <DependentUpon>DocenteLayout.Master</DependentUpon>
     </Compile>
     <Compile Include="GestorDocumentacion.aspx.cs">
       <DependentUpon>GestorDocumentacion.aspx</DependentUpon>
@@ -272,7 +277,6 @@
     <Compile Include="LoginDocente.aspx.designer.cs">
       <DependentUpon>LoginDocente.aspx</DependentUpon>
     </Compile>
-
     <Compile Include="MiPerfilAlumno.aspx.cs">
       <DependentUpon>MiPerfilAlumno.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -293,7 +297,6 @@
     </Compile>
     <Compile Include="MiPerfilDocente.aspx.designer.cs">
       <DependentUpon>MiPerfilDocente.aspx</DependentUpon>
-
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site1.Master.cs">
