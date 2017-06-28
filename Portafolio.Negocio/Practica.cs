@@ -60,15 +60,15 @@ namespace Portafolio.Negocio
 
                 while (pract.Read())
                 {
-                    FechaInicio = pract.GetDateTime(4).ToString();
-                    FechaTermino = pract.GetDateTime(3).ToString();
-                    CantHoras = pract.GetInt32(2);
+                    FechaInicio = pract.GetDateTime(6).ToString();
+                    FechaTermino = pract.GetDateTime(5).ToString();
+                    CantHoras = pract.GetInt32(4);
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
-                throw;
+                Console.WriteLine("Mensaje: "+e.Message);
             }
         }
 

@@ -72,17 +72,17 @@ namespace Portafolio.Testing
 
                 //user.AlumnosAsignados(4444);
 
-                if (alum.ObtenerDatos(44444))
-                {
-                    Console.WriteLine("Fecha inicio: "+alum.FechaInicio);
-                    Console.WriteLine("nombres: " + alum.Nombres);
-                    Console.WriteLine("centro: " + alum.NombreCentro);
-                    Console.WriteLine("Nota final: " + alum.NotaFinal);
-                    Console.WriteLine("Nota 3: " + alum.Nota3);
-                }
-                else {
-                    Console.WriteLine("usario NO encontrado");
-                }
+                //if (alum.ObtenerDatos(44444))
+                //{
+                //    Console.WriteLine("Fecha inicio: "+alum.FechaInicio);
+                //    Console.WriteLine("nombres: " + alum.Nombres);
+                //    Console.WriteLine("centro: " + alum.NombreCentro);
+                //    Console.WriteLine("Nota final: " + alum.NotaFinal);
+                //    Console.WriteLine("Nota 3: " + alum.Nota3);
+                //}
+                //else {
+                //    Console.WriteLine("usario NO encontrado");
+                //}
 
                 //if (user.EditarDocentePerfil(55555,"Manuel","Docente","Vergara","10/10/1980","santiago centro, santiago","emailprofe@gmail.com"))
                 //{
@@ -94,7 +94,7 @@ namespace Portafolio.Testing
                 //
                 //}
 
-                //Practica prac = new Practica();
+                Practica prac = new Practica();
                 //if (prac.tieneNota3(5555))
                 //{
                 //    Console.WriteLine("ya tiene nota 3");
@@ -104,6 +104,9 @@ namespace Portafolio.Testing
                 //{
                 //    Console.WriteLine("no tiene nota 3");
                 //}
+                prac.IdPractica = 141;
+                prac.buscarPractica();
+                Console.WriteLine("Cantidad de horas"+prac.CantHoras);
 
             }
             catch (Exception e)

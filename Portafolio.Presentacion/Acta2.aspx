@@ -526,8 +526,8 @@
                                 <tr>
                                     <td class="auto-style7" colspan="2"><strong>Promedio</strong></td>
                                     <td colspan="4">
-                                        <asp:TextBox ID="txt_prom_personal" runat="server" Width="172px" Enabled="False" TextMode="Number"></asp:TextBox>
-                                        <asp:Label ID="lbl_prom_personal" runat="server" Text="Promedio"></asp:Label>
+                                        <asp:TextBox ID="txt_prom_personal" runat="server" Width="172px" Enabled="False"></asp:TextBox>
+                                        
                                     </td>
                                     <td colspan="4">
                                             <asp:Button ID="btn_prom_personal"  runat="server" Text="Calcular" OnClick="btn_prom_personal_Click" />
@@ -710,7 +710,7 @@
                     <tr>
                         <td class="auto-style28" colspan="2"><strong>Promedio</strong></td>
                         <td colspan="7" class="auto-style29">
-                            <asp:TextBox ID="txt_prom_prof" runat="server" Width="167px" Enabled="False" TextMode="Number" ></asp:TextBox>
+                            <asp:TextBox ID="txt_prom_prof" runat="server" Width="167px" Enabled="False" ></asp:TextBox>
                             </td>
                         <td class="auto-style29">
                             <asp:Button ID="btn_prom_profesional" runat="server" Text="Calcular" OnClick="btn_prom_profesional_Click" />

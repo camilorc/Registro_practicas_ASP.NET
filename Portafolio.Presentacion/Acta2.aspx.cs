@@ -140,7 +140,7 @@ namespace Portafolio.Presentacion
             catch (Exception)
             {
 
-                lbl_mensaje.Text = "Ocurrio un error en el catch";
+                lbl_mensaje.Text = "Ocurrio un error";
             }
 
 
@@ -152,26 +152,26 @@ namespace Portafolio.Presentacion
 
         protected void btn_prom_personal_Click(object sender, EventArgs e)
         {
-            int suma = int.Parse(DropDownList1.SelectedValue) + int.Parse(DropDownList2.SelectedValue) + int.Parse(DropDownList3.SelectedValue) +
-                int.Parse(DropDownList4.SelectedValue) + int.Parse(DropDownList5.SelectedValue) + int.Parse(DropDownList6.SelectedValue) +
-                int.Parse(DropDownList7.SelectedValue) + int.Parse(DropDownList8.SelectedValue) + int.Parse(DropDownList9.SelectedValue) +
-                int.Parse(DropDownList10.SelectedValue) + int.Parse(DropDownList11.SelectedValue);
+            double suma = double.Parse(DropDownList1.SelectedValue) + double.Parse(DropDownList2.SelectedValue) + double.Parse(DropDownList3.SelectedValue) +
+                double.Parse(DropDownList4.SelectedValue) + double.Parse(DropDownList5.SelectedValue) + double.Parse(DropDownList6.SelectedValue) +
+                double.Parse(DropDownList7.SelectedValue) + double.Parse(DropDownList8.SelectedValue) + double.Parse(DropDownList9.SelectedValue) +
+                double.Parse(DropDownList10.SelectedValue) + double.Parse(DropDownList11.SelectedValue);
 
-            float promedio = suma / 11;
-            txt_prom_personal.Text = promedio.ToString();
-            lbl_prom_personal.Text = promedio.ToString();
+            double promedio = (suma / 11);
+            txt_prom_personal.Text = String.Format("{0:0.0}", promedio);
+            
 
 
         }
 
         protected void btn_prom_profesional_Click(object sender, EventArgs e)
         {
-            int suma = int.Parse(DropDownList12.SelectedValue) + int.Parse(DropDownList13.SelectedValue) + int.Parse(DropDownList14.SelectedValue) +
-                int.Parse(DropDownList15.SelectedValue) + int.Parse(DropDownList16.SelectedValue) + int.Parse(DropDownList17.SelectedValue) +
-                int.Parse(DropDownList18.SelectedValue) + int.Parse(DropDownList19.SelectedValue) + int.Parse(DropDownList20.SelectedValue);
+            double suma = double.Parse(DropDownList12.SelectedValue) + double.Parse(DropDownList13.SelectedValue) + double.Parse(DropDownList14.SelectedValue) +
+                double.Parse(DropDownList15.SelectedValue) + double.Parse(DropDownList16.SelectedValue) + double.Parse(DropDownList17.SelectedValue) +
+                double.Parse(DropDownList18.SelectedValue) + double.Parse(DropDownList19.SelectedValue) + double.Parse(DropDownList20.SelectedValue);
 
-            double promedio = suma / 9;
-            txt_prom_prof.Text = promedio.ToString();
+            double promedio = (suma / 9);
+            txt_prom_prof.Text = String.Format("{0:0.0}",promedio);
 
         }
 
