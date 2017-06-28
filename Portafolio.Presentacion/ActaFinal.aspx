@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="ActaFinal.aspx.cs" Inherits="Portafolio.Presentacion.ActaFinal" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DocenteLayout.Master" AutoEventWireup="true" CodeBehind="ActaFinal.aspx.cs" Inherits="Portafolio.Presentacion.ActaFinal" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .style12
@@ -64,6 +64,8 @@
      </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="container">
+        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"></asp:DropDownList>
 <table class="auto-style1">
     <tr>
         <td class="auto-style2">
@@ -263,4 +265,5 @@
 </table>
     <br />
 &nbsp;
+    </div>
 </asp:Content>

@@ -25,6 +25,10 @@ namespace Portafolio.Negocio
         public string FechaTermino { get; set; }
         public string TipoPractica { get; set; }
         public string DireccionCentro { get; set; }
+        public float Nota3 { get; set; }
+        public float NotaFinal { get; set; }
+        public float NotaPersonal { get; set; }
+        public float NotaProfesional { get; set; }
 
         public DetallePracticaAlumno() {
             Rut            = 0;
@@ -41,6 +45,11 @@ namespace Portafolio.Negocio
             FechaTermino   = "";
             TipoPractica   = "";
             DireccionCentro = "";
+            Nota3 = 0;
+            NotaFinal = 0;
+            NotaPersonal = 0;
+            NotaProfesional = 0;
+
         }
 
 
@@ -71,7 +80,10 @@ namespace Portafolio.Negocio
                 cmd.Parameters.Add("p_fecha_termino", OracleDbType.Date, 200).Direction = ParameterDirection.Output;
                 cmd.Parameters.Add("p_tipo_practica", OracleDbType.Varchar2, 200).Direction = ParameterDirection.Output;
                 cmd.Parameters.Add("p_direccion_centro", OracleDbType.Varchar2, 200).Direction = ParameterDirection.Output;
-
+                cmd.Parameters.Add("p_nota3", OracleDbType.Int32, 200).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("p_nota_final", OracleDbType.Int32, 200).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("p_prom_acta2_personal", OracleDbType.Int32, 200).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("p_prom_acta2_profesional", OracleDbType.Int32, 200).Direction = ParameterDirection.Output;
                 cmd.ExecuteNonQuery();
 
 
@@ -93,6 +105,10 @@ namespace Portafolio.Negocio
                 TipoPractica = cmd.Parameters["p_tipo_practica"].Value.ToString();
                 DireccionCentro = cmd.Parameters["p_direccion_centro"].Value.ToString();
 
+                Nota3 = float.Parse(cmd.Parameters["p_nota3"].Value.ToString());
+                NotaFinal = float.Parse(cmd.Parameters["p_nota_final"].Value.ToString());
+                NotaPersonal = float.Parse(cmd.Parameters["p_prom_acta2_personal"].Value.ToString());
+                NotaProfesional = float.Parse(cmd.Parameters["p_prom_acta2_profesional"].Value.ToString());
 
                 return true;
             }

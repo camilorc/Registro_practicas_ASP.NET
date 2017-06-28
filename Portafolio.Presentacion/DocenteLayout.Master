@@ -20,6 +20,7 @@
                   <li role="presentation"><a href="InicioDocente.aspx">Home</a></li>
                   <li role="presentation"><a href="Acta3.aspx" >Acta 3</a></li>
                   <li role="presentation"><a href="MiPerfilDocente.aspx" >Mi Perfil</a></li>
+                    <li role="presentation"><a href="ActaFinal.aspx" >Acta Final</a></li>
                   <li role="presentation"><a href="#">Cerrar Sesión</a></li>
                 </ul>
             </div>
