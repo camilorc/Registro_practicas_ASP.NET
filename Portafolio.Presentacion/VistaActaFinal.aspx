@@ -102,8 +102,8 @@
     </script> 
 </HEAD>
 <BODY>
-    <a href="javascript:imprSelec('paraimprimir')">Imprimir</a>
-    <br />
+    <a href="javascript:imprSelec('paraimprimir')">Imprimir</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+    <asp:HyperLink ID="hyperlink1" NavigateUrl="~/Archivo/ACTAFINAL.pdf" Text="descargar" Target="_new" runat="server"/>
     <br />
     <div id="paraimprimir">
 <DIV TYPE=HEADER>

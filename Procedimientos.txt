@@ -1,0 +1,23 @@
+PROCEDURE buscar_contrasena(p_email IN VARCHAR2,
+p_contrasenna OUT VARCHAR2, p_nombres OUT VARCHAR2, p_apellido1 OUT VARCHAR2, p_apellido2 OUT VARCHAR2)
+
+IS
+
+BEGIN
+  
+SELECT CONTRASEÑA, NOMBRES, APELLIDO1, APELLIDO2
+  
+INTO p_contrasenna,p_nombres,p_apellido1,p_apellido2
+  
+FROM USUARIO
+  
+WHERE CORREO = p_email;
+   
+EXCEPTION
+ WHEN OTHERS  
+THEN
+  
+DBMS_OUTPUT.PUT_LINE('Error: Usuario no encontrado '||SQLCODE);
+  DBMS_OUTPUT.PUT_LINE('Error: Usuario no encontrado '||sqlerrm);
+
+END;

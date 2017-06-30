@@ -53,9 +53,12 @@ ventimp.document.head.appendChild(css);
 </script> 
 </HEAD>
 <BODY>
-    <a href="javascript:imprSelec('paraimprimir')">Imprimir</a>
+    <a href="javascript:imprSelec('paraimprimir')">Imprimir</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+    <asp:HyperLink ID="hyperlink1" NavigateUrl="~/Archivo/ACTA1.pdf" Text="descargar" Target="_new" runat="server"/>
     <br />
     <br />
+    <br />
+    <asp:Button ID="btnCargarDatos" runat="server" Text="Cargar Datos" OnClick="btnCargarDatos_Click" />
     <div id="paraimprimir">
 <P  STYLE="margin-left: 1.48in; text-indent: 0.49in; margin-bottom: 0in">
 <FONT FACE="Arial Narrow, serif"><FONT SIZE=3><B>SUPERVISIÓN DE
@@ -80,6 +83,7 @@ N°1</B></FONT></FONT></P>
 		</TD>
 		<TD COLSPAN=6 WIDTH=466 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
 			<P><BR>
+			    <asp:Label ID="LblNombreAlumno" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
 	</TR>
@@ -89,6 +93,7 @@ N°1</B></FONT></FONT></P>
 		</TD>
 		<TD COLSPAN=6 WIDTH=466 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
 			<P><BR>
+			    <asp:Label ID="lblRutAlumno" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
 	</TR>
@@ -97,7 +102,9 @@ N°1</B></FONT></FONT></P>
 			<P><FONT FACE="Arial Narrow, serif"><FONT SIZE=3>Carrera</FONT></FONT></P>
 		</TD>
 		<TD COLSPAN=6 WIDTH=466 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
-			<P><BR>
+			<P>
+                <asp:Label ID="lblCarrera" runat="server" Text=""></asp:Label>
+                <BR>
 			</P>
 		</TD>
 	</TR>
@@ -107,6 +114,7 @@ N°1</B></FONT></FONT></P>
 		</TD>
 		<TD COLSPAN=2 WIDTH=99 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
 			<P><BR>
+			    <asp:Label ID="lblFechaInicio" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
 		<TD WIDTH=109 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
@@ -114,6 +122,7 @@ N°1</B></FONT></FONT></P>
 		</TD>
 		<TD COLSPAN=3 WIDTH=230 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
 			<P><BR>
+			    <asp:Label ID="lblFechaTermino" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
 	</TR>
@@ -124,6 +133,7 @@ N°1</B></FONT></FONT></P>
 		</TD>
 		<TD COLSPAN=6 WIDTH=466 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
 			<P><BR>
+			    <asp:Label ID="lblNombreCentroPractica" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
 	</TR>
@@ -134,6 +144,7 @@ N°1</B></FONT></FONT></P>
 		</TD>
 		<TD COLSPAN=6 WIDTH=466 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
 			<P><BR>
+			    <asp:Label ID="lblDireccionCentro" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
 	</TR>
@@ -144,6 +155,7 @@ N°1</B></FONT></FONT></P>
 		</TD>
 		<TD COLSPAN=6 WIDTH=466 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
 			<P><BR>
+			    <asp:Label ID="lblDepartamentoCentro" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
 	</TR>
@@ -153,7 +165,9 @@ N°1</B></FONT></FONT></P>
 			Directo</FONT></FONT></P>
 		</TD>
 		<TD COLSPAN=6 WIDTH=466 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
-			<P><BR>
+			<P>
+                <asp:Label ID="lblNombreJefe" runat="server" Text=""></asp:Label>
+                <BR>
 			</P>
 		</TD>
 	</TR>
@@ -164,6 +178,7 @@ N°1</B></FONT></FONT></P>
 		</TD>
 		<TD COLSPAN=6 WIDTH=466 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
 			<P><BR>
+			    <asp:Label ID="lblCargoJefe" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
 	</TR>
@@ -173,6 +188,7 @@ N°1</B></FONT></FONT></P>
 		</TD>
 		<TD COLSPAN=6 WIDTH=466 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
 			<P><BR>
+			    <asp:Label ID="lblCorreoJefe" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
 	</TR>
@@ -182,6 +198,7 @@ N°1</B></FONT></FONT></P>
 		</TD>
 		<TD COLSPAN=6 WIDTH=466 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
 			<P><BR>
+			    <asp:Label ID="lblTelefonoJefe" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
 	</TR>
@@ -192,6 +209,7 @@ N°1</B></FONT></FONT></P>
 		</TD>
 		<TD COLSPAN=6 WIDTH=466 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
 			<P><BR>
+			    <asp:Label ID="lblProfesorGuia" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
 	</TR>
@@ -202,6 +220,7 @@ N°1</B></FONT></FONT></P>
 		</TD>
 		<TD WIDTH=24 STYLE="border-top: 1px solid #00000a; border-bottom: 1px solid #00000a; border-left: 1px solid #00000a; border-right: 1.00pt solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
 			<P>         
+			    <asp:Label ID="lblDondeSi" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
 		<TD COLSPAN=3 WIDTH=328 STYLE="border-top: 1px solid #00000a; border-bottom: 1px solid #00000a; border-left: 1.00pt solid #00000a; border-right: 1.00pt solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
@@ -209,6 +228,7 @@ N°1</B></FONT></FONT></P>
 		</TD>
 		<TD WIDTH=33 STYLE="border-top: 1px solid #00000a; border-bottom: 1px solid #00000a; border-left: 1.00pt solid #00000a; border-right: 1.00pt solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
 			<P STYLE="margin-left: 0.29in"><BR>
+			    <asp:Label ID="lblDondeNo" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
 		<TD WIDTH=39 STYLE="border-top: 1px solid #00000a; border-bottom: 1px solid #00000a; border-left: 1.00pt solid #00000a; border-right: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">

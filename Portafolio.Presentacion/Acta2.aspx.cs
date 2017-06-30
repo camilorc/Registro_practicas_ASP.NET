@@ -10,7 +10,7 @@ using System.Configuration;
 
 namespace Portafolio.Presentacion
 {
-    public partial class Acta2 : System.Web.UI.Page
+    public partial class Acta2 : Page
     {
         public int idpracticaparametro { get; set; }
         //Creamos la variable de sesión para identificar el centro de práctica.

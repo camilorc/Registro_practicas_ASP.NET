@@ -11,5 +11,14 @@ namespace Portafolio.Presentacion {
     
     
     public partial class VistaActa1 {
+        
+        /// <summary>
+        /// hyperlink1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hyperlink1;
     }
 }
