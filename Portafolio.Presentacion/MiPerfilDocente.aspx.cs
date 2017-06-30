@@ -39,10 +39,6 @@ namespace Portafolio.Presentacion
                 txtFechaN.Text =  String.Format("{0:d}", Docente.FechaNac);
                 txtDireccion.Text = Docente.Direccion;
                 txtEmail.Text = Docente.Correo;
-
-
-
-
             }
             
         }

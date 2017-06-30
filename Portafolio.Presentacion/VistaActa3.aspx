@@ -51,8 +51,8 @@
 
     </script> 
 </HEAD>
-    <a href="javascript:imprSelec('paraimprimir')">Imprimir</a>
-    <br />
+    <a href="javascript:imprSelec('paraimprimir')">Imprimir</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+    <asp:HyperLink ID="hyperlink1" NavigateUrl="~/Archivo/ACTA3.pdf" Text="descargar" Target="_new" runat="server"/>
     <br />
     <div id="paraimprimir">
 <BODY LANG="es-CL" LINK="#0000ff" DIR="LTR">

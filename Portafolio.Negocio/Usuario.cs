@@ -131,7 +131,7 @@ namespace Portafolio.Negocio
                 _connection.Open();
 
                 OracleCommand cmd = _connection.CreateCommand();
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "VALIDARUSUARIO";
 
                 cmd.Parameters.Add("p_rut", OracleDbType.Int32,200).Value = rut;
@@ -170,14 +170,7 @@ namespace Portafolio.Negocio
                 FotoPerfil = cmd.Parameters["p_foto_perfil"].Value.ToString();
 
                 Console.WriteLine("este es el DV: "+Dv+" "+Nombres+" "+Telefono+" "+FechaNac);
-                
-
-                
-
                 return true;
-
-                
-
           }catch (Exception e )
             {
                 Console.WriteLine("mensaje error: "+e);
@@ -191,18 +184,26 @@ namespace Portafolio.Negocio
             OracleConnection _connection = new OracleConnection();
             _connection.ConnectionString = connectionString;
             _connection.Open();
-            string sql = "select * from usuario where correo ='" + email + "'";
-            OracleCommand cmd = new OracleCommand(sql, _connection);
-            var user = cmd.ExecuteReader();
-            while (user.Read())
-            {
-                Contraseña = user.GetString(2);
-                Nombres = user.GetString(3);
-                Apellido1 = user.GetString(4);
-                Apellido2 = user.GetString(5);
-            }
+
+            OracleCommand cmd = _connection.CreateCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "BUSCAR_CONTRASENA";
+            
+            cmd.Parameters.Add("p_email", OracleDbType.Varchar2).Value = email;
+            cmd.Parameters.Add("p_contrasenna", OracleDbType.Varchar2, 200).Direction = ParameterDirection.Output;
+            cmd.Parameters.Add("p_nombres", OracleDbType.Varchar2, 200).Direction = ParameterDirection.Output;
+            cmd.Parameters.Add("p_apellido1", OracleDbType.Varchar2, 200).Direction = ParameterDirection.Output;
+            cmd.Parameters.Add("p_apellido2", OracleDbType.Varchar2, 200).Direction = ParameterDirection.Output;
+            cmd.ExecuteNonQuery();
+
+            Nombres = cmd.Parameters["p_nombres"].Value.ToString();
+            Apellido1 = cmd.Parameters["p_apellido1"].Value.ToString();
+            Apellido2 = cmd.Parameters["p_apellido2"].Value.ToString();
+            Correo = email;
+            Contraseña = cmd.Parameters["p_contrasenna"].Value.ToString();
+
             MailMessage mmsg = new MailMessage();
-            mmsg.To.Add(email);
+            mmsg.To.Add(Correo);
             mmsg.Subject = "Sistema de Contraseñas ::::: Duoc UC";
             mmsg.SubjectEncoding = Encoding.UTF8;
             mmsg.Body = "Estimada(o) " + Nombres + " " + Apellido1 + " " + Apellido2 + ": " + Environment.NewLine + Environment.NewLine +
@@ -218,18 +219,20 @@ namespace Portafolio.Negocio
             cliente.Port = 587;
             cliente.EnableSsl = true;
             cliente.Host = "smtp.gmail.com";
+
+            _connection.Close();
             try
             {
                 cliente.Send(mmsg);
                 return true;
             }
-            catch (SmtpException ex)
+            catch (SmtpException)
             {
                 return false;
             }
         }
 
-        public bool EditarUsuario(int rut, DateTime nacimiento, string direccion, int telefono, string mail)
+        public bool EditarUsuario(int rut, string nacimiento, string direccion, int telefono, string mail)
         {
             try
             {
@@ -239,10 +242,10 @@ namespace Portafolio.Negocio
                 _connection.Open();
 
                 OracleCommand cmd = _connection.CreateCommand();
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "EDITAR_USER";
 
-                cmd.Parameters.Add("p_rut", OracleDbType.Int32).Value = Rut;
+                cmd.Parameters.Add("p_rut", OracleDbType.Int32).Value = rut;
                 cmd.Parameters.Add("p_fecha_nacimiento", OracleDbType.Varchar2).Value = nacimiento;
                 cmd.Parameters.Add("p_direccion", OracleDbType.Varchar2).Value = direccion;
                 cmd.Parameters.Add("p_telefono", OracleDbType.Int32).Value = telefono;
@@ -252,13 +255,11 @@ namespace Portafolio.Negocio
                 _connection.Close();
 
                 return true;
-
             }
-            catch (Exception e)
+            catch (Exception )
             {
                 return false;
             }
-
         }
 
         public bool EditarDocentePerfil(int rut_docente, string nombres, string apellido1, string apellido2,string nacimiento, string direccion, string email) {
@@ -270,7 +271,7 @@ namespace Portafolio.Negocio
                 _connection.Open();
 
                 OracleCommand cmd = _connection.CreateCommand();
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "update_perfil_docente";
 
                 cmd.Parameters.Add("p_rut_docente", OracleDbType.Int32).Value = rut_docente;
@@ -283,19 +284,13 @@ namespace Portafolio.Negocio
 
                 cmd.ExecuteReader();
                 _connection.Close();
-
-
-
+                
                 return true;
             }
             catch (Exception)
             {
-
                 return false;
             }
-
-
         }
-
     }
 }

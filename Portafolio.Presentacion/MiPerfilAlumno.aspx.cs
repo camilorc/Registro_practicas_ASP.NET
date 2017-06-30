@@ -12,20 +12,11 @@ namespace Portafolio.Presentacion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblNombre.Text = Alumno.Nombres + " " + Alumno.Apellido1 + " " + Alumno.Apellido2;
-            lblRut.Text = Alumno.Rut + "-" + Alumno.Dv;
-            txtCorreo.Text = Alumno.Correo;
-            txtDireccion.Text = Alumno.Direccion;
-            txtNacimiento.Text = Alumno.FechaNac.ToShortDateString();
-            txtTelefono.Text = Alumno.Telefono.ToString();
-            if (Practica.Nota3==0)
+            if (!IsPostBack)
             {
-                txtNota3.Text = "No calificado";
-            }else
-            {
-                txtNota3.Text = Practica.Nota3.ToString();
+                buscarInfo();
             }
-            txtFinal.Text = Practica.NotaFinal.ToString();
+            
         }
 
         public Usuario Alumno
@@ -62,11 +53,18 @@ namespace Portafolio.Presentacion
         
         protected void btnEditar_Click(object sender, EventArgs e)
         {
-            Usuario us = new Usuario();
-            if (us.EditarUsuario(Alumno.Rut, DateTime.Parse(txtNacimiento.Text), txtDireccion.Text, int.Parse(txtTelefono.Text), txtCorreo.Text))
+            
+            if (Alumno.EditarUsuario(Alumno.Rut, txtNacimiento.Text, txtDireccion.Text, int.Parse(txtTelefono.Text),txtCorreo.Text))
             {
-                btnEditar.Text = "Editado.";
-                btnEditar.Enabled = false;
+                Alumno.Direccion = txtDireccion.Text;
+                Alumno.FechaNac = DateTime.Parse(txtNacimiento.Text);
+                Alumno.Correo = txtCorreo.Text;
+                Alumno.Telefono = int.Parse(txtTelefono.Text);
+
+            }
+            else
+            {
+                btnEditar.Text = "Editar";
             }
         }
 
@@ -78,6 +76,26 @@ namespace Portafolio.Presentacion
             txtTelefono.Text = Alumno.Telefono.ToString();
             btnEditar.Text = "Editar";
             btnEditar.Enabled = true;
+        }
+
+        protected void buscarInfo()
+        {
+            lblNombre.Text = Alumno.Nombres + " " + Alumno.Apellido1 + " " + Alumno.Apellido2;
+            lblRut.Text = Alumno.Rut + "-" + Alumno.Dv;
+            txtCorreo.Text = Alumno.Correo;
+            txtDireccion.Text = Alumno.Direccion;
+            txtNacimiento.Text = Alumno.FechaNac.ToShortDateString();
+            txtTelefono.Text = Alumno.Telefono.ToString();
+            if (Practica.Nota3 == 0)
+            {
+                txtNota3.Text = "No calificado";
+            }
+            else
+            {
+                txtNota3.Text = Practica.Nota3.ToString();
+            }
+            txtFinal.Text = Practica.NotaFinal.ToString();
+            txtActa2.Text = Practica.FechaInicio;
         }
     }
 }

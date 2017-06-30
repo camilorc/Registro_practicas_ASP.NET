@@ -8,7 +8,7 @@ using Portafolio.Negocio;
 
 namespace Portafolio.Presentacion
 {
-    public partial class DetalleDelAlumnoPractica : System.Web.UI.Page
+    public partial class DetalleDelAlumnoPractica : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

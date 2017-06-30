@@ -12,7 +12,7 @@ using System.Net;
 
 namespace Portafolio.Presentacion
 {
-    public partial class LoginAlumno : System.Web.UI.Page
+    public partial class LoginAlumno : Page
     {
 
         public Usuario Alumno
@@ -22,10 +22,8 @@ namespace Portafolio.Presentacion
                 if (Session["alumno"] == null)
                 {
                     Session["alumno"] = new Usuario();
-
                 }
                 return (Usuario)Session["alumno"];
-
             }
             set
             {

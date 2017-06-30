@@ -97,14 +97,14 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Label ID="Label4" runat="server" Text="Mis Notas" Font-Size="Medium" ForeColor="LightBlue"></asp:Label>
                         &nbsp;&nbsp;<span class="auto-style11">&nbsp;</span>&nbsp;<asp:Label ID="Label9" runat="server" ForeColor="Blue" Text="Empleador"></asp:Label>
-                        &nbsp;<asp:TextBox ID="txtActa2" runat="server" Height="70px" Width="95px"></asp:TextBox>
+                        &nbsp;<asp:TextBox ID="txtActa2" runat="server" Height="70px" Width="95px" ReadOnly="true"></asp:TextBox>
                     </td>
                     <td>
                         <asp:Label ID="Label7" runat="server" Text="Informe" ForeColor="Blue"></asp:Label>
-                        &nbsp;&nbsp;<asp:TextBox ID="txtNota3" runat="server" Height="70px" Width="95px"></asp:TextBox>
+                        &nbsp;&nbsp;<asp:TextBox ID="txtNota3" runat="server" Height="70px" Width="95px" ReadOnly="true"></asp:TextBox>
                         <asp:Label ID="Label5" ForeColor="lightBlue" runat="server" Font-Size="Small" Text="Nota Final"></asp:Label>
 &nbsp;
-                        <asp:TextBox ID="txtFinal" runat="server" Height="70px" Width="95px"></asp:TextBox>
+                        <asp:TextBox ID="txtFinal" runat="server" Height="70px" Width="95px" ReadOnly="true"></asp:TextBox>
                     </td>
                     <td></td>
                 </tr>
