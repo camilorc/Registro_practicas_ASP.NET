@@ -71,18 +71,17 @@
         <td class="auto-style2">
             Nombre Alumno</td>
          <td>
-             <asp:TextBox ID="txtNombreAlumno" runat="server" Width="568px"></asp:TextBox>
+             <asp:TextBox ID="txtNombreAlumno" runat="server" Width="568px" Enabled="False"></asp:TextBox>
         </td>
     </tr>
     <tr>
         <td class="auto-style2">
             Rut<Rut</td>
          <td>
-             <asp:TextBox ID="txtRut" runat="server" Width="126px"></asp:TextBox>
-             -<asp:TextBox ID="txtDv" runat="server" Width="21px"></asp:TextBox>
+             <asp:TextBox ID="txtRut" runat="server" Width="126px" Enabled="False"></asp:TextBox>
+             -<asp:TextBox ID="txtDv" runat="server" Width="21px" Enabled="False"></asp:TextBox>
              &nbsp;
-             <asp:Button ID="btnBuscarAlumno" runat="server" Text="Buscar" />
-        </td>
+             </td>
     </tr>
     <tr>
         <td class="auto-style2">
@@ -102,22 +101,22 @@
             Profesor Guía
         </td>
         <td class="auto-style3">
-            <asp:TextBox ID="txtProfesorGuia" runat="server" Width="570px"></asp:TextBox>
+            <asp:TextBox ID="txtProfesorGuia" runat="server" Width="570px" Enabled="False"></asp:TextBox>
         </td>
     </tr>
     <tr>
         <td class="auto-style4">
             Tipo de Práctica</td>
         <td class="auto-style3">
-            Profesional<asp:TextBox ID="txtProfesional" runat="server" Width="42px"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Laboral <asp:TextBox ID="txtLaboral" runat="server" Width="48px"></asp:TextBox>
+            Profesional<asp:TextBox ID="txtProfesional" runat="server" Width="42px" Enabled="False"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Laboral <asp:TextBox ID="txtLaboral" runat="server" Width="48px" Enabled="False"></asp:TextBox>
         </td>
     </tr>
     <tr>
         <td class="auto-style4">
             Carrera</td>
         <td class="auto-style3">
-            <asp:TextBox ID="txtCarrera" runat="server" Width="567px"></asp:TextBox>
+            <asp:TextBox ID="txtCarrera" runat="server" Width="567px" Enabled="False"></asp:TextBox>
         </td>
     </tr>
 </table>
@@ -227,7 +226,7 @@
                         60%</td>
                     <td class="auto-style13">
 
-                        <asp:TextBox ID="txtInforme" runat="server" Height="58px" Width="51px"></asp:TextBox>
+                        <asp:TextBox ID="txtInforme" runat="server" Height="58px" Width="51px" Enabled="False"></asp:TextBox>
 
                     </td>
                 </tr>
@@ -242,7 +241,7 @@
                         40%</td>
                     <td class="auto-style13">
 
-                        <asp:TextBox ID="txtEmpresa" runat="server" Height="38px" Width="50px"></asp:TextBox>
+                        <asp:TextBox ID="txtEmpresa" runat="server" Height="38px" Width="50px" Enabled="False"></asp:TextBox>
 
                     </td>
                 </tr>
@@ -255,7 +254,7 @@
                     </td>
                     <td class="auto-style13">
 
-                        <asp:TextBox ID="txtNotaFinal" runat="server" Height="43px"></asp:TextBox>
+                        <asp:TextBox ID="txtNotaFinal" runat="server" Height="43px" Enabled="False"></asp:TextBox>
 
                     </td>
                 </tr>
@@ -265,5 +264,7 @@
 </table>
     <br />
 &nbsp;
+        <asp:Button ID="btnEnviar" runat="server" OnClick="btnEnviar_Click" Text="Enviar" />
+        <asp:Label ID="lblMensaje" runat="server" Text="Label"></asp:Label>
     </div>
 </asp:Content>

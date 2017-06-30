@@ -33,7 +33,7 @@ namespace Portafolio.Negocio
             PromedioProfesional = 0;
         }
 
-        public bool IngresarActa2(CentroPractica centro,int idpractica, int cant_horas,string fecha_inicio,string fecha_termino)
+        public bool IngresarActa2(int idpractica)
         {
             try
             {
@@ -49,9 +49,8 @@ namespace Portafolio.Negocio
                 cmd.Parameters.Add("p_tareas", OracleDbType.Varchar2).Value = this.PrincipalesTareas;
                 cmd.Parameters.Add("p_aportes", OracleDbType.Varchar2).Value = this.Aportes;
                 cmd.Parameters.Add("p_sugerencias", OracleDbType.Varchar2).Value = this.Sugerencias;
-                cmd.Parameters.Add("p_prom_personal", OracleDbType.Int32).Value = this.PromedioPersonal;
-                cmd.Parameters.Add("p_prom_profe", OracleDbType.Int32).Value = this.PromedioProfesional;
-                cmd.Parameters.Add("p_id_centro", OracleDbType.Int32).Value = centro.IdCentro;
+                cmd.Parameters.Add("p_prom_personal", OracleDbType.Double).Value = this.PromedioPersonal;
+                cmd.Parameters.Add("p_prom_profe", OracleDbType.Double).Value = this.PromedioProfesional;
                 cmd.Parameters.Add("p_id_practica", OracleDbType.Int32).Value = idpractica;
                
 

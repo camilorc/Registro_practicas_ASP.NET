@@ -24,8 +24,10 @@ namespace Portafolio.Testing
                 //acta2.PrincipalesTareas = "tareas de consola 3333";
                 //acta2.Aportes = "aportes de consola3333";
                 //acta2.Sugerencias = "sugerencia de consola33333";
-
-                //if (acta2.IngresarActa2())
+                //acta2.PromedioPersonal = 6.3;
+                //acta2.PromedioProfesional = 7.0;
+                //
+                //if (acta2.IngresarActa2(141))
                 //{
                 //    Console.WriteLine("Exito");
                 //
@@ -54,8 +56,8 @@ namespace Portafolio.Testing
                 //
                 //}
 
-                Usuario user = new Usuario();
-                DetallePracticaAlumno alum = new DetallePracticaAlumno();
+                //Usuario user = new Usuario();
+                //DetallePracticaAlumno alum = new DetallePracticaAlumno();
 
                 //foreach (var item in user.AlumnosAsignados(4444))
                 //{
@@ -94,7 +96,7 @@ namespace Portafolio.Testing
                 //
                 //}
 
-                Practica prac = new Practica();
+                //Practica prac = new Practica();
                 //if (prac.tieneNota3(5555))
                 //{
                 //    Console.WriteLine("ya tiene nota 3");
@@ -104,9 +106,18 @@ namespace Portafolio.Testing
                 //{
                 //    Console.WriteLine("no tiene nota 3");
                 //}
-                prac.IdPractica = 141;
-                prac.buscarPractica();
-                Console.WriteLine("Cantidad de horas"+prac.CantHoras);
+                //prac.IdPractica = 141;
+                //prac.buscarPractica();
+                //Console.WriteLine("Cantidad de horas"+prac.CantHoras);
+
+
+                Practica pra = new Practica();
+
+                if (pra.CambiarNotaFinal(44444,6.3)) {
+                    Console.WriteLine("Exito");
+                } else {
+                    Console.WriteLine("error");
+                }
 
             }
             catch (Exception e)

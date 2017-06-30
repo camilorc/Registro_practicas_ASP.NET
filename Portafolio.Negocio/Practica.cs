@@ -147,13 +147,72 @@ namespace Portafolio.Negocio
             }
         }
 
-        
+        public bool cambiarEstado(int rut_alumno, string estado) {
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["OracleDbContext"].ConnectionString;
+                OracleConnection _connection = new OracleConnection();
+                _connection.ConnectionString = connectionString;
+                _connection.Open();
 
-        
+                OracleCommand cmd = _connection.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "cambiar_estado_practica";
 
-        
+                cmd.Parameters.Add("p_rut_alumno", OracleDbType.Int32).Value = rut_alumno;
+                cmd.Parameters.Add("p_nuevo_estado", OracleDbType.Varchar2).Value = estado;
 
-     
- 
+                cmd.ExecuteNonQuery();
+                _connection.Close();
+
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+
+
+        }
+
+        public bool CambiarNotaFinal(int rut_alumno, double notaFinal)
+        {
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["OracleDbContext"].ConnectionString;
+                OracleConnection _connection = new OracleConnection();
+                _connection.ConnectionString = connectionString;
+                _connection.Open();
+
+                OracleCommand cmd = _connection.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "update_nota_final";
+
+                cmd.Parameters.Add("p_rut_alumno", OracleDbType.Int32).Value = rut_alumno;
+                cmd.Parameters.Add("p_nota_final", OracleDbType.Double).Value = notaFinal;
+
+                cmd.ExecuteNonQuery();
+                _connection.Close();
+
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+
+
+        }
+
+
+
+
+
+
+
+
+
     }
 }

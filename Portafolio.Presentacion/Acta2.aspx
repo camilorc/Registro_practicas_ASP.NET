@@ -123,7 +123,7 @@
             <tr>
                 <td class="auto-style1">Nombre Completo</td>
                 <td>
-                    <asp:DropDownList ID="ddl_alumnos" runat="server" AutoPostBack="True" Width="301px">
+                    <asp:DropDownList ID="ddl_alumnos" runat="server" AutoPostBack="True" Width="301px" OnSelectedIndexChanged="ddl_alumnos_SelectedIndexChanged">
                     </asp:DropDownList>
                     </td>
                 <td>&nbsp;</td>

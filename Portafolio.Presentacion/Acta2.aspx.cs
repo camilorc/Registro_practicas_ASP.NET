@@ -62,6 +62,13 @@ namespace Portafolio.Presentacion
 
             }
 
+            cargarDatosFormulario();
+
+            
+        }
+
+        private void cargarDatosFormulario()
+        {
             //Cargamos los txt dependiendo el alumno
             Usuario alum = new Usuario()
             {
@@ -96,9 +103,6 @@ namespace Portafolio.Presentacion
             txt_ini_prac.Text = prac.FechaInicio;
             txt_term_prac.Text = prac.FechaTermino;
             txt_horas_prac.Text = prac.CantHoras.ToString();
-
-
-
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -109,21 +113,12 @@ namespace Portafolio.Presentacion
                 acta2.PrincipalesTareas = txtTareas.Text;
                 acta2.Aportes = txtAportes.Text;
                 acta2.Sugerencias = txtSugerencias.Text;
-                acta2.PromedioPersonal = int.Parse(txt_prom_personal.Text);
-                acta2.PromedioProfesional = int.Parse(txt_prom_prof.Text);
+                acta2.PromedioPersonal = double.Parse(txt_prom_personal.Text);
+                acta2.PromedioProfesional = double.Parse(txt_prom_prof.Text);
 
-                //Asignamos valores del formulario al Centro de práctica
-                CentroPractica cen = new CentroPractica();
-                cen.NombreCentro = txt_nom_emp.Text;
-                cen.DireccionCentro = txt_direc_emp.Text;
-                cen.RazonSocial = txt_razon_emp.Text;
-                cen.Web = txt_web_emp.Text;
-                cen.Fono = int.Parse(txt_fono_emp.Text);
-                cen.Email = txt_email_emp.Text;
+                
 
-                Console.WriteLine("Vmos los datos antes del método: " + cen.RazonSocial);
-
-                if (acta2.IngresarActa2(cen, idpracticaparametro, int.Parse(txt_horas_prac.Text), txt_ini_prac.Text, txt_term_prac.Text))
+                if (acta2.IngresarActa2(idpracticaparametro))
                 {
                     lbl_mensaje.Text = "Éxito";
 
@@ -191,6 +186,9 @@ namespace Portafolio.Presentacion
             Response.Redirect("LoginCentroPractica.aspx");
         }
 
-
+        protected void ddl_alumnos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cargarDatosFormulario();
+        }
     }
 }
