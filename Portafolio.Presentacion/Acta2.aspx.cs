@@ -55,11 +55,8 @@ namespace Portafolio.Presentacion
                                 Text = item.Nombres,
                                 Value = item.Rut.ToString()
                             }
-
                         );
-
                 }
-
             }
 
             //Cargamos los txt dependiendo el alumno
@@ -96,7 +93,7 @@ namespace Portafolio.Presentacion
             txt_ini_prac.Text = prac.FechaInicio;
             txt_term_prac.Text = prac.FechaTermino;
             txt_horas_prac.Text = prac.CantHoras.ToString();
-
+            
 
 
         }
@@ -126,28 +123,17 @@ namespace Portafolio.Presentacion
                 if (acta2.IngresarActa2(cen, idpracticaparametro, int.Parse(txt_horas_prac.Text), txt_ini_prac.Text, txt_term_prac.Text))
                 {
                     lbl_mensaje.Text = "Éxito";
-
                 }
                 else
                 {
                     lbl_mensaje.Text = "Ocurrio un error";
                 }
-
-
-
-
             }
             catch (Exception)
             {
 
                 lbl_mensaje.Text = "Ocurrio un error";
             }
-
-
-
-
-
-
         }
 
         protected void btn_prom_personal_Click(object sender, EventArgs e)
@@ -159,9 +145,6 @@ namespace Portafolio.Presentacion
 
             double promedio = (suma / 11);
             txt_prom_personal.Text = String.Format("{0:0.0}", promedio);
-            
-
-
         }
 
         protected void btn_prom_profesional_Click(object sender, EventArgs e)

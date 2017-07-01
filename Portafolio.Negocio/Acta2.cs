@@ -68,10 +68,6 @@ namespace Portafolio.Negocio
                 Console.ReadLine();
                 return false;
             }
-
-
-
-
         }
     }
 }

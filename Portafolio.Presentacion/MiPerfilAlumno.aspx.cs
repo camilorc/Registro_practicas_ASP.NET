@@ -34,22 +34,6 @@ namespace Portafolio.Presentacion
                 Session["alumno"] = value;
             }  
         }
-
-        public Practica Practica
-        {
-            get
-            {
-                if (Session["practica"] == null)
-                {
-                    Session["practica"] = new Practica();
-                }
-                return (Practica)Session["practica"];
-            }
-            set
-            {
-                Session["practica"] = value;
-            }
-        }
         
         protected void btnEditar_Click(object sender, EventArgs e)
         {
@@ -86,16 +70,12 @@ namespace Portafolio.Presentacion
             txtDireccion.Text = Alumno.Direccion;
             txtNacimiento.Text = Alumno.FechaNac.ToShortDateString();
             txtTelefono.Text = Alumno.Telefono.ToString();
-            if (Practica.Nota3 == 0)
-            {
-                txtNota3.Text = "No calificado";
-            }
-            else
-            {
-                txtNota3.Text = Practica.Nota3.ToString();
-            }
-            txtFinal.Text = Practica.NotaFinal.ToString();
-            txtActa2.Text = Practica.FechaInicio;
+
+
+            Practica pra = new Practica();
+            pra.LlenarActa1(Alumno.Rut);
+            txtNota3.Text = pra.Nota3.ToString();
+
         }
     }
 }

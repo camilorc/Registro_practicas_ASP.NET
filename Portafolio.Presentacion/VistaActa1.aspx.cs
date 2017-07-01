@@ -8,6 +8,8 @@ using Microsoft;
 using iTextSharp.text.pdf;
 using System.IO;
 using Portafolio.Negocio;
+using Oracle.ManagedDataAccess.Client;
+using System.Configuration;
 
 namespace Portafolio.Presentacion
 {
@@ -32,30 +34,46 @@ namespace Portafolio.Presentacion
                 Session["alumno"] = value;
             }
         }
-        public Practica Practica
-        {
-            get
-            {
-                if (Session["practica"] == null)
-                {
-                    Session["practica"] = new Practica();
-                }
-                return (Practica)Session["practica"];
-            }
-            set
-            {
-                Session["practica"] = value;
-            }
-        }
-
-
-
         protected void btnCargarDatos_Click(object sender, EventArgs e)
         {
             LblNombreAlumno.Text = Alumno.Nombres +" "+ Alumno.Apellido1 +" "+Alumno.Apellido2;
             lblRutAlumno.Text = Alumno.Rut.ToString();
-            lblFechaInicio.Text = Practica.FechaInicio;
 
+            CentroPractica ce = new CentroPractica();
+            ce.LlenarActa1(Alumno.Rut);
+            lblDireccionCentro.Text = ce.DireccionCentro;
+            lblDepartamentoCentro.Text = ce.DepartamentoCentro;
+            lblNombreCentroPractica.Text = ce.NombreCentro;
+
+            Practica pra = new Practica();
+            pra.LlenarActa1(Alumno.Rut);
+            lblFechaInicio.Text = pra.FechaInicio.ToString();
+            lblFechaTermino.Text = pra.FechaTermino.ToString();
+            lblCarrera.Text = pra.Nota3.ToString();
+
+            //Carrera
+            Carrera carrera = new Carrera();
+            carrera.buscarCarrera(Alumno.Rut);
+            lblCarrera.Text = carrera.NombreCarrera;
+
+
+            //Jefe
+            Usuario jefe = new Usuario();
+            jefe.buscarJefe(pra.RutEmpleador);
+            lblNombreJefe.Text = jefe.Nombres + " " + jefe.Apellido1 + " " + jefe.Apellido2;
+            lblTelefonoJefe.Text = jefe.Telefono.ToString();
+            lblCargoJefe.Text = "Ingeniero Civil";
+            lblCorreoJefe.Text = jefe.Correo;
+
+            //Docente 
+            Usuario profe = new Usuario();
+            profe.buscarProfeRut(Alumno.Rut);
+            int profeRut =profe.Rut;
+
+            Usuario profesor = new Usuario();
+            profesor.buscarJefe(pra.RutDocente);
+            lblProfesorGuia.Text = profesor.Nombres + " " + profesor.Apellido1 + " " + profesor.Apellido2;
         }
+        
     }
 }

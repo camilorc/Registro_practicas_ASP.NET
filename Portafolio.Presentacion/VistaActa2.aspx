@@ -54,6 +54,8 @@ ventimp.document.head.appendChild(css);
     <a href="javascript:imprSelec('paraimprimir')">Imprimir</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
     <asp:HyperLink ID="hyperlink1" NavigateUrl="~/Archivo/ACTA2.pdf" Text="descargar" Target="_new" runat="server"/>
     <br />
+    <asp:Button ID="btnCargar" runat="server" Text="Cargar Datos" Height="43px" OnClick="btnCargar_Click" Width="136px" />
+    <br />
     <div id="paraimprimir">
 <DIV TYPE=HEADER>
 	<P LANG="es-CL" STYLE="margin-bottom: 0in"><BR>
@@ -93,6 +95,7 @@ alumno.</SPAN></FONT></FONT></FONT></P>
 		</TD>
 		<TD WIDTH=391 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
 			<P LANG="en-US"><BR>
+			    <asp:Label ID="lblNombreAlumno" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
 	</TR>
@@ -101,7 +104,9 @@ alumno.</SPAN></FONT></FONT></FONT></P>
 			<P><FONT FACE="Calibri, serif"><FONT SIZE=2><SPAN LANG="en-US">RUT</SPAN></FONT></FONT></P>
 		</TD>
 		<TD WIDTH=391 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
-			<P LANG="en-US"><BR>
+			<P LANG="en-US">
+                <asp:Label ID="lblRutAlumno" runat="server" Text=""></asp:Label>
+                <BR>
 			</P>
 		</TD>
 	</TR>
@@ -110,7 +115,9 @@ alumno.</SPAN></FONT></FONT></FONT></P>
 			<P><FONT FACE="Calibri, serif"><FONT SIZE=2><SPAN LANG="en-US">Domicilio</SPAN></FONT></FONT></P>
 		</TD>
 		<TD WIDTH=391 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
-			<P LANG="en-US"><BR>
+			<P LANG="en-US">
+                <asp:Label ID="lblDomicilioAlumno" runat="server" Text=""></asp:Label>
+                <BR>
 			</P>
 		</TD>
 	</TR>
@@ -119,7 +126,9 @@ alumno.</SPAN></FONT></FONT></FONT></P>
 			<P><FONT FACE="Calibri, serif"><FONT SIZE=2><SPAN LANG="en-US">Carrera</SPAN></FONT></FONT></P>
 		</TD>
 		<TD WIDTH=391 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
-			<P LANG="en-US"><BR>
+			<P LANG="en-US">
+                <asp:Label ID="lblCarrera" runat="server" Text=""></asp:Label>
+                <BR>
 			</P>
 		</TD>
 	</TR>
@@ -140,7 +149,9 @@ alumno.</SPAN></FONT></FONT></FONT></P>
 			</P>
 		</TD>
 		<TD WIDTH=391 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
-			<P LANG="en-US"><BR>
+			<P LANG="en-US">
+                <asp:Label ID="lblNombreEmpresa" runat="server" Text=""></asp:Label>
+                <BR>
 			</P>
 		</TD>
 	</TR>
@@ -151,6 +162,7 @@ alumno.</SPAN></FONT></FONT></FONT></P>
 		</TD>
 		<TD WIDTH=391 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
 			<P LANG="en-US"><BR>
+			    <asp:Label ID="lblRazonSocial" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
 	</TR>
@@ -160,6 +172,7 @@ alumno.</SPAN></FONT></FONT></FONT></P>
 		</TD>
 		<TD WIDTH=391 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
 			<P LANG="en-US"><BR>
+			    <asp:Label ID="lblDireccionEmpresa" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
 	</TR>
@@ -169,7 +182,9 @@ alumno.</SPAN></FONT></FONT></FONT></P>
 			WEB</SPAN></FONT></FONT></P>
 		</TD>
 		<TD WIDTH=391 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
-			<P LANG="en-US"><BR>
+			<P LANG="en-US">
+                <asp:Label ID="lblWebEmpresa" runat="server" Text=""></asp:Label>
+                <BR>
 			</P>
 		</TD>
 	</TR>
@@ -180,6 +195,7 @@ alumno.</SPAN></FONT></FONT></FONT></P>
 		</TD>
 		<TD WIDTH=391 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
 			<P LANG="en-US"><BR>
+			    <asp:Label ID="lblNombreJefe" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
 	</TR>
@@ -190,6 +206,7 @@ alumno.</SPAN></FONT></FONT></FONT></P>
 		</TD>
 		<TD WIDTH=391 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
 			<P LANG="en-US"><BR>
+			    <asp:Label ID="lblTelefonoJefe" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
 	</TR>
@@ -199,7 +216,9 @@ alumno.</SPAN></FONT></FONT></FONT></P>
 			electrónico</SPAN></FONT></FONT></P>
 		</TD>
 		<TD WIDTH=391 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
-			<P LANG="en-US"><BR>
+			<P LANG="en-US">
+                <asp:Label ID="lblCorreoJEfe" runat="server" Text=""></asp:Label>
+                <BR>
 			</P>
 		</TD>
 	</TR>
@@ -220,6 +239,7 @@ alumno.</SPAN></FONT></FONT></FONT></P>
 		</TD>
 		<TD WIDTH=391 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
 			<P LANG="en-US"><BR>
+			    <asp:Label ID="lblNombreProfe" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
 	</TR>
@@ -228,7 +248,9 @@ alumno.</SPAN></FONT></FONT></FONT></P>
 			<P><FONT FACE="Calibri, serif"><FONT SIZE=2><SPAN LANG="en-US">RUT</SPAN></FONT></FONT></P>
 		</TD>
 		<TD WIDTH=391 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
-			<P LANG="en-US"><A NAME="_GoBack"></A><BR>
+			<P LANG="en-US">
+                <asp:Label ID="lblRutProfe" runat="server" Text=""></asp:Label>
+                <BR>
 			</P>
 		</TD>
 	</TR>
@@ -239,6 +261,7 @@ alumno.</SPAN></FONT></FONT></FONT></P>
 		</TD>
 		<TD WIDTH=391 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
 			<P LANG="en-US"><BR>
+			    <asp:Label ID="lblTelefonoProfe" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
 	</TR>
@@ -249,6 +272,7 @@ alumno.</SPAN></FONT></FONT></FONT></P>
 		</TD>
 		<TD WIDTH=391 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
 			<P LANG="en-US"><BR>
+			    <asp:Label ID="lblCorreoProfe" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
 	</TR>
@@ -268,6 +292,7 @@ alumno.</SPAN></FONT></FONT></FONT></P>
 		</TD>
 		<TD WIDTH=391 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
 			<P LANG="en-US"><BR>
+			    <asp:Label ID="lblFechaInicio" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
 	</TR>
@@ -278,6 +303,7 @@ alumno.</SPAN></FONT></FONT></FONT></P>
 		</TD>
 		<TD WIDTH=391 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
 			<P LANG="en-US"><BR>
+			    <asp:Label ID="lblFechaTermino" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
 	</TR>
@@ -288,6 +314,7 @@ alumno.</SPAN></FONT></FONT></FONT></P>
 		</TD>
 		<TD WIDTH=391 VALIGN=TOP STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
 			<P LANG="en-US"><BR>
+			    <asp:Label ID="lblCantHoras" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
 	</TR>

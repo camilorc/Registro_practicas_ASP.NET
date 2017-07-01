@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,10 +44,8 @@ namespace Portafolio.Negocio
             Pass = "";
         }
 
-        
-
-
-        public CentroPractica iniciarSesion() {
+        public CentroPractica iniciarSesion()
+        {
             try
             {
                 var connectionString = ConfigurationManager.ConnectionStrings["OracleDbContext"].ConnectionString;
@@ -56,12 +55,13 @@ namespace Portafolio.Negocio
 
                 string sql = "Select idcentropractica,nombre_centro,direccion_centro,departamento_centro,area_centro,username,razon_social,web,fono,email FROM centro_practica WHERE nombre_centro = '" + this.Username + "'";
 
-                OracleCommand cmd = new OracleCommand(sql,_connection);
+                OracleCommand cmd = new OracleCommand(sql, _connection);
 
                 var centro = cmd.ExecuteReader();
-                while (centro.Read()) {
+                while (centro.Read())
+                {
                     IdCentro = centro.GetInt32(0);
-                    NombreCentro =centro.GetString(1);
+                    NombreCentro = centro.GetString(1);
                     DireccionCentro = centro.GetString(2);
                     DepartamentoCentro = centro.GetString(3);
                     AreaCentro = centro.GetString(4);
@@ -70,12 +70,8 @@ namespace Portafolio.Negocio
                     Web = centro.GetString(7);
                     Fono = centro.GetInt32(8);
                     Email = centro.GetString(9);
-                    
-
                 }
-
                 return this;
-
             }
             catch (Exception)
             {
@@ -84,7 +80,8 @@ namespace Portafolio.Negocio
             }
         }
 
-        public List<Usuario> alumnosEnPractica() {
+        public List<Usuario> alumnosEnPractica()
+        {
             try
             {
                 List<Usuario> users = new List<Usuario>();
@@ -93,40 +90,32 @@ namespace Portafolio.Negocio
                 _connection.ConnectionString = connectionString;
                 _connection.Open();
 
-                string sql = "select * from Usuario JOIN PRACTICA ON Usuario.PRACTICA_IDPRACTICA = PRACTICA.IDPRACTICA JOIN CENTRO_PRACTICA ON PRACTICA.IDCENTROPRACTICA = CENTRO_PRACTICA.IDCENTROPRACTICA WHERE CENTRO_PRACTICA.IDCENTROPRACTICA = '"+this.IdCentro+"' AND Usuario.ROLES_IDROL = 4";
+                string sql = "select * from Usuario JOIN PRACTICA ON Usuario.PRACTICA_IDPRACTICA = PRACTICA.IDPRACTICA JOIN CENTRO_PRACTICA ON PRACTICA.IDCENTROPRACTICA = CENTRO_PRACTICA.IDCENTROPRACTICA WHERE CENTRO_PRACTICA.IDCENTROPRACTICA = '" + this.IdCentro + "' AND Usuario.ROLES_IDROL = 4";
 
                 OracleCommand cmd = new OracleCommand(sql, _connection);
 
                 var alumnos = cmd.ExecuteReader();
 
-                while (alumnos.Read()) {
+                while (alumnos.Read())
+                {
                     Usuario user = new Usuario();
                     user.Rut = alumnos.GetInt32(0);
-                    user.Nombres = alumnos.GetString(3)+" "+alumnos.GetString(4)+" "+alumnos.GetString(5);
+                    user.Nombres = alumnos.GetString(3) + " " + alumnos.GetString(4) + " " + alumnos.GetString(5);
                     user.Direccion = alumnos.GetString(7);
                     users.Add(user);
-                                       
                 }
-
                 return users;
-
-
-
             }
             catch (Exception)
             {
-
                 throw;
             }
-
-
-
         }
 
-        public bool ValidarUsuario(string username, string pass) {
+        public bool ValidarUsuario(string username, string pass)
+        {
             try
             {
-
                 var connectionString = ConfigurationManager.ConnectionStrings["OracleDbContext"].ConnectionString;
                 OracleConnection _connection = new OracleConnection();
                 _connection.ConnectionString = connectionString;
@@ -138,38 +127,108 @@ namespace Portafolio.Negocio
 
                 var centro = cmd.ExecuteReader();
                 while (centro.Read())
-                    {
-                        IdCentro = centro.GetInt32(0);
-                        NombreCentro = centro.GetString(1);
-                        DireccionCentro = centro.GetString(2);
-                        DepartamentoCentro = centro.GetString(3);
-                        AreaCentro = centro.GetString(4);
-                        Username = centro.GetString(5);
-                        RazonSocial = centro.GetString(6);
-                        Web = centro.GetString(7);
-                        Fono = centro.GetInt32(8);
-                        Email = centro.GetString(9);
+                {
+                    IdCentro = centro.GetInt32(0);
+                    NombreCentro = centro.GetString(1);
+                    DireccionCentro = centro.GetString(2);
+                    DepartamentoCentro = centro.GetString(3);
+                    AreaCentro = centro.GetString(4);
+                    Username = centro.GetString(5);
+                    RazonSocial = centro.GetString(6);
+                    Web = centro.GetString(7);
+                    Fono = centro.GetInt32(8);
+                    Email = centro.GetString(9);
                 }
 
                 if (centro.HasRows)
                 {
                     return true;
                 }
-                else {
+                else
+                {
                     return false;
                 }
-            
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
+        public bool LlenarActa1(int rutAlumno)
+        {
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["OracleDbContext"].ConnectionString;
+                OracleConnection _connection = new OracleConnection();
+                _connection.ConnectionString = connectionString;
+                _connection.Open();
+
+                string sql = "select nombre_centro, direccion_centro, departamento_centro, area_centro, razon_social, web, fono, email from usuario join practica on(usuario.practica_idpractica = practica.idpractica) join centro_practica on(practica.idcentropractica = centro_practica.idcentropractica) where rut = '" + rutAlumno + "'";
+                OracleCommand cmd = new OracleCommand(sql, _connection);
+
+                var alumnos = cmd.ExecuteReader();
+
+                while (alumnos.Read())
+                {
+                    NombreCentro = alumnos.GetString(0);
+                    DireccionCentro = alumnos.GetString(1);
+                    DepartamentoCentro = alumnos.GetString(2);
+                    AreaCentro = alumnos.GetString(3);
+                    RazonSocial = alumnos.GetString(4);
+                    Web = alumnos.GetString(5);
+                    Fono = alumnos.GetInt32(6);
+                    Email = alumnos.GetString(7);
+                }
+
+                if (alumnos.HasRows)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool EditarCentro(int id, string nombre, string direccion, string departamento, string area, string razon, string web, int fono, string mail)
+        {
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["OracleDbContext"].ConnectionString;
+                OracleConnection _connection = new OracleConnection();
+                _connection.ConnectionString = connectionString;
+                _connection.Open();
+
+                OracleCommand cmd = _connection.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "EDITAR_CENTRO";
+
+                cmd.Parameters.Add("p_idcentro", OracleDbType.Int32).Value = id;
+                cmd.Parameters.Add("p_nombre", OracleDbType.Varchar2).Value = nombre;
+                cmd.Parameters.Add("p_direccion", OracleDbType.Varchar2).Value = direccion;
+                cmd.Parameters.Add("p_departamento", OracleDbType.Varchar2).Value = departamento;
+                cmd.Parameters.Add("p_area", OracleDbType.Varchar2).Value = area;
+                cmd.Parameters.Add("p_razon", OracleDbType.Varchar2).Value = razon;
+                cmd.Parameters.Add("p_web", OracleDbType.Varchar2).Value = web;
+                cmd.Parameters.Add("p_fono", OracleDbType.Int32).Value = fono;
+                cmd.Parameters.Add("p_mail", OracleDbType.Varchar2).Value = mail;
+
+                cmd.ExecuteReader();
+                _connection.Close();
+
+                return true;
             }
             catch (Exception)
             {
                 return false;
             }
 
-
-
         }
-
-
     }
 }

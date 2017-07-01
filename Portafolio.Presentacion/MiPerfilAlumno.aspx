@@ -7,7 +7,7 @@
             
         }
         .auto-style6 {
-            width: 429px;
+            width: 433px;
             height: 224px;
         }
         .auto-style7 {
@@ -23,6 +23,9 @@
         .auto-style11 {
             color: #0000FF;
         }
+        .auto-style12 {
+            width: 433px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -30,7 +33,7 @@
         <asp:Panel ID="Panel4" runat="server" Width="999px">
             <table class="auto-style4">
                 <tr>
-                    <td class="auto-style10">
+                    <td class="auto-style12">
 
                     </td>
                     <td>
@@ -59,11 +62,11 @@
                     </td>
                 </tr>
                  <tr>
-                    <td class="auto-style10">
+                    <td class="auto-style12">
 
-                        <asp:Button ID="btnEditar" runat="server" Text="Editar" OnClick="btnEditar_Click" />
+                        <asp:Button ID="btnEditar" runat="server" Text="Editar" OnClick="btnEditar_Click" Height="39px" Width="74px" />
                         <br />
-                        <asp:Button ID="btnLimpiar" runat="server" Text="Limpiar" OnClick="btnLimpiar_Click" />
+                        <asp:Button ID="btnLimpiar" runat="server" Text="Limpiar" OnClick="btnLimpiar_Click" Height="39px" Width="77px" />
 
                     </td>
                     <td>
@@ -93,7 +96,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td class="auto-style12">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Label ID="Label4" runat="server" Text="Mis Notas" Font-Size="Medium" ForeColor="LightBlue"></asp:Label>
                         &nbsp;&nbsp;<span class="auto-style11">&nbsp;</span>&nbsp;<asp:Label ID="Label9" runat="server" ForeColor="Blue" Text="Empleador"></asp:Label>
@@ -101,7 +104,7 @@
                     </td>
                     <td>
                         <asp:Label ID="Label7" runat="server" Text="Informe" ForeColor="Blue"></asp:Label>
-                        &nbsp;&nbsp;<asp:TextBox ID="txtNota3" runat="server" Height="70px" Width="95px" ReadOnly="true"></asp:TextBox>
+                        &nbsp;&nbsp;<asp:TextBox ID="txtNota3" runat="server" Height="70px" Width="95px" ReadOnly="true" ></asp:TextBox>
                         <asp:Label ID="Label5" ForeColor="lightBlue" runat="server" Font-Size="Small" Text="Nota Final"></asp:Label>
 &nbsp;
                         <asp:TextBox ID="txtFinal" runat="server" Height="70px" Width="95px" ReadOnly="true"></asp:TextBox>

@@ -220,6 +220,8 @@ N°1</B></FONT></FONT></P>
 		</TD>
 		<TD WIDTH=24 STYLE="border-top: 1px solid #00000a; border-bottom: 1px solid #00000a; border-left: 1px solid #00000a; border-right: 1.00pt solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
 			<P>         
+			    &nbsp;</P>
+            <P>         
 			    <asp:Label ID="lblDondeSi" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>

@@ -21,3 +21,24 @@ DBMS_OUTPUT.PUT_LINE('Error: Usuario no encontrado '||SQLCODE);
   DBMS_OUTPUT.PUT_LINE('Error: Usuario no encontrado '||sqlerrm);
 
 END;
+
+create or replace PROCEDURE editar_centro(p_idcentro number, p_nombre VARCHAR2, p_direccion VARCHAR2, p_departamento VARCHAR2, p_area VARCHAR2, p_razon VARCHAR2,
+p_web varchar2, p_fono NUMBER, p_mail VARCHAR2)
+IS BEGIN
+  UPDATE CENTRO_PRACTICA
+  SET NOMBRE_CENTRO = p_nombre,
+  DIRECCION_CENTRO = p_direccion, 
+  DEPARTAMENTO_CENTRO = p_departamento, 
+  AREA_CENTRO = p_area,
+  RAZON_SOCIAL = p_razon,
+  WEB = p_web,
+  FONO = p_fono,
+  EMAIL = p_mail
+  WHERE IDCENTROPRACTICA = p_idcentro;
+
+  EXCEPTION
+  WHEN OTHERS  THEN
+  DBMS_OUTPUT.PUT_LINE('Error: Usuario no encontrado '||SQLCODE);
+  DBMS_OUTPUT.PUT_LINE('Error: Usuario no encontrado '||sqlerrm);
+END;
+

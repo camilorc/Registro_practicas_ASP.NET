@@ -54,10 +54,12 @@
     <a href="javascript:imprSelec('paraimprimir')">Imprimir</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
     <asp:HyperLink ID="hyperlink1" NavigateUrl="~/Archivo/ACTA3.pdf" Text="descargar" Target="_new" runat="server"/>
     <br />
+    <br />
     <div id="paraimprimir">
-<BODY LANG="es-CL" LINK="#0000ff" DIR="LTR">
+        <asp:Button ID="btnCargarDatos" runat="server" Height="32px" Text="Cargar Datos" Width="78px" OnClick="btnCargarDatos_Click" />
+<BODY>
 <H3 CLASS="western" STYLE="text-indent: 0.49in"><A NAME="_Toc362353347"></A>
-<I>Pauta de Evaluación Informe de Práctica</I></H3>
+<I>Pauta de Evaluación Informe de Prácticaauta de Evaluación Informe de Práctica</I></H3>
 <P CLASS="western" STYLE="margin-bottom: 0in"><BR>
 </P>
 <TABLE WIDTH=599 CELLPADDING=7 CELLSPACING=0>
@@ -362,7 +364,8 @@
 							Final</FONT></FONT></FONT></P>
 						</TD>
 						<TD WIDTH=73 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: 1.00pt solid #00000a; border-left: none; border-right: 1.00pt solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.05in">
-							<P CLASS="western" ALIGN=CENTER><FONT COLOR="#000000">&nbsp;</FONT></P>
+							<P CLASS="western" ALIGN=CENTER><FONT COLOR="#000000">&nbsp;<asp:Label ID="lblNota3" runat="server" Text=""></asp:Label>
+                                </FONT></P>
 						</TD>
 					</TR>
 				</TBODY>

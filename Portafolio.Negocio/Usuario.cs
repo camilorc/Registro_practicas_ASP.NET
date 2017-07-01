@@ -292,5 +292,37 @@ namespace Portafolio.Negocio
                 return false;
             }
         }
+
+        public void buscarJefe(string empleador)
+        {
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["OracleDbContext"].ConnectionString;
+                OracleConnection _connection = new OracleConnection();
+                _connection.ConnectionString = connectionString;
+                _connection.Open();
+
+                string sql = "select  * from usuario where rut = '"+empleador+"'";
+                OracleCommand cmd = new OracleCommand(sql, _connection);
+
+                var pract = cmd.ExecuteReader();
+
+                while (pract.Read())
+                {
+                    Nombres = pract.GetString(3);
+                    Apellido1 = pract.GetString(4);
+                    Apellido2 = pract.GetString(5);
+                    Correo = pract.GetString(9);
+                    Telefono = pract.GetInt32(8);
+                    Apellido1 = pract.GetString(4);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Mensaje: " + e.Message);
+            }
+        }
+
+        
     }
 }

@@ -1,10 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Empleador.Master" AutoEventWireup="true" CodeBehind="InicioEmpleador.aspx.cs" Inherits="WebApplication1.InicioEmpleador" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
-        .auto-style1 {
-            width: 974px;
-        }
-        <style type="text/css" >
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Empleador.master.cs" Inherits="Portafolio.Presentacion.Empleador" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        <style>
+
+            <style type="text/css" >
         body
         {
          background: url("Imagenes/") no-repeat center center;
@@ -74,27 +78,31 @@
 			right:-140px;
 			top:0px;
 		}
-        .auto-style1 {
-            left: -2px;
-            top: -1px;
-            background-color:lightblue;
-        }
-        .auto-style3 {
-            left: 0px;
-            top: 0px;
-            width: 188px;
-        }
+            .auto-style4 {
+                width: 196px;
+            }
         </style>
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <br />
-            <div class="row">
-            <div class="col-md-6">
-                <h2>Bienvenido(a) <asp:Label ID="lbl_nom_centro" runat="server" Text="Label"></asp:Label></h2>
-                <p>&nbsp;</p>
- 
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="nav nav-pills">
+                            <li role="presentation" class="active"><a href="InicioEmpleador.aspx">Home</a></li>
+                            <li role="presentation" oncancel="active"><a href="Acta2.aspx" runat="server">Evaluar</a></li>
+                            <li role="presentation" oncancel="active"><a href="MiPerfilEmpleador.aspx" runat="server">Mi Perfil</a></li>
+                             </ul>
+                    </div>
+                </div>
             </div>
-        </div>
-
-      
-</asp:Content>
+        
+        
+    </div>
+    </form>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+</body>
+</html>

@@ -12,8 +12,19 @@ namespace Portafolio.Presentacion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblArea.Text = Centro.AreaCentro;
-            lblNombrePractica.Text = Centro.NombreCentro;
+            if (!IsPostBack)
+            {
+                CentroPractica ce = new CentroPractica();
+                ce.LlenarActa1(Alumno.Rut);
+                lblArea.Text = ce.AreaCentro;
+                lblDepartamento.Text = ce.DepartamentoCentro;
+                lblDireccion.Text = ce.DireccionCentro;
+                lblFono.Text = ce.Fono.ToString();
+                lblMail.Text = ce.Email;
+                lblNombrePractica.Text = ce.NombreCentro;
+                lblRazon.Text = ce.RazonSocial;
+                lblWeb.Text = ce.Web;
+            }
             
              
 
@@ -34,35 +45,6 @@ namespace Portafolio.Presentacion
                 Session["alumno"] = value;
             }
         }
-        public Practica Practica
-        {
-            get
-            {
-                if (Session["practica"] == null)
-                {
-                    Session["practica"] = new Practica();
-                }
-                return (Practica)Session["practica"];
-            }
-            set
-            {
-                Session["practica"] = value;
-            }
-        }
-        public CentroPractica Centro
-        {
-            get
-            {
-                if (Session["centro"] == null)
-                {
-                    Session["centro"] = new CentroPractica();
-                }
-                return (CentroPractica)Session["centro"];
-            }
-            set
-            {
-                Session["centro"] = value;
-            }
-        }
+        
     }
 }

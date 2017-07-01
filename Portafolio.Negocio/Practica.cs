@@ -20,9 +20,11 @@ namespace Portafolio.Negocio
         public string FechaTermino { get; set; }
         public char Distancia { get; set; }
         public string Donde { get; set; }
-        public double NotaFinal { get; set; }
-        public int Nota3 { get; set; }
+        public float NotaFinal { get; set; }
+        public float Nota3 { get; set; }
         public bool Estado { get; set; }
+        public string RutEmpleador { get; set; }
+        public string RutDocente { get; set; }
 
         public Practica()
         {
@@ -41,6 +43,8 @@ namespace Portafolio.Negocio
             NotaFinal = 0;
             Nota3 = 0;
             Estado = true;
+            RutEmpleador = "";
+            RutDocente = "";
         }
 
         //Método para buscar una práctica según el IDPRACTICA en la BD
@@ -60,9 +64,14 @@ namespace Portafolio.Negocio
 
                 while (pract.Read())
                 {
+                    RutEmpleador = pract.GetString(2);
                     FechaInicio = pract.GetDateTime(6).ToString();
                     FechaTermino = pract.GetDateTime(5).ToString();
                     CantHoras = pract.GetInt32(4);
+                    Nota3 = pract.GetInt32(10);
+                    NotaFinal = pract.GetInt32(9);
+                    Donde = pract.GetString(8);
+                    Distancia = pract.GetChar(7);
                 }
             }
             catch (Exception e)
@@ -82,7 +91,7 @@ namespace Portafolio.Negocio
                 _connection.Open();
 
                 OracleCommand cmd = _connection.CreateCommand();
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "UPDATE_ACTA3_ALUMNO";
 
                 cmd.Parameters.Add("p_rut_alumno", OracleDbType.Int32).Value = rut_alumno;
@@ -90,10 +99,6 @@ namespace Portafolio.Negocio
 
                 cmd.ExecuteNonQuery();
                 _connection.Close();
-
-
-
-
                 return true;
             }
             catch (Exception)
@@ -101,10 +106,6 @@ namespace Portafolio.Negocio
 
                 return false;
             }
-
-
-
-
         }
 
         //MÉTODO PARA SABER SI YA TIENE UNA NOTA_3 
@@ -117,7 +118,7 @@ namespace Portafolio.Negocio
                 _connection.Open();
 
                 OracleCommand cmd = _connection.CreateCommand();
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "saber_si_tiene_nota3";
 
                 cmd.Parameters.Add("p_rut_alumno", OracleDbType.Int32).Value = rut_alumno;
@@ -126,8 +127,7 @@ namespace Portafolio.Negocio
                 cmd.ExecuteNonQuery();
 
                 Int32 nota3 = Convert.ToInt32((decimal)(OracleDecimal)(cmd.Parameters["p_nota3"].Value));
-
-
+                
                 Console.WriteLine("param: "+nota3);
                 if (nota3 > 0)
                 {
@@ -147,13 +147,46 @@ namespace Portafolio.Negocio
             }
         }
 
-        
+        public double LlenarActa1(int rutAlumno)
+        {
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["OracleDbContext"].ConnectionString;
+                OracleConnection _connection = new OracleConnection();
+                _connection.ConnectionString = connectionString;
+                _connection.Open();
 
-        
+                string sql = "select rutdocente, rutempleador, cant_horas, fecha_termino, fecha_inicio, distancia, donde, nota_final, nota_3 from usuario join practica on (usuario.practica_idpractica = practica.idpractica) where rut = " + rutAlumno;
+                OracleCommand cmd = new OracleCommand(sql, _connection);
 
-        
+                var alumnos = cmd.ExecuteReader();
 
-     
- 
+                while (alumnos.Read())
+                {
+                    RutDocente = alumnos.GetString(0);
+                    RutEmpleador = alumnos.GetString(1);
+                    CantHoras = alumnos.GetInt32(2);
+                    FechaTermino = alumnos.GetDateTime(3).ToShortDateString();
+                    FechaInicio = alumnos.GetDateTime(4).ToShortDateString();
+                    Distancia = alumnos.GetChar(5);
+                    Donde = alumnos.GetString(6);
+                    NotaFinal = alumnos.GetFloat(7);
+                    Nota3 = alumnos.GetFloat(8);
+                }
+                
+                if (alumnos.HasRows)
+                {
+                    return Nota3;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }
     }
 }
