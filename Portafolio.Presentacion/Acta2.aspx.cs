@@ -100,12 +100,6 @@ namespace Portafolio.Presentacion
             txt_ini_prac.Text = prac.FechaInicio;
             txt_term_prac.Text = prac.FechaTermino;
             txt_horas_prac.Text = prac.CantHoras.ToString();
-<<<<<<< HEAD
-            
-
-
-=======
->>>>>>> b16f6760de0bd4ded44eb73346baf825df36d633
         }
 
         protected void Button1_Click(object sender, EventArgs e)

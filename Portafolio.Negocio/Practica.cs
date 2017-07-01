@@ -20,8 +20,8 @@ namespace Portafolio.Negocio
         public string FechaTermino { get; set; }
         public char Distancia { get; set; }
         public string Donde { get; set; }
-        public float NotaFinal { get; set; }
-        public float Nota3 { get; set; }
+        public decimal NotaFinal { get; set; }
+        public decimal Nota3 { get; set; }
         public bool Estado { get; set; }
         public string RutEmpleador { get; set; }
         public string RutDocente { get; set; }
@@ -146,10 +146,7 @@ namespace Portafolio.Negocio
                 return false;
             }
         }
-
-<<<<<<< HEAD
-        public double LlenarActa1(int rutAlumno)
-=======
+        
         public bool cambiarEstado(int rut_alumno, string estado) {
             try
             {
@@ -159,7 +156,7 @@ namespace Portafolio.Negocio
                 _connection.Open();
 
                 OracleCommand cmd = _connection.CreateCommand();
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "cambiar_estado_practica";
 
                 cmd.Parameters.Add("p_rut_alumno", OracleDbType.Int32).Value = rut_alumno;
@@ -179,8 +176,10 @@ namespace Portafolio.Negocio
 
         }
 
-        public bool CambiarNotaFinal(int rut_alumno, double notaFinal)
->>>>>>> b16f6760de0bd4ded44eb73346baf825df36d633
+        
+
+
+        public bool LlenarActa1(int rutAlumno)
         {
             try
             {
@@ -188,11 +187,9 @@ namespace Portafolio.Negocio
                 OracleConnection _connection = new OracleConnection();
                 _connection.ConnectionString = connectionString;
                 _connection.Open();
-<<<<<<< HEAD
 
                 string sql = "select rutdocente, rutempleador, cant_horas, fecha_termino, fecha_inicio, distancia, donde, nota_final, nota_3 from usuario join practica on (usuario.practica_idpractica = practica.idpractica) where rut = " + rutAlumno;
                 OracleCommand cmd = new OracleCommand(sql, _connection);
-
                 var alumnos = cmd.ExecuteReader();
 
                 while (alumnos.Read())
@@ -204,28 +201,36 @@ namespace Portafolio.Negocio
                     FechaInicio = alumnos.GetDateTime(4).ToShortDateString();
                     Distancia = alumnos.GetChar(5);
                     Donde = alumnos.GetString(6);
-                    NotaFinal = alumnos.GetFloat(7);
-                    Nota3 = alumnos.GetFloat(8);
+                    NotaFinal = alumnos.GetDecimal(7);
+                    Nota3 = alumnos.GetDecimal(8);
                 }
-                
+
                 if (alumnos.HasRows)
                 {
-                    return Nota3;
+                    return true;
                 }
                 else
                 {
-                    return 0;
+                    return false;
                 }
             }
             catch (Exception)
             {
-                return 0;
+                return false;
             }
         }
-=======
 
-                OracleCommand cmd = _connection.CreateCommand();
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+        public bool CambiarNotaFinal(int rut_alumno, double notaFinal)
+        {
+            try { 
+            var connectionString = ConfigurationManager.ConnectionStrings["OracleDbContext"].ConnectionString;
+            OracleConnection _connection = new OracleConnection();
+            _connection.ConnectionString = connectionString;
+            _connection.Open();
+
+            OracleCommand cmd = _connection.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "update_nota_final";
 
                 cmd.Parameters.Add("p_rut_alumno", OracleDbType.Int32).Value = rut_alumno;
@@ -241,18 +246,7 @@ namespace Portafolio.Negocio
 
                 return false;
             }
-
-
         }
 
-
-
-
-
-
-
-
-
->>>>>>> b16f6760de0bd4ded44eb73346baf825df36d633
     }
 }

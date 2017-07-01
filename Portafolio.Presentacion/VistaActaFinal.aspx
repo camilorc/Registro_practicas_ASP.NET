@@ -47,6 +47,24 @@
 	    .auto-style4 {
             height: 25px;
         }
+	    .auto-style6 {
+            width: 44px;
+        }
+        .auto-style7 {
+            width: 169px;
+        }
+        .auto-style8 {
+            width: 127px;
+        }
+        .auto-style9 {
+            width: 150px;
+        }
+        .auto-style10 {
+            width: 48px;
+        }
+        .auto-style11 {
+            width: 79px;
+        }
 	-->
 	</STYLE>
           <script language="Javascript">
@@ -91,17 +109,17 @@ N°5 - FINAL</B></FONT></FONT></P>
         <P STYLE="margin-bottom: 0in">&nbsp;<BR>
 </P>
 <TABLE WIDTH=695 CELLPADDING=5 CELLSPACING=0>
-	<COL WIDTH=200>
-	<COL WIDTH=13>
+	<COL>
+	<COL>
 	<COL WIDTH=273>
 	<COL WIDTH=13>
-	<COL WIDTH=122>
+	<COL>
 	<COL WIDTH=12>
 	<TR>
 		<TD WIDTH=200 HEIGHT=9 VALIGN=TOP BGCOLOR="#d9d9d9" STYLE="border-top: 1.00pt solid #00000a; border-bottom: none; border-left: 1.00pt solid #00000a; border-right: 1px solid #00000a; padding: 0in 0.05in">
 			<P><FONT FACE="Calibri, serif"><B>NOMBRE ALUMNO</B></FONT></P>
 		</TD>
-		<TD COLSPAN=5 WIDTH=473 VALIGN=BOTTOM BGCOLOR="#ffffff" STYLE="border-top: 1.00pt solid #00000a; border-bottom: 1px solid #00000a; border-left: none; border-right: 1.00pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.05in">
+		<TD COLSPAN=5 VALIGN=BOTTOM BGCOLOR="#ffffff" STYLE="border-top: 1.00pt solid #00000a; border-bottom: 1px solid #00000a; border-left: none; border-right: 1.00pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.05in">
 			<P><FONT COLOR="#000000">&nbsp;<asp:Label ID="lblNombreAlumno" runat="server" Text=""></asp:Label>
                 </FONT></P>
 		</TD>
@@ -110,7 +128,7 @@ N°5 - FINAL</B></FONT></FONT></P>
 		<TD WIDTH=200 VALIGN=TOP BGCOLOR="#d9d9d9" STYLE="border-top: 1px solid #00000a; border-bottom: 1px solid #00000a; border-left: 1.00pt solid #00000a; border-right: 1px solid #00000a; padding: 0in 0.05in" class="auto-style4">
 			<P><FONT FACE="Calibri, serif"><B>RUT</B></FONT></P>
 		</TD>
-		<TD COLSPAN=5 WIDTH=473 VALIGN=BOTTOM BGCOLOR="#ffffff" STYLE="border-top: 1px solid #00000a; border-bottom: 1px solid #00000a; border-left: none; border-right: 1.00pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.05in" class="auto-style4">
+		<TD COLSPAN=5 VALIGN=BOTTOM BGCOLOR="#ffffff" STYLE="border-top: 1px solid #00000a; border-bottom: 1px solid #00000a; border-left: none; border-right: 1.00pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.05in" class="auto-style4">
 			<P><FONT COLOR="#000000">&nbsp;<asp:Label ID="lblRut" runat="server" Text=""></asp:Label>
                 </FONT></P>
 		</TD>
@@ -119,11 +137,12 @@ N°5 - FINAL</B></FONT></FONT></P>
 		<TD WIDTH=200 BGCOLOR="#d9d9d9" STYLE="border-top: none; border-bottom: 1.00pt solid #00000a; border-left: 1.00pt solid #00000a; border-right: 1px solid #00000a; padding: 0in 0.05in">
 			<P><FONT FACE="Calibri, serif"><B>FECHA</B></FONT></P>
 		</TD>
-		<TD WIDTH=13 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: 1.00pt solid #00000a; border-left: none; border-right: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.05in">
+		<TD BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: 1.00pt solid #00000a; border-left: none; border-right: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.05in" class="auto-style8">
 			<P ALIGN=CENTER><FONT COLOR="#000000">&nbsp;<asp:Label ID="lblFecha" runat="server" Text=""></asp:Label>
+                &nbsp;
                 </FONT></P>
 		</TD>
-		<TD WIDTH=273 BGCOLOR="#d9d9d9" STYLE="border-top: none; border-bottom: 1.00pt solid #00000a; border-left: none; border-right: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.05in">
+		<TD BGCOLOR="#d9d9d9" STYLE="border-top: none; border-bottom: 1.00pt solid #00000a; border-left: none; border-right: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.05in" class="auto-style7">
 			<P><FONT FACE="Calibri, serif"><B>SEMESTRE</B></FONT></P>
 		</TD>
 		<TD WIDTH=13 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: 1.00pt solid #00000a; border-left: none; border-right: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.05in">
@@ -133,7 +152,7 @@ N°5 - FINAL</B></FONT></FONT></P>
 		<TD WIDTH=122 BGCOLOR="#d9d9d9" STYLE="border-top: none; border-bottom: 1.00pt solid #00000a; border-left: none; border-right: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.05in">
 			<P><FONT FACE="Calibri, serif"><B>AÑO</B></FONT></P>
 		</TD>
-		<TD WIDTH=12 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: 1.00pt solid #00000a; border-left: none; border-right: 1.00pt solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.05in">
+		<TD BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: 1.00pt solid #00000a; border-left: none; border-right: 1.00pt solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.05in" class="auto-style6">
 			<P ALIGN=CENTER><FONT COLOR="#000000">&nbsp;<asp:Label ID="lblAnio" runat="server" Text=""></asp:Label>
                 </FONT></P>
 		</TD>
@@ -143,13 +162,13 @@ N°5 - FINAL</B></FONT></FONT></P>
 </P>
 <TABLE WIDTH=697 CELLPADDING=5 CELLSPACING=0>
 	<COLGROUP>
-		<COL WIDTH=200>
+		<COL>
 	</COLGROUP>
 	<COLGROUP>
 		<COL WIDTH=244>
 	</COLGROUP>
 	<COLGROUP>
-		<COL WIDTH=12>
+		<COL>
 	</COLGROUP>
 	<COLGROUP>
 		<COL WIDTH=168>
@@ -160,7 +179,7 @@ N°5 - FINAL</B></FONT></FONT></P>
 	</COLGROUP>
 	<TBODY>
 		<TR VALIGN=BOTTOM>
-			<TD WIDTH=200 HEIGHT=9 BGCOLOR="#d9d9d9" STYLE="border-top: 1.00pt solid #00000a; border-bottom: 1px solid #00000a; border-left: 1.00pt solid #00000a; border-right: 1px solid #00000a; padding: 0in 0.05in">
+			<TD HEIGHT=9 BGCOLOR="#d9d9d9" STYLE="border-top: 1.00pt solid #00000a; border-bottom: 1px solid #00000a; border-left: 1.00pt solid #00000a; border-right: 1px solid #00000a; padding: 0in 0.05in" class="auto-style9">
 				<P><FONT FACE="Calibri, serif"><B>PROFESOR GUIA</B></FONT></P>
 			</TD>
 			<TD COLSPAN=5 WIDTH=475 BGCOLOR="#ffffff" STYLE="border-top: 1.00pt solid #00000a; border-bottom: 1px solid #00000a; border-left: none; border-right: 1.00pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.05in">
@@ -171,10 +190,10 @@ N°5 - FINAL</B></FONT></FONT></P>
 	</TBODY>
 	<TBODY>
 		<TR VALIGN=BOTTOM>
-			<TD WIDTH=200 HEIGHT=10 BGCOLOR="#d9d9d9" STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: 1.00pt solid #00000a; border-right: 1px solid #00000a; padding: 0in 0.05in">
+			<TD HEIGHT=10 BGCOLOR="#d9d9d9" STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: 1.00pt solid #00000a; border-right: 1px solid #00000a; padding: 0in 0.05in" class="auto-style9">
 				<P><FONT FACE="Calibri, serif"><B>TIPO DE PRACTICA</B></FONT></P>
 			</TD>
-			<TD WIDTH=244 BGCOLOR="#d9d9d9" STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: none; border-right: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.05in">
+			<TD BGCOLOR="#d9d9d9" STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: none; border-right: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.05in" class="auto-style11">
 				<P><FONT COLOR="#000000"><FONT FACE="Calibri, serif"><B>PROFESIONAL</B></FONT></FONT></P>
 			</TD>
 			<TD WIDTH=12 BGCOLOR="#ffffff" STYLE="border: none; padding: 0in">
@@ -182,7 +201,7 @@ N°5 - FINAL</B></FONT></FONT></P>
 				    <asp:Label ID="lblProfesional" runat="server" Text=""></asp:Label>
 				</P>
 			</TD>
-			<TD WIDTH=168 BGCOLOR="#d9d9d9" STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: 1px solid #00000a; border-right: 1px solid #00000a; padding: 0in 0.05in">
+			<TD BGCOLOR="#d9d9d9" STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: 1px solid #00000a; border-right: 1px solid #00000a; padding: 0in 0.05in" class="auto-style10">
 				<P><FONT FACE="Calibri, serif"><B>LABORAL</B></FONT></P>
 			</TD>
 			<TD WIDTH=6 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: none; border-left: 1px solid #00000a; border-right: none; padding-top: 0in; padding-bottom: 0in; padding-left: 0.05in; padding-right: 0in">
@@ -195,7 +214,7 @@ N°5 - FINAL</B></FONT></FONT></P>
 			</TD>
 		</TR>
 		<TR VALIGN=BOTTOM>
-			<TD WIDTH=200 HEIGHT=10 BGCOLOR="#d9d9d9" STYLE="border-top: none; border-bottom: 1.00pt solid #00000a; border-left: 1.00pt solid #00000a; border-right: 1px solid #00000a; padding: 0in 0.05in">
+			<TD HEIGHT=10 BGCOLOR="#d9d9d9" STYLE="border-top: none; border-bottom: 1.00pt solid #00000a; border-left: 1.00pt solid #00000a; border-right: 1px solid #00000a; padding: 0in 0.05in" class="auto-style9">
 				<P><FONT FACE="Calibri, serif"><B>CARRERA</B></FONT></P>
 			</TD>
 			<TD COLSPAN=5 WIDTH=475 BGCOLOR="#ffffff" STYLE="border-top: 1px solid #00000a; border-bottom: 1.00pt solid #00000a; border-left: none; border-right: 1.00pt solid #000001; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.05in">
@@ -225,13 +244,16 @@ N°5 - FINAL</B></FONT></FONT></P>
 			N°1</B></FONT></FONT></P>
 		</TD>
 		<TD WIDTH=44 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: 1px solid #00000a; border-right: 1px solid #00000a; padding: 0in 0.05in">
-			<P><FONT COLOR="#ff0000">&nbsp;</FONT></P>
+			<P><FONT COLOR="#ff0000">&nbsp;<asp:Label ID="lblActa1Si" runat="server" Text="" ForeColor="Black"></asp:Label>
+                </FONT></P>
 		</TD>
 		<TD WIDTH=144 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: 1px solid #00000a; border-right: 1px solid #00000a; padding: 0in 0.05in">
 			<P><FONT FACE="Arial Narrow, serif"><FONT SIZE=3>Sí</FONT></FONT></P>
 		</TD>
 		<TD WIDTH=39 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: none; border-right: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.05in">
-			<P>&nbsp;</P>
+			<P>
+                <asp:Label ID="lblActa1No" runat="server" Text=""></asp:Label>
+            </P>
 		</TD>
 		<TD WIDTH=126 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: 1px solid #00000a; border-right: 1px solid #00000a; padding: 0in 0.05in">
 			<P><FONT FACE="Arial Narrow, serif"><FONT SIZE=3>No</FONT></FONT></P>
@@ -243,13 +265,16 @@ N°5 - FINAL</B></FONT></FONT></P>
 			N°2</B></FONT></FONT></P>
 		</TD>
 		<TD WIDTH=44 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: 1px solid #00000a; border-right: 1px solid #00000a; padding: 0in 0.05in">
-			<P><FONT COLOR="#ff0000">&nbsp;</FONT></P>
+			<P><FONT COLOR="#ff0000">&nbsp;<asp:Label ID="lblActa2si" runat="server" Text="" ForeColor="Black"></asp:Label>
+                </FONT></P>
 		</TD>
 		<TD WIDTH=144 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: 1px solid #00000a; border-right: 1px solid #00000a; padding: 0in 0.05in">
 			<P><FONT FACE="Arial Narrow, serif"><FONT SIZE=3>Sí</FONT></FONT></P>
 		</TD>
 		<TD WIDTH=39 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: none; border-right: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.05in">
-			<P>&nbsp;</P>
+			<P>
+			    <asp:Label ID="lblActa2No" runat="server" Text=""></asp:Label>
+			</P>
 		</TD>
 		<TD WIDTH=126 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: 1px solid #00000a; border-right: 1px solid #00000a; padding: 0in 0.05in">
 			<P><FONT FACE="Arial Narrow, serif"><FONT SIZE=3>No</FONT></FONT></P>
@@ -262,6 +287,7 @@ N°5 - FINAL</B></FONT></FONT></P>
 		</TD>
 		<TD WIDTH=44 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: 1px solid #00000a; border-right: 1px solid #00000a; padding: 0in 0.05in">
 			<P><BR>
+			    <asp:Label ID="lblActa3Si" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
 		<TD WIDTH=144 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: 1px solid #00000a; border-right: 1px solid #00000a; padding: 0in 0.05in">
@@ -269,6 +295,7 @@ N°5 - FINAL</B></FONT></FONT></P>
 		</TD>
 		<TD WIDTH=39 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: none; border-right: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.05in">
 			<P><BR>
+			    <asp:Label ID="lblActa3No" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
 		<TD WIDTH=126 BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: 1px solid #00000a; border-right: 1px solid #00000a; padding: 0in 0.05in">
@@ -281,14 +308,18 @@ N°5 - FINAL</B></FONT></FONT></P>
 			CENTRO DE PRÁCTICA</B></FONT></FONT></P>
 		</TD>
 		<TD WIDTH=44 VALIGN=BOTTOM BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: 1px solid #00000a; border-right: 1px solid #00000a; padding: 0in 0.05in">
-			<P><BR>
+			<P>
+                <asp:Label ID="lblActa22Si" runat="server" Text=""></asp:Label>
+                <BR>
 			</P>
 		</TD>
 		<TD WIDTH=144 VALIGN=BOTTOM BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: 1px solid #00000a; border-right: 1px solid #00000a; padding: 0in 0.05in">
 			<P><FONT FACE="Arial Narrow, serif"><FONT SIZE=3>Sí</FONT></FONT></P>
 		</TD>
 		<TD WIDTH=39 VALIGN=BOTTOM BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: none; border-right: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0in; padding-right: 0.05in">
-			<P>&nbsp;</P>
+			<P>
+                <asp:Label ID="lblActa22No" runat="server" Text=""></asp:Label>
+            </P>
 		</TD>
 		<TD WIDTH=126 VALIGN=BOTTOM BGCOLOR="#ffffff" STYLE="border-top: none; border-bottom: 1px solid #00000a; border-left: 1px solid #00000a; border-right: 1px solid #00000a; padding: 0in 0.05in">
 			<P><FONT FACE="Arial Narrow, serif"><FONT SIZE=3>No</FONT></FONT></P>

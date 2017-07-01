@@ -4,20 +4,20 @@
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
 <HEAD>
-	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
-	<TITLE></TITLE>
-	<META NAME="GENERATOR" CONTENT="LibreOffice 4.1.6.2 (Linux)">
-	<META NAME="AUTHOR" CONTENT="saceituno">
-	<META NAME="CREATED" CONTENT="20160229;12900000000000">
-	<META NAME="CHANGEDBY" CONTENT="Christian Lazcano">
-	<META NAME="CHANGED" CONTENT="20160229;40900000000000">
-	<META NAME="AppVersion" CONTENT="15.0000">
-	<META NAME="DocSecurity" CONTENT="0">
-	<META NAME="HyperlinksChanged" CONTENT="false">
-	<META NAME="LinksUpToDate" CONTENT="false">
-	<META NAME="ScaleCrop" CONTENT="false">
-	<META NAME="ShareDoc" CONTENT="false">
-	<STYLE TYPE="text/css">
+	<META HTTP-EQUIV="CONTENT-TYPE" content="text/html; charset=utf-8"/>
+	
+	<meta name="GENERATOR" content="LibreOffice 4.1.6.2 (Linux)"/>
+	<meta name="AUTHOR" content="saceituno"/>
+	<meta name="CREATED" content="20160229;12900000000000"/>
+	<meta name="CHANGEDBY" content="Christian Lazcano"/>
+	<meta name="CHANGED" content="20160229;40900000000000"/>
+	<meta name="AppVersion" content="15.0000"/>
+	<meta name="DocSecurity" content="0"/>
+	<meta name="HyperlinksChanged" content="false"/>
+	<meta name="LinksUpToDate" content="false"/>
+	<meta name="ScaleCrop" content="false"/>
+	<meta name="ShareDoc" content="false"/>
+	<style type="text/css">
 	<!--
 		@page { size: 8.5in 11in; margin-left: 1.18in; margin-right: 1.18in; margin-top: 0.49in; margin-bottom: 0.89in }
 		P { margin-bottom: 0.08in; direction: ltr; widows: 2; orphans: 2 }
@@ -32,7 +32,7 @@
             height: 0.29in;
         }
         -->
-	</STYLE>
+	</style>
     <script language="Javascript">
 
   function imprSelec(paraimprimir)
@@ -82,7 +82,7 @@ N°1</B></FONT></FONT></P>
 			<P><FONT FACE="Arial Narrow, serif"><FONT SIZE=3>Nombre del Alumno</FONT></FONT></P>
 		</TD>
 		<TD COLSPAN=6 WIDTH=466 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
-			<P><BR>
+			<P><br/>
 			    <asp:Label ID="LblNombreAlumno" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
@@ -101,10 +101,10 @@ N°1</B></FONT></FONT></P>
 		<TD WIDTH=177 HEIGHT=4 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
 			<P><FONT FACE="Arial Narrow, serif"><FONT SIZE=3>Carrera</FONT></FONT></P>
 		</TD>
-		<TD COLSPAN=6 WIDTH=466 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+		<TD COLSPAN=6 width=466 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
 			<P>
                 <asp:Label ID="lblCarrera" runat="server" Text=""></asp:Label>
-                <BR>
+                <br/>
 			</P>
 		</TD>
 	</TR>
@@ -121,7 +121,7 @@ N°1</B></FONT></FONT></P>
 			<P><FONT FACE="Arial Narrow, serif"><FONT SIZE=3>Fecha Término</FONT></FONT></P>
 		</TD>
 		<TD COLSPAN=3 WIDTH=230 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
-			<P><BR>
+			<P><br/>
 			    <asp:Label ID="lblFechaTermino" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
@@ -132,7 +132,7 @@ N°1</B></FONT></FONT></P>
 			de Práctica</FONT></FONT></P>
 		</TD>
 		<TD COLSPAN=6 WIDTH=466 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
-			<P><BR>
+			<P><br/>
 			    <asp:Label ID="lblNombreCentroPractica" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
@@ -143,7 +143,7 @@ N°1</B></FONT></FONT></P>
 			Práctica</FONT></FONT></P>
 		</TD>
 		<TD COLSPAN=6 WIDTH=466 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
-			<P><BR>
+			<P><br/>
 			    <asp:Label ID="lblDireccionCentro" runat="server" Text=""></asp:Label>
 			</P>
 		</TD>
@@ -238,18 +238,20 @@ N°1</B></FONT></FONT></P>
 		</TD>
 	</TR>
 </TABLE>
-<P STYLE="margin-bottom: 0in"><BR>
-</P>
-<P STYLE="margin-bottom: 0in"><BR>
-</P>
-<P STYLE="text-indent: -0.0in; margin-bottom: 0in"><FONT FACE="Arial Narrow, serif"><FONT SIZE=3><B>Principalestareas a desempeñar</B></FONT></FONT></P>
-<P STYLE="margin-left: -0.49in; margin-bottom: 0in"><br />
+<p style="margin-bottom: 0in"><br/>
+</p>
+<p style="margin-bottom: 0in"><br/>
+</p>
+<p style="text-indent: -0.0in; margin-bottom: 0in"><font FACE="Arial Narrow, serif"><FONT SIZE=3><B>Principalestareas a desempeñar</B></FONT></font></P>
+<p style="margin-left: -0.49in; margin-bottom: 0in"><br />
 </P>
 <TABLE WIDTH=684 CELLPADDING="7" CELLSPACING=0>
 	<col WIDTH=670>
 	<tr>
 		<td WIDTH=670 HEIGHT=5 VALIGN=TOP STYLE="border-top: 1.00pt solid #00000a; border-bottom: 1.00pt solid #00000a; border-left: none; border-right: none; padding: 0in">
-			<P STYLE="margin-left: -0.02in; text-indent: 0.02in"><BR>
+			<P STYLE="margin-left: -0.02in; text-indent: 0.02in">
+                <asp:Label ID="lblTareas" runat="server" Text=""></asp:Label>
+                <BR>
 			</P>
 		</td>
 	</tr>
@@ -276,14 +278,16 @@ N°1</B></FONT></FONT></P>
 </P>
 <P STYLE="margin-left: -0.0in; margin-bottom: 0in"><FONT FACE="Arial Narrow, serif"><FONT SIZE=3><B>Observaciones
 Especiales</B></FONT></FONT></P>
-<P STYLE="margin-left: -0.49in; margin-bottom: 0in"><BR>
+<P STYLE="margin-left: -0.49in; margin-bottom: 0in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="lblObservaciones" runat="server" Text=""></asp:Label>
+			<BR>
 </P>
 <TABLE WIDTH=684 CELLPADDING=7 CELLSPACING=0>
 	<COL WIDTH=670>
 	<tr>
 		<td width=670 height=5 VALIGN=TOP STYLE="border-top: 1.00pt solid #00000a; border-bottom: 1.00pt solid #00000a; border-left: none; border-right: none; padding: 0in">
-			<p style="margin-left: 0.9in; text-indent: 0.02in"><BR>
-			</p>
+			<p style="margin-left: 0.9in; text-indent: 0.02in">
+                &nbsp;</p>
 		</td>
 	</tr>
 	<tr>

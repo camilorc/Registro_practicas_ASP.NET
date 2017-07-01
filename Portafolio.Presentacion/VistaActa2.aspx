@@ -881,7 +881,9 @@ criterios:</SPAN></FONT></FONT></FONT></P>
 		<TD COLSPAN=8 WIDTH=285 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
 			<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
 			</P>
-			<P LANG="en-US" ALIGN=RIGHT><BR>
+			<P LANG="en-US" ALIGN=RIGHT>
+                <asp:Label ID="lblPersonal" runat="server" Text=""></asp:Label>
+                <BR>
 			</P>
 		</TD>
 	</TR>
@@ -1378,7 +1380,9 @@ criterios:</SPAN></FONT></FONT></FONT></P>
 		<TD COLSPAN=9 WIDTH=382 STYLE="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
 			<P LANG="en-US" STYLE="margin-bottom: 0in"><BR>
 			</P>
-			<P LANG="en-US" ALIGN=RIGHT><BR>
+			<P LANG="en-US" ALIGN=RIGHT>
+                <asp:Label ID="lblProfesional" runat="server" Text=""></asp:Label>
+                <BR>
 			</P>
 		</TD>
 	</TR>

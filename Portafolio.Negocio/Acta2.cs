@@ -68,5 +68,35 @@ namespace Portafolio.Negocio
                 return false;
             }
         }
+
+        public void InfoActa2(int rutAlumno)
+        {
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["OracleDbContext"].ConnectionString;
+                OracleConnection _connection = new OracleConnection();
+                _connection.ConnectionString = connectionString;
+                _connection.Open();
+
+                string sql = "select principales_tareas, aportes, sugerencias, promedio_personal, promedio_profesional from usuario join practica on(usuario.PRACTICA_IDPRACTICA = practica.IDPRACTICA) join acta2 on(acta2.IDACTA2 = practica.ACTA2_IDACTA2) where rut = "+ rutAlumno;
+                OracleCommand cmd = new OracleCommand(sql, _connection);
+
+                var pract = cmd.ExecuteReader();
+
+                while (pract.Read())
+                {
+                     PrincipalesTareas = pract.GetString(0);
+                     Aportes = pract.GetString(1);
+                     Sugerencias = pract.GetString(2);
+                     PromedioPersonal = pract.GetInt32(3);
+                     PromedioProfesional= pract.GetInt32(4);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Mensaje: " + e.Message);
+            }
+        }
+        
     }
 }

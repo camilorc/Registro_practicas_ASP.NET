@@ -8,7 +8,7 @@ using Portafolio.Negocio;
 
 namespace Portafolio.Presentacion
 {
-    public partial class MiPerfilAlumno : System.Web.UI.Page
+    public partial class MiPerfilAlumno : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,7 +16,6 @@ namespace Portafolio.Presentacion
             {
                 buscarInfo();
             }
-            
         }
 
         public Usuario Alumno
@@ -74,8 +73,9 @@ namespace Portafolio.Presentacion
 
             Practica pra = new Practica();
             pra.LlenarActa1(Alumno.Rut);
-            txtNota3.Text = pra.Nota3.ToString();
-
+            decimal nota3 = pra.Nota3;
+            txtNota3.Text = nota3.ToString();
+            
         }
     }
 }

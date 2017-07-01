@@ -73,6 +73,13 @@ namespace Portafolio.Presentacion
             Usuario profesor = new Usuario();
             profesor.buscarJefe(pra.RutDocente);
             lblProfesorGuia.Text = profesor.Nombres + " " + profesor.Apellido1 + " " + profesor.Apellido2;
+
+            //Acta2
+            Negocio.Acta2 a2 = new Negocio.Acta2();
+            a2.InfoActa2(Alumno.Rut);
+            lblObservaciones.Text = a2.Sugerencias;
+            lblTareas.Text = a2.PrincipalesTareas;
+
         }
         
     }

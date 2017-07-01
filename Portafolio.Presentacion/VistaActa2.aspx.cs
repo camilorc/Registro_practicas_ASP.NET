@@ -78,6 +78,13 @@ namespace Portafolio.Presentacion
             carrera.buscarCarrera(Alumno.Rut);
             lblCarrera.Text = carrera.NombreCarrera;
 
+            //Acta2
+            Negocio.Acta2 ac2 = new Negocio.Acta2();
+            ac2.InfoActa2(Alumno.Rut);
+            lblPersonal.Text = ac2.PromedioPersonal.ToString();
+            lblProfesional.Text = ac2.PromedioProfesional.ToString();
+            
+
 
     }
 }

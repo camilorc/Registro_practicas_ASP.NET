@@ -56,7 +56,7 @@
     <br />
     <br />
     <div id="paraimprimir">
-        <asp:Button ID="btnCargarDatos" runat="server" Height="32px" Text="Cargar Datos" Width="78px" OnClick="btnCargarDatos_Click" />
+        <asp:Button ID="btnCargarDatos" runat="server" Height="33px" Text="Cargar Datos" Width="107px" OnClick="btnCargarDatos_Click" />
 <BODY>
 <H3 CLASS="western" STYLE="text-indent: 0.49in"><A NAME="_Toc362353347"></A>
 <I>Pauta de Evaluación Informe de Prácticaauta de Evaluación Informe de Práctica</I></H3>
