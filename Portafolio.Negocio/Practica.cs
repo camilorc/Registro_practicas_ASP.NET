@@ -147,7 +147,40 @@ namespace Portafolio.Negocio
             }
         }
 
+<<<<<<< HEAD
         public double LlenarActa1(int rutAlumno)
+=======
+        public bool cambiarEstado(int rut_alumno, string estado) {
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["OracleDbContext"].ConnectionString;
+                OracleConnection _connection = new OracleConnection();
+                _connection.ConnectionString = connectionString;
+                _connection.Open();
+
+                OracleCommand cmd = _connection.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "cambiar_estado_practica";
+
+                cmd.Parameters.Add("p_rut_alumno", OracleDbType.Int32).Value = rut_alumno;
+                cmd.Parameters.Add("p_nuevo_estado", OracleDbType.Varchar2).Value = estado;
+
+                cmd.ExecuteNonQuery();
+                _connection.Close();
+
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+
+
+        }
+
+        public bool CambiarNotaFinal(int rut_alumno, double notaFinal)
+>>>>>>> b16f6760de0bd4ded44eb73346baf825df36d633
         {
             try
             {
@@ -155,6 +188,7 @@ namespace Portafolio.Negocio
                 OracleConnection _connection = new OracleConnection();
                 _connection.ConnectionString = connectionString;
                 _connection.Open();
+<<<<<<< HEAD
 
                 string sql = "select rutdocente, rutempleador, cant_horas, fecha_termino, fecha_inicio, distancia, donde, nota_final, nota_3 from usuario join practica on (usuario.practica_idpractica = practica.idpractica) where rut = " + rutAlumno;
                 OracleCommand cmd = new OracleCommand(sql, _connection);
@@ -188,5 +222,37 @@ namespace Portafolio.Negocio
                 return 0;
             }
         }
+=======
+
+                OracleCommand cmd = _connection.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "update_nota_final";
+
+                cmd.Parameters.Add("p_rut_alumno", OracleDbType.Int32).Value = rut_alumno;
+                cmd.Parameters.Add("p_nota_final", OracleDbType.Double).Value = notaFinal;
+
+                cmd.ExecuteNonQuery();
+                _connection.Close();
+
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+
+
+        }
+
+
+
+
+
+
+
+
+
+>>>>>>> b16f6760de0bd4ded44eb73346baf825df36d633
     }
 }
