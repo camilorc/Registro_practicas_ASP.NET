@@ -50,6 +50,7 @@ namespace Portafolio.Presentacion
             lblFechaInicio.Text = pra.FechaInicio.ToString();
             lblFechaTermino.Text = pra.FechaTermino.ToString();
             lblCarrera.Text = pra.Nota3.ToString();
+            
 
             //Carrera
             Carrera carrera = new Carrera();

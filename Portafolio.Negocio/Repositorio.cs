@@ -90,5 +90,8 @@ namespace Portafolio.Negocio
             return ListarCentro(InstanciaBD.Instancia.CENTRO_PRACTICA.ToList());
         }
 
+
+
+
     }
 }

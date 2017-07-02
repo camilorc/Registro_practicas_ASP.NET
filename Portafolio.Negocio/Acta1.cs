@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Oracle.ManagedDataAccess.Client;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,6 +55,28 @@ namespace Portafolio.Negocio
                 this.IdActa1 = ac1.IDACTA1;
                 this.Observaciones = ac1.OBSERVACIONES;
                 this.Tareas = ac1.TAREAS;
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateA1(int id, string tareas)
+        {
+            try
+            {
+
+                var connectionString = ConfigurationManager.ConnectionStrings["OracleDbContext"].ConnectionString;
+                OracleConnection _connection = new OracleConnection();
+                _connection.ConnectionString = connectionString;
+                _connection.Open();
+
+                string sql = "UPDATE ACTA1 SET TAREAS = '"+ tareas + "' WHERE IDACTA1 =" +id;
+                OracleCommand cmd = new OracleCommand(sql, _connection);
+                var docenteRut = cmd.ExecuteNonQuery();
 
                 return true;
             }

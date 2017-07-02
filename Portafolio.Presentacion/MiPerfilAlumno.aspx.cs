@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Portafolio.Negocio;   
+using Portafolio.Negocio;
 
 namespace Portafolio.Presentacion
 {
@@ -84,5 +84,11 @@ namespace Portafolio.Presentacion
             double notas = ((n1 + n2) / 2);
             txtActa2.Text = notas.ToString();
         }
+
+        protected void btnFoto_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
+    
 }

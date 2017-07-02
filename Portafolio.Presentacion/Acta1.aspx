@@ -29,14 +29,6 @@
         </tr>
         <tr>
             <td>
-                <asp:Label ID="Label4" runat="server" Text="Cargo jefe directo"></asp:Label>
-            </td>
-            <td>
-                <asp:TextBox ID="txtCargoJefe" runat="server"></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
-            <td>
                 <asp:Label ID="Label5" runat="server" Text="Correo Jefe"></asp:Label>
             </td>
             <td>
@@ -53,14 +45,6 @@
         </tr>
         <tr>
             <td>
-                <asp:Label ID="Label7" runat="server" Text="Nombre profesor guía"></asp:Label>
-            </td>
-            <td>
-                <asp:TextBox ID="txtNomProf" runat="server"></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
-            <td>
                 <asp:Label ID="Label8" runat="server" Text="Correo Alumno"></asp:Label>
             </td>
             <td>
@@ -72,7 +56,10 @@
                 <asp:Label ID="Label9" runat="server" Text="Práctica a distancia"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="txtPracDistan" runat="server"></asp:TextBox>
+                <asp:CheckBox ID="idNo" runat="server" Text="No" />
+                
+                <asp:CheckBox ID="idSi" runat="server" Text="Si" />
+                
             </td>
         </tr>
         <tr>

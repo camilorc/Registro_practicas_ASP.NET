@@ -323,6 +323,75 @@ namespace Portafolio.Negocio
             }
         }
 
-        
+        public bool EditarActa1Alumno(int rut, string mail)
+        {
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["OracleDbContext"].ConnectionString;
+                OracleConnection _connection = new OracleConnection();
+                _connection.ConnectionString = connectionString;
+                _connection.Open();
+
+                OracleCommand cmd = _connection.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "UPDATE_ACTA1ALUMNO";
+
+                cmd.Parameters.Add("p_correo_alumno", OracleDbType.Varchar2).Value = mail;
+
+                cmd.ExecuteReader();
+                _connection.Close();
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateA1(int rutAlumno, string mail)
+        {
+            try
+            {
+
+                var connectionString = ConfigurationManager.ConnectionStrings["OracleDbContext"].ConnectionString;
+                OracleConnection _connection = new OracleConnection();
+                _connection.ConnectionString = connectionString;
+                _connection.Open();
+
+                string sql = "UPDATE USUARIO SET CORREO = '"+mail+"' WHERE RUT ='"+rutAlumno+"'";
+                OracleCommand cmd = new OracleCommand(sql, _connection);
+                var docenteRut = cmd.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateA1Jefe(int rut, string nombre, string a1, string a2, string email, int fono )
+        {
+            try
+            {
+
+                var connectionString = ConfigurationManager.ConnectionStrings["OracleDbContext"].ConnectionString;
+                OracleConnection _connection = new OracleConnection();
+                _connection.ConnectionString = connectionString;
+                _connection.Open();
+
+                string sql = "UPDATE USUARIO SET NOMBRES = '" + nombre + "' ,APELLIDO1 = '" + a1 + "', APELLIDO2 = '" + a2 + "', CORREO = '" + email + "', TELEFONO = " + fono + " WHERE RUT = '" + rut + "'";
+                OracleCommand cmd = new OracleCommand(sql, _connection);
+                var docenteRut = cmd.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
     }
 }

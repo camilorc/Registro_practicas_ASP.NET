@@ -17,9 +17,6 @@
             margin-left: 50px;
             margin-top: 29px;
         }
-        .auto-style10 {
-            width: 429px;
-        }
         .auto-style11 {
             color: #0000FF;
         }
@@ -64,7 +61,11 @@
                  <tr>
                     <td class="auto-style12">
 
+                        <br />
+
                         <asp:Button ID="btnEditar" runat="server" Text="Editar" OnClick="btnEditar_Click" Height="39px" Width="74px" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="btnFoto" runat="server" Text="Subir Foto" OnClick="btnFoto_Click" />
                         <br />
                         <asp:Button ID="btnLimpiar" runat="server" Text="Limpiar" OnClick="btnLimpiar_Click" Height="39px" Width="77px" />
 

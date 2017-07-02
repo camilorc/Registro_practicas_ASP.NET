@@ -25,6 +25,8 @@ namespace Portafolio.Negocio
         public bool Estado { get; set; }
         public string RutEmpleador { get; set; }
         public string RutDocente { get; set; }
+        public int idCentro { get; set; }
+        public int idAc1 { get; set; }
 
         public Practica()
         {
@@ -175,10 +177,7 @@ namespace Portafolio.Negocio
 
 
         }
-
         
-
-
         public bool LlenarActa1(int rutAlumno)
         {
             try
@@ -188,21 +187,22 @@ namespace Portafolio.Negocio
                 _connection.ConnectionString = connectionString;
                 _connection.Open();
 
-                string sql = "select rutdocente, rutempleador, cant_horas, fecha_termino, fecha_inicio, distancia, donde, nota_final, nota_3 from usuario join practica on (usuario.practica_idpractica = practica.idpractica) where rut = " + rutAlumno;
+                string sql = "select idpractica, rutdocente, idcentropractica, acta1_idacta1, rutempleador, cant_horas, fecha_termino, fecha_inicio, distancia, donde from usuario join practica on (usuario.practica_idpractica = practica.idpractica) where rut = " + rutAlumno;
                 OracleCommand cmd = new OracleCommand(sql, _connection);
                 var alumnos = cmd.ExecuteReader();
 
                 while (alumnos.Read())
                 {
-                    RutDocente = alumnos.GetString(0);
-                    RutEmpleador = alumnos.GetString(1);
-                    CantHoras = alumnos.GetInt32(2);
-                    FechaTermino = alumnos.GetDateTime(3).ToShortDateString();
-                    FechaInicio = alumnos.GetDateTime(4).ToShortDateString();
-                    Distancia = alumnos.GetChar(5);
-                    Donde = alumnos.GetString(6);
-                    NotaFinal = alumnos.GetDouble(7);
-                    Nota3 = alumnos.GetDouble(8);
+                    IdPractica = alumnos.GetInt32(0);
+                    RutDocente = alumnos.GetString(1);
+                    idCentro = alumnos.GetInt32(2);
+                    idAc1 = alumnos.GetInt32(3);
+                    RutEmpleador = alumnos.GetString(4);
+                    CantHoras = alumnos.GetInt32(5);
+                    FechaTermino = alumnos.GetDateTime(6).ToShortDateString();
+                    FechaInicio = alumnos.GetDateTime(7).ToShortDateString();
+                    Distancia = alumnos.GetChar(8);
+                    Donde = alumnos.GetString(9);
                 }
 
                 if (alumnos.HasRows)
@@ -270,6 +270,28 @@ namespace Portafolio.Negocio
             catch (Exception)
             {
                 Nota3 = 1;
+            }
+        }
+
+        public bool UpdateA1(int idA1, string distancia)
+        {
+            try
+            {
+
+                var connectionString = ConfigurationManager.ConnectionStrings["OracleDbContext"].ConnectionString;
+                OracleConnection _connection = new OracleConnection();
+                _connection.ConnectionString = connectionString;
+                _connection.Open();
+
+                string sql = "UPDATE PRACTICA SET DISTANCIA = '" + distancia + "' WHERE IDPRACTICA ='" + idA1 + "'";
+                OracleCommand cmd = new OracleCommand(sql, _connection);
+                var docenteRut = cmd.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
 

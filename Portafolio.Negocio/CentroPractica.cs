@@ -290,5 +290,28 @@ namespace Portafolio.Negocio
             }
         }
 
+        public bool UpdateA1(int id, string direccion, string departamento)
+        {
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["OracleDbContext"].ConnectionString;
+                OracleConnection _connection = new OracleConnection();
+                _connection.ConnectionString = connectionString;
+                _connection.Open();
+
+                string sql = "UPDATE CENTRO_PRACTICA SET DIRECCION_CENTRO = '" + direccion + "', DEPARTAMENTO_CENTRO = '"+departamento+"' WHERE IDCENTROPRACTICA = '" + id + "'";
+                OracleCommand cmd = new OracleCommand(sql, _connection);
+                var docenteRut = cmd.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+
+        
     }
 }
