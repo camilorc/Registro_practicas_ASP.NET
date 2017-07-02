@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace Portafolio.Presentacion
 {
-    public partial class VistaActa3 : System.Web.UI.Page
+    public partial class VistaActa3 : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -34,7 +34,7 @@ namespace Portafolio.Presentacion
         protected void btnCargarDatos_Click(object sender, EventArgs e)
         {
             Practica pra = new Practica();
-            pra.LlenarActa1(Alumno.Rut);
+            pra.BuscarNotas(Alumno.Rut);
             lblNota3.Text = pra.Nota3.ToString();
         }
     }

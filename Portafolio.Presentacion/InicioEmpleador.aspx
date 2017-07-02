@@ -90,7 +90,7 @@
     <br />
             <div class="row">
             <div class="col-md-6">
-                <h2>Bienvenido(a) <asp:Label ID="lbl_nom_centro" runat="server" Text="Label"></asp:Label></h2>
+                <h2>Bienvenido(a) <asp:Label ID="lbl_nom_centro" runat="server" Text="Label" ForeColor="Blue"></asp:Label></h2>
                 <p>&nbsp;</p>
  
             </div>

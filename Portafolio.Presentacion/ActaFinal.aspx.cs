@@ -10,7 +10,7 @@ using Portafolio.Negocio;
 
 namespace Portafolio.Presentacion
 {
-    public partial class ActaFinal : System.Web.UI.Page
+    public partial class ActaFinal : Page
     {
         public Usuario Docente
         {

@@ -13,7 +13,7 @@ using System.Configuration;
 
 namespace Portafolio.Presentacion
 {
-    public partial class VistaActa11 : System.Web.UI.Page
+    public partial class VistaActa11 : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

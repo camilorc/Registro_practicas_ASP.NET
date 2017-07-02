@@ -88,8 +88,8 @@ namespace Portafolio.Negocio
                      PrincipalesTareas = pract.GetString(0);
                      Aportes = pract.GetString(1);
                      Sugerencias = pract.GetString(2);
-                     PromedioPersonal = pract.GetInt32(3);
-                     PromedioProfesional= pract.GetInt32(4);
+                     PromedioPersonal = pract.GetDouble(3);
+                     PromedioProfesional= pract.GetDouble(4);
                 }
             }
             catch (Exception e)

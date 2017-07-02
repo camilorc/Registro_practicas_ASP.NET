@@ -20,8 +20,8 @@ namespace Portafolio.Negocio
         public string FechaTermino { get; set; }
         public char Distancia { get; set; }
         public string Donde { get; set; }
-        public decimal NotaFinal { get; set; }
-        public decimal Nota3 { get; set; }
+        public double NotaFinal { get; set; }
+        public double Nota3 { get; set; }
         public bool Estado { get; set; }
         public string RutEmpleador { get; set; }
         public string RutDocente { get; set; }
@@ -201,8 +201,8 @@ namespace Portafolio.Negocio
                     FechaInicio = alumnos.GetDateTime(4).ToShortDateString();
                     Distancia = alumnos.GetChar(5);
                     Donde = alumnos.GetString(6);
-                    NotaFinal = alumnos.GetDecimal(7);
-                    Nota3 = alumnos.GetDecimal(8);
+                    NotaFinal = alumnos.GetDouble(7);
+                    Nota3 = alumnos.GetDouble(8);
                 }
 
                 if (alumnos.HasRows)
@@ -245,6 +245,31 @@ namespace Portafolio.Negocio
             {
 
                 return false;
+            }
+        }
+
+        public void BuscarNotas(int rutAlumno)
+        {
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["OracleDbContext"].ConnectionString;
+                OracleConnection _connection = new OracleConnection();
+                _connection.ConnectionString = connectionString;
+                _connection.Open();
+
+                string sql = "select nota_final, nota_3 from usuario join practica on (usuario.practica_idpractica = practica.idpractica) where rut = " + rutAlumno;
+                OracleCommand cmd = new OracleCommand(sql, _connection);
+                var alumnos = cmd.ExecuteReader();
+
+                while (alumnos.Read())
+                {
+                    NotaFinal = alumnos.GetDouble(0);
+                    Nota3 = alumnos.GetDouble(1);
+                }
+            }
+            catch (Exception)
+            {
+                Nota3 = 1;
             }
         }
 

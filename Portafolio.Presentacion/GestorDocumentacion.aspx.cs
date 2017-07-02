@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Portafolio.Presentacion
 {
-    public partial class GestorDocumentacion : System.Web.UI.Page
+    public partial class GestorDocumentacion : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

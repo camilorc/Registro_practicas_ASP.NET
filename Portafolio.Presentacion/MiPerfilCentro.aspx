@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DocenteLayout.Master" AutoEventWireup="true" CodeBehind="MiPerfilDocente.aspx.cs" Inherits="Portafolio.Presentacion.MiPerfilDocente" EnableEventValidation="false"%>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Empleado.Master" AutoEventWireup="true" CodeBehind="MiPerfilCentro.aspx.cs" Inherits="Portafolio.Presentacion.MiPerfilCentro" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -11,45 +11,61 @@
                 <form class="form-horizontal">
 
                   <div class="form-group">
-                    <label for="inputNombres" class="col-sm-2 control-label">Nombres</label>
+                    <label for="inputNombres" class="col-sm-2 control-label">Nombre Centro de Práctica</label>
                     <div class="col-sm-10">
-                      <asp:TextBox ID="txtNombres" runat="server" CssClass="form-control"></asp:TextBox>
+                      <asp:TextBox ID="txtNombreCentro" runat="server" CssClass="form-control"></asp:TextBox>
                     </div>
                   </div>
 
                   <br />
                   <div class="form-group">
-                    <label for="txtApellido1" class="col-sm-2 control-label">Apellido Materno</label>
-                    <div class="col-sm-10">
-                       <asp:TextBox ID="txtApellido1" runat="server" CssClass="form-control"></asp:TextBox>
-                    </div>
-                  </div>
-
-                  <br />
-                  <div class="form-group">
-                    <label for="txtApellido2" class="col-sm-2 control-label">Apellido Paterno</label>
-                    <div class="col-sm-10">
-                       <asp:TextBox ID="txtApellido2" runat="server" CssClass="form-control"></asp:TextBox>
-                    </div>
-                  </div>
-
-                  <br />
-                  <div class="form-group">
-                    <label for="txtFechaN" class="col-sm-2 control-label">Nacimiento</label>
-                    <div class="col-sm-10">
-                       <asp:TextBox ID="txtFechaN" runat="server" CssClass="form-control"></asp:TextBox>
-                    </div>
-                  </div>
-
-                <br />
-                  <div class="form-group">
-                    <label for="txtDireccion" class="col-sm-2 control-label">Direccion</label>
+                    <label for="txtApellido1" class="col-sm-2 control-label">Dirección</label>
                     <div class="col-sm-10">
                        <asp:TextBox ID="txtDireccion" runat="server" CssClass="form-control"></asp:TextBox>
                     </div>
                   </div>
 
+                  <br />
+                  <div class="form-group">
+                    <label for="txtApellido2" class="col-sm-2 control-label">Departamento</label>
+                    <div class="col-sm-10">
+                       <asp:TextBox ID="txtDepartamento" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                  </div>
+
+                  <br />
+                  <div class="form-group">
+                    <label for="txtFechaN" class="col-sm-2 control-label">Area</label>
+                    <div class="col-sm-10">
+                       <asp:TextBox ID="txtArea" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                  </div>
+
+                <br />
+                  <div class="form-group">
+                    <label for="txtDireccion" class="col-sm-2 control-label">Razón Social</label>
+                    <div class="col-sm-10">
+                       <asp:TextBox ID="txtRazon" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                  </div>
+
                     <br />
+                  <div class="form-group">
+                    <label for="txtEmail" class="col-sm-2 control-label">Página Web</label>
+                    <div class="col-sm-10">
+                       <asp:TextBox ID="txtWeb" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                  </div>
+
+                     <br />
+                  <div class="form-group">
+                    <label for="txtEmail" class="col-sm-2 control-label">Teléfono</label>
+                    <div class="col-sm-10">
+                       <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                  </div>
+
+                     <br />
                   <div class="form-group">
                     <label for="txtEmail" class="col-sm-2 control-label">Email</label>
                     <div class="col-sm-10">

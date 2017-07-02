@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -53,7 +55,7 @@ namespace Portafolio.Negocio
                 _connection.ConnectionString = connectionString;
                 _connection.Open();
 
-                string sql = "Select idcentropractica,nombre_centro,direccion_centro,departamento_centro,area_centro,username,razon_social,web,fono,email FROM centro_practica WHERE nombre_centro = '" + this.Username + "'";
+                string sql = "Select idcentropractica, nombre_centro, direccion_centro, departamento_centro, area_centro, username, razon_social, web, fono,email FROM centro_practica WHERE nombre_centro = '" + this.Username + "'";
 
                 OracleCommand cmd = new OracleCommand(sql, _connection);
 
@@ -230,5 +232,63 @@ namespace Portafolio.Negocio
             }
 
         }
+
+        public bool OlvidarContrasena(string email)
+        {
+            var connectionString = ConfigurationManager.ConnectionStrings["OracleDbContext"].ConnectionString;
+            OracleConnection _connection = new OracleConnection();
+            _connection.ConnectionString = connectionString;
+            _connection.Open();
+
+            OracleCommand cmd = _connection.CreateCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "buscar_contrasenaCentro";
+
+
+            cmd.Parameters.Add("p_email", OracleDbType.Varchar2).Value = email;
+            cmd.Parameters.Add("p_contrasenna", OracleDbType.Varchar2, 200).Direction = ParameterDirection.Output;
+            cmd.Parameters.Add("p_nombres", OracleDbType.Varchar2, 200).Direction = ParameterDirection.Output;
+            cmd.Parameters.Add("p_usuario", OracleDbType.Varchar2, 200).Direction = ParameterDirection.Output;
+            cmd.ExecuteNonQuery();
+
+            NombreCentro = cmd.Parameters["p_nombres"].Value.ToString();
+            Email = email;
+            Pass = cmd.Parameters["p_contrasenna"].Value.ToString();
+            Username = cmd.Parameters["p_usuario"].Value.ToString();
+
+            MailMessage mmsg = new MailMessage();
+            mmsg.To.Add(Email);
+            mmsg.Subject = "Sistema de Contraseñas ::::: Duoc UC";
+            mmsg.SubjectEncoding = Encoding.UTF8;
+            mmsg.Body = "Estimada(o) " + NombreCentro + ": " + Environment.NewLine + Environment.NewLine +
+                "Le reenviamos sus datos de sesión" + Environment.NewLine +
+                "---------------------------------- " 
+                + Environment.NewLine +
+                "User:        " + Username 
+                + Environment.NewLine+
+                "Contraseña:  " + Pass+
+                Environment.NewLine +
+                "-------------------------------";
+            mmsg.BodyEncoding = Encoding.UTF8;
+            mmsg.IsBodyHtml = false;
+            mmsg.From = new MailAddress("duocucmaipu.informatica@gmail.com");
+            SmtpClient cliente = new SmtpClient();
+            cliente.Credentials = new NetworkCredential("duocucmaipu.informatica@gmail.com", "abcd1234.");
+            cliente.Port = 587;
+            cliente.EnableSsl = true;
+            cliente.Host = "smtp.gmail.com";
+
+            _connection.Close();
+            try
+            {
+                cliente.Send(mmsg);
+                return true;
+            }
+            catch (SmtpException)
+            {
+                return false;
+            }
+        }
+
     }
 }

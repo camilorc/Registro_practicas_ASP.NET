@@ -8,7 +8,7 @@ using Portafolio.Negocio;
 
 namespace Portafolio.Presentacion
 {
-    public partial class MiPerfilDocente : System.Web.UI.Page
+    public partial class MiPerfilDocente : Page
     {
         public Usuario Docente
         {

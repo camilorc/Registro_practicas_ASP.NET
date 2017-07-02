@@ -5,14 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Portafolio.Negocio;
-using Microsoft.Office.Interop.Word;
 using System.Net.Mail;
 using System.Web.Mail;
 using System.Net;
 
 namespace WebApplication1
 {
-    public partial class InicioAlumno : System.Web.UI.Page
+    public partial class InicioAlumno : Page
     {
 
         public Usuario Alumno

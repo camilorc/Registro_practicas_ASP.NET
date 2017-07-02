@@ -72,10 +72,17 @@ namespace Portafolio.Presentacion
 
 
             Practica pra = new Practica();
-            pra.LlenarActa1(Alumno.Rut);
-            decimal nota3 = pra.Nota3;
+            pra.BuscarNotas(Alumno.Rut);
+            double nota3 = pra.Nota3;
             txtNota3.Text = nota3.ToString();
-            
+            txtFinal.Text = pra.NotaFinal.ToString();
+
+            Negocio.Acta2 ac2 = new Negocio.Acta2();
+            ac2.InfoActa2(Alumno.Rut);
+            double n1 = ac2.PromedioPersonal;
+            double n2 = ac2.PromedioProfesional;
+            double notas = ((n1 + n2) / 2);
+            txtActa2.Text = notas.ToString();
         }
     }
 }

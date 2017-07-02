@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Empleado.master.cs" Inherits="Portafolio.Presentacion.Empleado" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="Content/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav nav-pills">
+                  <li role="presentation"><a href="InicioEmpleador.aspx">Home</a></li>
+                  <li role="presentation"><a href="MiPerfilCentro.aspx" >Mi Perfil</a></li>
+                    <li role="presentation"><a href="Acta2.aspx" >Evaluar</a></li>
+                  <li role="presentation"><a href="#">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </div>
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    <script src="Script/jquery-3.2.1.min.js"></script>
+    <script src="Script/bootstrap.min.js"></script>
+</body>
+</html>

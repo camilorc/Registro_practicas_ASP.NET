@@ -147,7 +147,7 @@
     <Content Include="LoginCentroPractica.aspx" />
     <Content Include="LoginDocente.aspx" />
     <Content Include="MiPerfilAlumno.aspx" />
-    <Content Include="MiPerfilEmpleador.aspx" />
+    <Content Include="MiPerfilCentro.aspx" />
     <Content Include="MiPracticaAlumno.aspx" />
     <Content Include="MiPerfilDocente.aspx" />
     <Content Include="packages.config" />
@@ -168,7 +168,7 @@
     <Content Include="Archivo\ACTA2.pdf" />
     <Content Include="Archivo\ACTA3.pdf" />
     <Content Include="Archivo\ACTAFINAL.pdf" />
-    <Content Include="Empleador.Master" />
+    <Content Include="Empleado.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -226,12 +226,12 @@
     <Compile Include="DocenteLayout.Master.designer.cs">
       <DependentUpon>DocenteLayout.Master</DependentUpon>
     </Compile>
-    <Compile Include="Empleador.Master.cs">
-      <DependentUpon>Empleador.Master</DependentUpon>
+    <Compile Include="Empleado.Master.cs">
+      <DependentUpon>Empleado.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Empleador.Master.designer.cs">
-      <DependentUpon>Empleador.Master</DependentUpon>
+    <Compile Include="Empleado.Master.designer.cs">
+      <DependentUpon>Empleado.Master</DependentUpon>
     </Compile>
     <Compile Include="GestorDocumentacion.aspx.cs">
       <DependentUpon>GestorDocumentacion.aspx</DependentUpon>
@@ -296,12 +296,12 @@
     <Compile Include="MiPerfilAlumno.aspx.designer.cs">
       <DependentUpon>MiPerfilAlumno.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MiPerfilEmpleador.aspx.cs">
-      <DependentUpon>MiPerfilEmpleador.aspx</DependentUpon>
+    <Compile Include="MiPerfilCentro.aspx.cs">
+      <DependentUpon>MiPerfilCentro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MiPerfilEmpleador.aspx.designer.cs">
-      <DependentUpon>MiPerfilEmpleador.aspx</DependentUpon>
+    <Compile Include="MiPerfilCentro.aspx.designer.cs">
+      <DependentUpon>MiPerfilCentro.aspx</DependentUpon>
     </Compile>
     <Compile Include="MiPracticaAlumno.aspx.cs">
       <DependentUpon>MiPracticaAlumno.aspx</DependentUpon>

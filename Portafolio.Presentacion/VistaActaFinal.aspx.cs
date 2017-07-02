@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace Portafolio.Presentacion
 {
-    public partial class VistaActa1 : System.Web.UI.Page
+    public partial class VistaActa1 : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -48,8 +48,6 @@ namespace Portafolio.Presentacion
             //Practica
             Practica pra = new Practica();
             pra.LlenarActa1(Alumno.Rut);
-            lblNotaFinal.Text = pra.NotaFinal.ToString();
-            lblActa3.Text = pra.Nota3.ToString();
 
             int horas = pra.CantHoras;
             if (horas==480)
@@ -62,6 +60,14 @@ namespace Portafolio.Presentacion
                 lblSemestre.Text = "8";
                 lblProfesional.Text = "X";
             }
+
+
+            Practica notas = new Practica();
+            notas.BuscarNotas(Alumno.Rut);
+            lblNotaFinal.Text = notas.NotaFinal.ToString();
+            double nota3= notas.Nota3;
+            lblActa3.Text = nota3.ToString();
+
             
             Usuario profesor = new Usuario();
             profesor.buscarJefe(pra.RutDocente);
@@ -96,6 +102,14 @@ namespace Portafolio.Presentacion
             {
                 lblActa22Si.Text = "X";
                 lblActa2si.Text = "X";
+            }
+            if (nota3==null || nota3==1)
+            {
+                lblActa3No.Text = "X";
+            }
+            else
+            {
+                lblActa3Si.Text = "X";
             }
             
 

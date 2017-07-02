@@ -1,8 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="InicioAlumno.aspx.cs" Inherits="WebApplication1.InicioAlumno" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<style>
+    .backcolor{
+        background-color:steelblue;
+    }
+</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="">
     <p>
         <br />
     </p>
@@ -35,5 +41,6 @@
     </p>
     <p>
         &nbsp;</p>
+        </div>
 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="select * from sede"></asp:SqlDataSource>
 </asp:Content>

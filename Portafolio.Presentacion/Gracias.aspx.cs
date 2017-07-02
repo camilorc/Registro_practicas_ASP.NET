@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace WebApplication1
 {
-    public partial class Gracias : System.Web.UI.Page
+    public partial class Gracias : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

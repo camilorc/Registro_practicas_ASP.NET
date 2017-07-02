@@ -8,7 +8,7 @@ using Portafolio.Negocio;
 
 namespace WebApplication1
 {
-    public partial class InicioEmpleador : System.Web.UI.Page
+    public partial class InicioEmpleador : Page
     {
 
         public CentroPractica Centro

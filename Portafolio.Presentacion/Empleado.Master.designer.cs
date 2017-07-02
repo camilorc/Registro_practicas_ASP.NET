@@ -10,7 +10,7 @@
 namespace Portafolio.Presentacion {
     
     
-    public partial class Empleador {
+    public partial class Empleado {
         
         /// <summary>
         /// head control.

@@ -9,7 +9,7 @@ using System.Web.Security;
 
 namespace Portafolio.Presentacion
 {
-    public partial class LoginCentroPractica : System.Web.UI.Page
+    public partial class LoginCentroPractica : Page
     {
 
 
@@ -49,16 +49,20 @@ namespace Portafolio.Presentacion
 
         protected void SendEmail(object sender, EventArgs e)
         {
-            Usuario al = new Usuario();
-            if (al.OlvidarContrasena(txtEmail.Text))
+            if (txtEmail.Text.Length>1)
             {
-                txtEmail.Text = "Correo enviado";
-                txtEmail.ReadOnly = true;
-                txtEmail.ForeColor = System.Drawing.Color.Blue;
-            }
-            else
+                if (Centro.OlvidarContrasena(txtEmail.Text))
+                {
+                    txtEmail.Text = "Correo enviado";
+                    txtEmail.ForeColor = System.Drawing.Color.Blue;
+                }
+                else
+                {
+                    txtEmail.Text = "Correo no enviado";
+                }
+            }else
             {
-                txtEmail.Text = "Correo no enviado";
+                txtEmail.Text = "Escriba su email";
             }
         }
     }
