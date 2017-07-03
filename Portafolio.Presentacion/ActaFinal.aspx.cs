@@ -86,11 +86,8 @@ namespace Portafolio.Presentacion
                             Value = item.Rut.ToString()
 
                         }
-
                     );
                 }
-
-
             }
         }
 

@@ -138,6 +138,7 @@
     <Content Include="Imagenes\final.jpg" />
     <Content Include="Imagenes\GraciasASSS.jpg" />
     <Content Include="Imagenes\logoDuoc.png" />
+    <Content Include="Imagenes\perfil.png" />
     <Content Include="Imagenes\tres.png" />
     <Content Include="Imagenes\uno.png" />
     <Content Include="InicioAlumno.aspx" />

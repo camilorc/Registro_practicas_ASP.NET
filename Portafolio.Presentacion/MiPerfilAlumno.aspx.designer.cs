@@ -67,15 +67,6 @@ namespace Portafolio.Presentacion {
         protected global::System.Web.UI.WebControls.Button btnEditar;
         
         /// <summary>
-        /// btnFoto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnFoto;
-        
-        /// <summary>
         /// btnLimpiar control.
         /// </summary>
         /// <remarks>

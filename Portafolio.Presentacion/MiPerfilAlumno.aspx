@@ -43,7 +43,7 @@
                 <tr>
                     <td class="auto-style6">
 
-                        <asp:Image ID="Image1" runat="server" Height="192px" Width="332px" BorderColor="blue" BorderWidth="10px" CssClass="auto-style9"/>
+                        <asp:Image ID="Image1" runat="server" Height="192px" Width="298px" BorderColor="blue" BorderWidth="10px" CssClass="auto-style9" ImageUrl="~/Imagenes/perfil.png"/>
 
                     </td>
                     <td class="auto-style7">
@@ -65,7 +65,6 @@
 
                         <asp:Button ID="btnEditar" runat="server" Text="Editar" OnClick="btnEditar_Click" Height="39px" Width="74px" />
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="btnFoto" runat="server" Text="Subir Foto" OnClick="btnFoto_Click" />
                         <br />
                         <asp:Button ID="btnLimpiar" runat="server" Text="Limpiar" OnClick="btnLimpiar_Click" Height="39px" Width="77px" />
 
