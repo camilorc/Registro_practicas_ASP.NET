@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft;
-using iTextSharp.text.pdf;
+//using iTextSharp.text.pdf;
 using System.IO;
 using Portafolio.Negocio;
 using Oracle.ManagedDataAccess.Client;
