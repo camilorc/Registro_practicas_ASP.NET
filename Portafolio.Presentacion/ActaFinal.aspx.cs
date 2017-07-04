@@ -61,10 +61,30 @@ namespace Portafolio.Presentacion
 
                 txtCarrera.Text = alum.NombreCarrera;
                 txtDv.Text = alum.Dv;
-                txtInforme.Text = alum.Nota3.ToString();
-                double notaCentro = (alum.NotaPersonal + alum.NotaProfesional) / 2;
-                txtEmpresa.Text = (notaCentro).ToString();
-                txtNotaFinal.Text = (Math.Round(((alum.Nota3 * 0.6) + (notaCentro * 0.4))/10,1)).ToString();
+
+                //notas
+                Practica notas = new Practica();
+                notas.BuscarNotas(alum.Rut);
+                
+                double nota3 = notas.Nota3;
+                txtInforme.Text = nota3.ToString();
+                //txtNotaFinal.Text = notas.NotaFinal.ToString();
+
+                Negocio.Acta2 a2 = new Negocio.Acta2();
+                a2.InfoActa2(alum.Rut);
+                string tareas = a2.PrincipalesTareas;
+                double nota = a2.PromedioPersonal;
+                double nota2 = a2.PromedioProfesional;
+                double notaEmpresa = ((nota + nota2) / 2);
+                txtEmpresa.Text = ((nota + nota2) / 2).ToString();
+
+                //calculamos nota final
+                txtNotaFinal.Text = ((nota3 * 0.6) + (notaEmpresa * 0.4)).ToString();
+
+                //txtInforme.Text = alum.Nota3.ToString();
+                //double notaCentro = ((alum.NotaProfesional/10) + (alum.NotaPersonal/10))/2;
+                //txtEmpresa.Text = (notaCentro).ToString();
+                //txtNotaFinal.Text = ((alum.Nota3 * 0.6) + (notaCentro * 0.4)).ToString();
             }
         }
 
@@ -117,7 +137,7 @@ namespace Portafolio.Presentacion
             try
             {
                 //Si es igual a 0 , falta la nota, retornar falso
-                if (int.Parse(txtInforme.Text) == 0 && int.Parse(txtEmpresa.Text) == 0) {
+                if (double.Parse(txtInforme.Text) == 0 || double.Parse(txtEmpresa.Text) == 0) {
                     return false;
                 } 
                 
